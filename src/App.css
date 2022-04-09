@@ -19,3 +19,9 @@ nav{
 a.dropdown-item{
   color:white;
 }
+div#sidebar{
+  background-color: rgb(23,22,27); 
+  border-style: solid;
+  border-color:rgb(23,22,27);
+  border-right-color:rgb(27,26,31);
+}
