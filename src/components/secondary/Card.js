@@ -25,7 +25,7 @@ function Card(props) {
     const data2=await fetch(url2);
     const parsedData2=await data2.json();
     const trailer=parsedData2.videos.results.find(vid=>vid.name==='Official Trailer')
-    console.log(trailer.key); 
+    console.log(trailer); 
     const loc=trailer.key;
     setLoc(loc);
     console.log(id);

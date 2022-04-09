@@ -20,7 +20,7 @@ function Trailers() {
         const parsedData=await data.json();
         setMovie(parsedData.results);
         console.log(parsedData.results[0].id);  
-        
+        console.log(parsedData);
         
         const url2=`https://api.themoviedb.org/3/movie/${parsedData.results[0].id}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&append_to_response=videos`;
         const data2=await fetch(url2);
