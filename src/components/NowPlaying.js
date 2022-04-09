@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect ,useState } from 'react';
 import BiggerCard from './secondary/BiggerCard';
-
+import '../App.css'
 function NowPlaying() {
     const [movie, setMovie] = useState([]);
 
@@ -21,7 +21,7 @@ function NowPlaying() {
     },[]);
     return (
         <div style={{position:'absolute',right:'10%'}}>
-              Bigger Card
+            
              {movie.slice(3,4).map(element=>(
                    
                    <BiggerCard imageURL={`https://image.tmdb.org/t/p/w780${element.backdrop_path}`} title={element.title}/>
