@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Staatliches&display=swap');
+
 body{
    background-color: rgb(23,22,27);  
 }
+
 h1,a{
+
+  font-family: 'Staatliches', cursive;
   color:white;
 }
+
 nav{
   background-color: rgb(23,22,27); 
+  border-style: solid;
+  border-color:rgb(23,22,27);
+  border-bottom-color:rgb(27,26,31);
+}
+a.dropdown-item{
+  color:white;
 }
