@@ -14,7 +14,8 @@ function navbar() {
                             <a className="nav-link active mx-2" href="#">Movies</a>
                             <a className="nav-link  mx-2" href="#">TV Shows</a>
                             <a className="nav-link  mx-2" href="#">Animations</a>
-                            <a className="nav-link mx-2 " href="#">Plans</a>
+                            <a className="nav-link  mx-2 " href="#">Date Night</a>
+                            <a className="nav-link  mx-2 " href="#">Advanced Search</a>
                           
                         </div>
                     </div>
