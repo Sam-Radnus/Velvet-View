@@ -20,11 +20,11 @@ function NowPlaying() {
         getMovies();
     },[]);
     return (
-        <div style={{position:'absolute',right:'10%'}}>
+        <div style={{position:'absolute',right:'0%'}}>
             
-             {movie.slice(3,4).map(element=>(
+             {movie.slice(8,9).map(element=>(
                    
-                   <BiggerCard imageURL={`https://image.tmdb.org/t/p/w780${element.backdrop_path}`} title={element.title}/>
+                   <BiggerCard imageURL={`https://image.tmdb.org/t/p/w1280${element.backdrop_path}`} title={element.title}/>
     ))}
              
         </div>
