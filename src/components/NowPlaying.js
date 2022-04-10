@@ -20,7 +20,7 @@ function NowPlaying() {
         getMovies();
     },[]);
     return (
-        <div style={{position:'absolute',right:'0%'}}>
+        <div style={{position:'absolute',top:'10%',left:'-15%',marginBottom:'55vw'}}>
             
              {movie.slice(8,9).map(element=>(
                    

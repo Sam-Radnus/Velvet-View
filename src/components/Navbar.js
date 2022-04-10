@@ -3,7 +3,7 @@ import '../App.css';
 function navbar() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark ">
+            <nav style={{position:'fixed',top:'0',zIndex:'6',width:'100%'}} className="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark ">
                 <div className="container-fluid">
                     <a  id="heading "style={{ marginRight: '10vw' }} className="navbar-brand " href="#">Movie<span>-Array</span></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
