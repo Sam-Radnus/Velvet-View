@@ -17,7 +17,7 @@ function Card(props) {
   };
   let [id, setLoc] = useState("");
   const renderFunction = async () => {
-    console.log(props.play);
+    
     // const trailer=props.play.videos.results.find(vid=>vid.name==='Official Trailer')
     // console.log(trailer);
 
@@ -28,7 +28,7 @@ function Card(props) {
  
     const loc = trailer.key;
     setLoc(loc);
-    console.log(id);
+    
     return loc;
   };
 

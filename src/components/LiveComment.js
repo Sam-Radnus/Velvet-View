@@ -11,7 +11,7 @@ function LiveComment(props) {
         const data = await fetch(url);
         const parsedData = await data.json();
 
-        console.log(parsedData.results[0].id);
+        
         const token = parsedData.id;
 
         const url2 = `https://api.themoviedb.org/3/movie/${token}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;

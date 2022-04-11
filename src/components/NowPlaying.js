@@ -12,9 +12,7 @@ function NowPlaying() {
         const parsedData = await data.json();
       
         setMovie(parsedData.results);
-        console.log(parsedData.results);
-        console.log("Bigger Card");
-        console.log(parsedData.results[0].id);
+      
     }
     useEffect(()=>{
         getMovies();

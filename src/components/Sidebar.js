@@ -9,13 +9,13 @@ function Sidebar() {
  
   return (
      <>
-     <div id="sidebar" className="w3-sidebar w3-bar-block" style={{backgroundColor:'rgb(23,22,27)',marginRight:'0px',top:'10%',width:"25%"}}>
+     <div id="sidebar" className="w3-sidebar w3-bar-block" style={{backgroundColor:'rgb(23,22,27)',overflow:'scroll',marginRight:'0px',top:'10%',width:"25%"}}>
      <div  style={{color:'white'}}className="w3-bar-item ">
           <h3>Catch New Trailers</h3>
           <Trailers/> 
      </div>
      <div  style={{color:'white'}}className="w3-bar-item "><LiveComment/></div>
-     <div  style={{color:'white'}}className="w3-bar-item "><MatchoftheDay/></div>
+     <div  style={{color:'white',marginBottom:'25vh'}}className="w3-bar-item "><MatchoftheDay/></div>
      </div>
      </>
   )
