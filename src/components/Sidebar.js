@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import LiveComment from './LiveComment'
 import Trailers from './Trailers'
 function Sidebar() {
   return (
@@ -9,7 +10,7 @@ function Sidebar() {
           <h3>Catch New Trailers</h3>
           <Trailers/> 
      </div>
-     <div  style={{color:'white'}}className="w3-bar-item ">Link 2</div>
+     <div  style={{color:'white'}}className="w3-bar-item "><LiveComment/></div>
      <div  style={{color:'white'}}className="w3-bar-item ">Link 3</div>
      </div>
      </>
