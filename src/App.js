@@ -14,8 +14,9 @@ function App() {
        <Sidebar/>
        <NowPlaying/>
        <div style={{marginTop:'70vh',marginLeft:'25vw'}}>
-       <Featured FeatureName="top_rated"/>
-       <Featured FeatureName="upcoming"/>
+       <Featured FeatureName={"TOP RATED"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"/>
+       <Featured FeatureName={"UPCOMING"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"/>
+       <Featured FeatureName={"TRENDING"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"/>
        </div>
         </>
   );

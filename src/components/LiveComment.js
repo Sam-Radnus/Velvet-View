@@ -3,43 +3,38 @@ import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import Comment from './secondary/Comment';
 function LiveComment(props) {
-    const[comments,setComments]=useState([]);
-    const[movieName,setMoviename]=useState('');
+    const [comments, setComments] = useState([]);
+    const [movieName, setMoviename] = useState('');
     const fetchComments = async () => {
-        
-         const url="https://api.themoviedb.org/3/movie/15/reviews?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1";
-         const data=await fetch(url);
-         const parsedData=await data.json();
-        // console.log(parsedData.results);
-         console.log(parsedData.results[0].id);
-         const token=parsedData.id;
-         
-         const url2=`https://api.themoviedb.org/3/movie/${token}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;
-         const details=await fetch(url2);
-         const parsedDetails=await details.json();
-         console.log(parsedDetails.title);
-         const titles=parsedDetails.title;
-       
-         setMoviename(titles);
-         console.log(movieName);
-         const review=parsedData.results;
-         setComments(review);
-         for(let i=0;i<3;i++){
-           console.log(review[i].author+" liked "+movieName);
-           console.log(review[i].content.slice(0,65)+"....");
-         }
-        
-         console.log(movieName); 
+        const rand=Math.random(100,1000);
+        const url = "https://api.themoviedb.org/3/movie/11/reviews?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1";
+        const data = await fetch(url);
+        const parsedData = await data.json();
+
+        console.log(parsedData.results[0].id);
+        const token = parsedData.id;
+
+        const url2 = `https://api.themoviedb.org/3/movie/${token}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;
+        const details = await fetch(url2);
+        const parsedDetails = await details.json();
+
+        const titles = parsedDetails.title;
+
+        setMoviename(titles);
+
+        const review = parsedData.results;
+        setComments(review);
+
     }
     useEffect(() => {
         fetchComments();
-        
-    },[]);
+
+    }, []);
     return (
         <>
             <h1>Live Comments</h1>
-            {comments.slice(0,3).map(element=>(
-                <Comment  key={element.id} userName={element.author} MovieName={movieName} Review={element.content.slice(0,76)}/>
+            {comments.slice(0, 3).map(element => (
+                <Comment key={element.id} userName={element.author} MovieName={movieName} Review={element.content.slice(0, 76)} />
             ))}
         </>
     )
