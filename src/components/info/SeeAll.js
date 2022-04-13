@@ -16,17 +16,13 @@ function SeeAll(props) {
         const url = `${URL}`;
         const data = await fetch(url);
         const parsedData = await data.json();
-
         setMovie(parsedData.results);
-
-
-
     }
     return (
         <>
             <h1>{title}</h1>
             
-            <div style={{ marginTop: '0vh' }} className='container'>
+            <div style={{ marginTop: '0px' }} className='container'>
                 <div className='row row-cols-4'>
                     
                     {movie.slice(2, 20).map(element => (
