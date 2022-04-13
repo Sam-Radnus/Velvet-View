@@ -17,7 +17,7 @@ function Featured(props) {
         const url=`${FeatureURL}`;
         const data=await fetch(url);
         const parsedData=await data.json();
-     
+      
         setMovie(parsedData.results); 
        
 
@@ -30,7 +30,7 @@ function Featured(props) {
        <div className='row'>
        {movie.slice(6,9).map(element=>(
           <div className="col">
-          {movie.length > 0 && <MidCard imageURL={`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`} title={element.title}/> }
+          {movie.length > 0 && <MidCard imageURL={`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`} title={element.title?element.title:element.name}/> }
            </div>
        ))}
        </div>

@@ -5,10 +5,10 @@ function MidCard(props) {
     let { imageURL, title } = props;
     return (
         <div>
-            <p style={{ position: 'relative' }}></p>
-            <div style={{ height: '25vh', width: '22vw', borderRadius: '10px', backgroundImage: `url(${props.imageURL} ` }}>
+           
+            <div style={{ height: '170px', width: '299px', borderRadius: '10px', backgroundImage: `url(${props.imageURL} ` }}>
                 <div style={{ backgroundColor: 'rgba(0,0,0,0.11)', backdropFilter: 'blur(0px)' }} className="card-body">
-                    <div style={{ position: 'absolute', top: '5vw' }} className="bottom"><p id="title" style={{ fontSize: '22px' }} className="card-title">{props.title}</p></div>
+                    <div style={{ marginTop: '20%' }} className="bottom"><p id="title" style={{ fontSize: '22px' }} className="card-title">{props.title}</p></div>
 
                 </div>
             </div>

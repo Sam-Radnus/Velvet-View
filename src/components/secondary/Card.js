@@ -3,18 +3,10 @@ import PropTypes from 'prop-types';
 import YouTube from 'react-youtube';
 import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import '../../App.css';
 import Video1 from './Video1';
 function Card(props) {
   let { play, imageURL, title } = props;
-
-  const opts = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
   let [id, setLoc] = useState("");
   const renderFunction = async () => {
     
@@ -25,7 +17,7 @@ function Card(props) {
     const data2 = await fetch(url2);
     const parsedData2 = await data2.json();
     const trailer = parsedData2.videos.results.find(vid => vid.name === 'Official Trailer')
- 
+    
     const loc = trailer.key;
     setLoc(loc);
     
