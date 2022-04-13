@@ -12,12 +12,15 @@ function Featured(props) {
        
        getMovies();
    
-    },[])
+    },[movie.length])
     const getMovies=async()=>{
-        const url=`${props.FeatureURL}`;
+        const url=`${FeatureURL}`;
         const data=await fetch(url);
         const parsedData=await data.json();
-        setMovie(parsedData.results);  
+     
+        setMovie(parsedData.results); 
+       
+
        
      }
   return (
@@ -27,7 +30,7 @@ function Featured(props) {
        <div className='row'>
        {movie.slice(6,9).map(element=>(
           <div className="col">
-           <MidCard imageURL={`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`} title={element.title}/> 
+          {movie.length > 0 && <MidCard imageURL={`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`} title={element.title}/> }
            </div>
        ))}
        </div>
