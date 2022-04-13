@@ -17,13 +17,11 @@ function Card(props) {
     const data2 = await fetch(url2);
     const parsedData2 = await data2.json();
     const trailer = parsedData2.videos.results.find(vid => vid.name === 'Official Trailer')
-    
+
     const loc = trailer.key;
     setLoc(loc);
-    
     return loc;
   };
-
   return (
     <div style={{ backgroundImage: `url(${props.imageURL}`, backgroundPosition: 'left center ' }} className="card my-2">
       {/* <YouTube videoId={id} opts={opts} /> */}
