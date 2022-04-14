@@ -9,7 +9,9 @@ h1,a,h3,h5,span,p#title{
   font-family: 'Staatliches', cursive;
   color:white;
 }
-
+li{
+  list-style-type: '';
+}
 nav{
   background-color: rgb(23,22,27); 
   border-style: solid;
