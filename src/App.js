@@ -23,9 +23,9 @@ function App() {
           <Routes>
          
           <Route exact path="/" element={<> 
-            
-            <div style={{ marginTop:`${window.location.pathname==='/'?'70vh':'10vh'}`, marginLeft: '25vw' }}>
             <NowPlaying />
+            <div style={{ marginTop:`${window.location.pathname==='/'?'70vh':'5vh'}`, marginLeft: '25vw' }}>
+           
           <Featured FeatureName={"TOP RATED"}    location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
           <Featured FeatureName={"UPCOMING"}     location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
           <Featured FeatureName={"TRENDING"}     location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />

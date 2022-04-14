@@ -19,6 +19,7 @@ function Featured(props) {
         const data=await fetch(url);
         const parsedData=await data.json();
        // console.log(location)
+        console.log(parsedData.results);
         setMovie(parsedData.results); 
        
 

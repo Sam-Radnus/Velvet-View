@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {useEffect,useState} from 'react'
+import { useEffect, useState } from 'react'
 import BiggerCard from '../secondary/BiggerCard';
 import '../../App.css';
+import Details from './Details';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 function SeeAll(props) {
 
     let { title, URL } = props;
@@ -19,25 +23,38 @@ function SeeAll(props) {
         setMovie(parsedData.results);
     }
     return (
-        <div style={{width:'75vw',marginLeft:'15vw'}} >
-          
-            
-            <div style={{ marginTop: '20vh',marginLeft:'10vw' }} className='container'>
-            <h1 style={{fontSize:'65px',textAlign:'center'}}>{title}</h1>
-                <div className='row row-cols-4'>
+
+        
+        <div style={{ width: '75vw', marginLeft: '15vw' }} >
+
+                <Routes>
+                < Route exact path={`/${props.title}/*`} index element={
+                    <div style={{ marginTop: '20vh', marginLeft: '10vw' }} className='container'>
                     
-                    {movie.slice(0, 20).map(element => (
-                        <div style={{backgroundColor:'rgb(23,22,27)'}} className="card" >
-                        <img src={`https://image.tmdb.org/t/p/original/${element.poster_path}`} className="card-img-top" />
-                        <div className="card-body">
-                          <h5 className="card-title">{element.title?element.title:element.name}</h5>
-                          <a href="#" className="btn btn-danger">View More</a>
+                        <h1 style={{ fontSize: '65px', textAlign: 'center' }}>{title}</h1>
+                        <div className='row row-cols-4'>
+                    
+                            {movie.slice(0, 20).map(element => (
+                                <div style={{ backgroundColor: 'rgb(23,22,27)' }} className="card" >
+                                 
+                                    <img src={`https://image.tmdb.org/t/p/original/${element.poster_path}`} className="card-img-top" />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{element.title ? element.title : element.name}</h5>
+                                        <Link className="btn btn-danger" to={`${props.title}/${element.title ? element.title : element.name}`}>
+                                            View More
+                                        </Link>
+                                        <Route exact path={`${props.title}/${element.title ? element.title : element.name}`} element={<Details key={element.title} title={element.title ? element.title : element.name} overview={element.overview} imageURL={`https://image.tmdb.org/t/p/w1280${element.backdrop_path}`}></Details>}></Route>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                      </div>
-                    ))}
+                    </div>
+               }></Route>
+
+                </Routes>
                 </div>
-            </div>
-        </div>
+           
+        
     )
 }
 
