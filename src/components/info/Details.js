@@ -1,18 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+function Details() {
 
-function Details(props) {
-    let{title,overview,imageURL}=props;
+    let { username } = useParams();
+    const [movie, setMovie] = useState([]);
+
+
+    const getMovies = async () => {
+        // const url="https://api.themoviedb.org/3/movie/latest?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US";
+        const url = `https://api.themoviedb.org/3/movie/${username}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;
+        const data = await fetch(url);
+
+        const parsedData = await data.json();
+        console.log(parsedData);
+        setMovie(parsedData);
+        console.log(movie);
+    }
+    useEffect(() => {
+        getMovies();
+    }, [movie]);
     return (
-        <div>
-            <div style={{ marginLeft: '40vw' }}>
-                <div style={{ height: '350px', width: '75vw',backgroundColor: 'rgba(0,0,0,0.11)',backgroundImage: `url(${props.imageURL} ` }}>
+        <div><h1>Movie Info ABOUT {movie.title}</h1>
+            {movie &&
+
+                <div>
+                    
+                    <img src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`} />
+                    <p style={{color:'white'}}>{movie.overview}</p>
                 </div>
 
-                <h1 id="title" style={{ textAlign:'center',fontSize: '75px' }} >{props.title}</h1>
-                
-                <p>{props.overview}</p>
-            </div>
+
+            }
         </div>
     )
 }
