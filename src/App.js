@@ -9,36 +9,46 @@ import Featured from './components/Featured';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import SeeAll from './components/info/SeeAll';
 import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import Details from './components/info/Details';
 function App() {
-  
+
   return (
     <>
-  
+
       <Router>
         <Navbar />
         <Sidebar />
-      
-        
-        
-          <Routes>
-         
-          <Route exact path="/" element={<> 
+
+
+
+        <Routes>
+
+          <Route exact path="/" element={<>
             <NowPlaying />
-            <div style={{ marginTop:`${window.location.pathname==='/'?'70vh':'5vh'}`, marginLeft: '25vw' }}>
-           
-          <Featured FeatureName={"TOP RATED"}    location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
-          <Featured FeatureName={"UPCOMING"}     location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
-          <Featured FeatureName={"TRENDING"}     location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
-          <Featured FeatureName={"RECOMMENDED"}  location={"Recommended"} FeatureURL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1" />
+            <div style={{ marginTop: "70vh", marginLeft: '25vw' }}>
+
+              <Featured FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+              <Featured FeatureName={"UPCOMING"} location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+              <Featured FeatureName={"TRENDING"} location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+              <Featured FeatureName={"RECOMMENDED"} location={"Recommended"} FeatureURL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1" />
             </div>
           </>}
-         ></Route>
-         <Route exact path="/TopRated" element={<SeeAll key="topRated" title="Top Rated" URL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}></Route>
-         <Route exact path="/Upcoming" element={<SeeAll key="upComing" title="Upcoming" URL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}></Route>
-         <Route exact path="/Trending" element={<SeeAll key="Trending" title="Trending" URL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}></Route>
-         <Route exact path="/Recommended" element={<SeeAll key="Recommended" title="Recommended" URL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"></SeeAll>}></Route>
-          </Routes>
-      
+          ></Route>
+          <Route exact path="/TopRated" element={<SeeAll key="topRated" title="Top Rated" URL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
+            <Route  path="Details/:username" element={<Details />} />
+          </Route>
+          <Route exact path="/Upcoming" element={<SeeAll key="upComing" title="Upcoming" URL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
+            <Route path="Details/:username" element={<Details />} />
+          </Route>
+          <Route exact path="/Trending" element={<SeeAll key="Trending" title="Trending" URL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
+            <Route path="Details/:username" element={<Details />} />
+          </Route>
+          <Route exact path="/Recommended" element={<SeeAll key="Recommended" title="Recommended" URL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"></SeeAll>}>
+            <Route path="Details/:username" element={<Details />} />
+          </Route>
+        </Routes>
+
       </Router>
     </>
   );
