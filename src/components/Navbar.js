@@ -12,11 +12,11 @@ function navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <a style={{fontSize:'large'}}className="nav-link active mx-2" href="#">Movies</a>
-                            <a style={{fontSize:'large'}}className="nav-link  mx-2" href="#">TV Shows</a>
-                            <a style={{fontSize:'large'}}className="nav-link  mx-2" href="#">Animations</a>
-                            <a style={{fontSize:'large'}}className="nav-link  mx-2 " href="#">Date Night</a>
-                            <a style={{fontSize:'large'}}className="nav-link  mx-2 " href="#">Advanced Search</a>
+                            <Link style={{fontSize:'large'}}className="nav-link active mx-2" to="/">Movies</Link>
+                            <Link style={{fontSize:'large'}}className="nav-link  mx-2"       to="/TVshows">TV Shows</Link>
+                            <Link style={{fontSize:'large'}}className="nav-link  mx-2"       to="/Anime">Animations</Link>
+                            <Link style={{fontSize:'large'}}className="nav-link  mx-2 "      to="/DateNight">Date Night</Link>
+                            <Link style={{fontSize:'large'}}className="nav-link  mx-2 "      to="/AdvancedSearch">Advanced Search</Link>
                           
                         </div>
                     </div>

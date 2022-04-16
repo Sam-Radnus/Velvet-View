@@ -11,6 +11,11 @@ import SeeAll from './components/info/SeeAll';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Details from './components/info/Details';
+import Anime from './components/Category/Anime';
+import TVShows from './components/Category/TVShows';
+import AdvancedSearch from './components/Features/AdvancedSearch';
+import DateNight from './components/Features/DateNight';
+
 function App() {
 
   return (
@@ -18,7 +23,8 @@ function App() {
 
       <Router>
         <Navbar />
-        <Sidebar />
+        
+      <Sidebar />
 
 
 
@@ -26,8 +32,9 @@ function App() {
 
           <Route exact path="/" element={<>
             <NowPlaying />
+            
             <div style={{ marginTop: "70vh", marginLeft: '25vw' }}>
-
+          
               <Featured FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
               <Featured FeatureName={"UPCOMING"} location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
               <Featured FeatureName={"TRENDING"} location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
@@ -35,6 +42,10 @@ function App() {
             </div>
           </>}
           ></Route>
+         <Route exact path="/Anime" element={<Anime/>}/>
+         <Route exact path="/TVShows" element={<TVShows/>}/>
+         <Route exact path="/AdvancedSearch" element={<AdvancedSearch/>}></Route>
+         <Route exact path="/DateNight" element={<DateNight/>}></Route>
           <Route exact path="/TopRated" element={<SeeAll key="topRated" title="Top Rated" URL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
             <Route  path="Details/:username" element={<Details />} />
           </Route>
