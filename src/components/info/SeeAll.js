@@ -30,7 +30,7 @@ function SeeAll(props) {
        
         <div style={{ width: '75vw', marginTop:'10vh',marginLeft: '15vw' }} >
             
-                    <div style={{ marginTop: '20vh', marginLeft: '10vw' }} className='container'>
+                    <div style={{ marginTop: '12vh', marginLeft: '10vw' }} className='container'>
                     <Outlet/>
                         <h1 style={{ fontSize: '65px', textAlign: 'center' }}>{title}</h1>
                         <div className='row row-cols-4'>

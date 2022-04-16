@@ -29,10 +29,11 @@ function Details() {
  
                 <div style={{marginLeft:'10%'}}>
                   <div style={{float:'left'}} className='image'>
-                    <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+                    <img style={{position:'absolute',top:'30%',left:'30%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
                     </div>
-                    <div style={{ paddingLeft:'15%',marginLeft:'25% ',paddingTop:'10%',width:'55%'}}className='overview'>
+                    <div style={{ paddingLeft:'15%',marginLeft:'25% ',paddingTop:'5%',width:'55%'}}className='overview'>
                         <h3 style={{ color: 'white' }}>{movie.overview}</h3>
+                        <h3 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h3>
                     </div>
                 </div>
 

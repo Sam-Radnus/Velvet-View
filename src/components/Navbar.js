@@ -1,11 +1,12 @@
 import React from 'react'
 import '../App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 function navbar() {
     return (
         <>
             <nav style={{position:'fixed',top:'0',zIndex:'6',width:'100%'}} className="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark ">
                 <div className="container-fluid">
-                    <a   id="heading "style={{ fontSize:'xx-large',marginRight: '10vw' }} className="navbar-brand " href="#">Movie<span>-Array</span></a>
+                    <Link   id="heading "style={{ fontSize:'xx-large',marginRight: '10vw' }} className="navbar-brand " to="/">Movie<span>-Array</span></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
