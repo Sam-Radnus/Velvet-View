@@ -5,6 +5,7 @@ import MidCard from './secondary/MidCard';
 import { useState, useCallback } from 'react'
 import { useEffect } from 'react'
 import Text from './secondary/Text';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 function MatchoftheDay(props) {
   const [movieName1, setMovieName1] = useState('');
   const [genreAR1, setGenre1] = useState([]);
@@ -66,6 +67,11 @@ function MatchoftheDay(props) {
       <Text color={'blue'} title={movieName2} />
       <h1 style={{ textAlign: 'center' }} >=</h1>
       {commonGenre.length > 0 && (<Text color={'purple'}  title={commonGenre[4].title} />)}
+
+      <Link to="/DateNight" ><button style={{marginTop:'25px',height:'70px',border:'none',width:'22.5vw',backgroundColor:'rgb(8,9,55)'}}>
+        <h1>See How it works <i className="fa-solid fa-angle-right"></i>  </h1>
+      </button>
+      </Link>
     </div>
   )
 }

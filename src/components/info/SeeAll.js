@@ -38,7 +38,7 @@ function SeeAll(props) {
                             {movie.slice(0, 20).map(element => (
                                 <div style={{ backgroundColor: 'rgb(23,22,27)' }} className="card" >
                                  
-                                    <img src={`https://image.tmdb.org/t/p/original/${element.poster_path}`} className="card-img-top" />
+                                    <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png'} className="card-img-top" />
                                     <div className="card-body">
                                         <h5 className="card-title">{element.title ? element.title : element.name}</h5>
                                         <Link className="btn btn-danger"  to={`Details/${element.id}`}>

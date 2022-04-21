@@ -23,7 +23,7 @@ function Card(props) {
     return loc;
   };
   return (
-    <div style={{ backgroundImage: `url(${props.imageURL}`, backgroundPosition: 'left center ' }} className="card my-2">
+    <div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '25% 25% ' }} className="card my-2">
       {/* <YouTube videoId={id} opts={opts} /> */}
       <div style={{ backgroundColor: 'rgba(0,0,0,0.11)', backdropFilter: 'blur(0px)' }} className="card-body">
         <p id="title" className="card-title">{props.title}</p>

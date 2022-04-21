@@ -31,9 +31,9 @@ function App() {
         <Routes>
 
           <Route exact path="/" element={<>
+       
             <NowPlaying />
-            
-            <div style={{ marginTop: "70vh", marginLeft: '25vw' }}>
+            <div style={{ marginTop: "57vh", marginLeft: '25vw' }}>
           
               <Featured FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
               <Featured FeatureName={"UPCOMING"} location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />

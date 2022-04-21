@@ -27,8 +27,8 @@ function Featured(props) {
      }
   return (
     
-    <div  style={{marginTop:'5vh'}}className='container'>
-   <div className="tag" style={{display:'inline',width:'100%'}}><p> <span style={{color:'white',fontSize:'30px'}}>{props.FeatureName}</span><Link style={{position:'absolute',color:'grey',cursor:'pointer',marginTop:'12px',right:'2vw'}} to={`/${location}`}>See All <i className="fa-solid fa-angle-right"></i> </Link></p></div>
+    <div  style={{marginTop:'1vh'}}className='container'>
+   <div className="tag" style={{display:'inline',width:'100%'}}><p> <span style={{color:'white',fontSize:'50px'}}>{props.FeatureName}</span><Link style={{position:'absolute',color:'grey',cursor:'pointer',marginTop:'12px',right:'2vw'}} to={`/${location}`}>See All <i className="fa-solid fa-angle-right"></i> </Link></p></div>
        <div className='row'>
        {movie.slice(0,3).map(element=>(
           <div className="col">

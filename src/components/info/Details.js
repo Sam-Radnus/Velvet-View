@@ -22,8 +22,7 @@ function Details() {
         getMovies();
     },[ movie.id && username]);
     return (
-        movie && <div style={{ height: '590px', width: '75vw', backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`, backgroundColor: 'rgb(0,0,0,0.5)',backgroundBlendMode:'darken' }}>
-
+        movie && <div style={{ height: '590px', width: '75vw', backgroundImage: `${movie.backdrop_path}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png', backgroundColor: 'rgb(0,0,0,0.5)',backgroundBlendMode:'darken' }}>
             <h1 style={{textAlign:'center',fontSize:'75px'}}> {movie.title} </h1>
             {
  
