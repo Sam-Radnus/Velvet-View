@@ -29,9 +29,9 @@ function SeeAll(props) {
     return (
 
        
-        <div style={{ width: '75vw', marginTop:'10vh',marginLeft: '15vw' }} >
+        <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '1vw' }} >
             
-                    <div style={{ marginTop: '12vh', marginLeft: '10vw' }} className='container'>
+                    <div style={{ marginTop: '12vh', marginLeft: '5.5vw' }} className='container'>
                     <Outlet/>
                         <h1 style={{ fontSize: '65px', textAlign: 'center' }}>{title}</h1>
                         <div className='row row-cols-4'>
