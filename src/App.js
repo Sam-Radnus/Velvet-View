@@ -17,19 +17,18 @@ import AdvancedSearch from './components/Features/AdvancedSearch';
 import DateNight from './components/Features/DateNight';
 
 function App() {
-
+  
   return (
     <>
 
       <Router>
         <Navbar />
-        
-      <Sidebar />
+       <Sidebar/>
 
+     
 
 
         <Routes>
-
           <Route exact path="/" element={<>
        
             <NowPlaying />

@@ -15,7 +15,7 @@ function Sidebar() {
     else
     {setDisplay('none')}
     console.log(location);
-  },[location.pathname]);
+  },[location]);
   return (
      <div style={{display:`${display}`}}>
      <div  id="sidebar" className="w3-sidebar w3-bar-block" style={{backgroundColor:'rgb(23,22,27)',overflow:'scroll',marginRight:'0px',top:'10%',width:"25%"}}>
