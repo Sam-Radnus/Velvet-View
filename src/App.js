@@ -48,15 +48,19 @@ function App() {
          <Route exact path="/DateNight" element={<DateNight/>}></Route>
           <Route exact path="/TopRated" element={<SeeAll key="topRated" title="Top Rated" URL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
             <Route  path="Details/:username" element={<Details />} />
+           
           </Route>
           <Route exact path="/Upcoming" element={<SeeAll key="upComing" title="Upcoming" URL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
-            <Route path="Details/:username" element={<Details />} />
+            <Route  path="Details/:username" element={<Details />} />
+          
           </Route>
           <Route exact path="/Trending" element={<SeeAll key="Trending" title="Trending" URL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
-            <Route path="Details/:username" element={<Details />} />
+            <Route  path="Details/:media/:username" element={<Details />} />
+            
           </Route>
           <Route exact path="/Recommended" element={<SeeAll key="Recommended" title="Recommended" URL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"></SeeAll>}>
-            <Route path="Details/:username" element={<Details />} />
+            <Route  path="Details/:username" element={<Details />} />
+            
           </Route>
         </Routes>
 

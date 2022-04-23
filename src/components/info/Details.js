@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-function Details() {
-
-    let { username } = useParams();
+function Details(props) {
+    let media_type={props};
+    let {media, username } = useParams();
     const [movie, setMovie] = useState([]);
 
 
     const getMovies = async () => {
         // const url="https://api.themoviedb.org/3/movie/latest?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US";
-        const url = `https://api.themoviedb.org/3/movie/${username}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;
+        const url = `https://api.themoviedb.org/3/${media?media:'movie'}/${username}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;
         const data = await fetch(url);
 
         const parsedData = await data.json();
@@ -23,7 +23,7 @@ function Details() {
     },[ movie.id && username]);
     return (
         movie && <div style={{ height: '590px', width: '75vw', backgroundImage: `${movie.backdrop_path}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png', backgroundColor: 'rgb(0,0,0,0.5)',backgroundBlendMode:'darken' }}>
-            <h1 style={{textAlign:'center',fontSize:'75px'}}> {movie.title} </h1>
+            <h1 style={{textAlign:'center',fontSize:'75px'}}> {movie.title?movie.title:movie.name} </h1>
             {
  
                 <div style={{marginLeft:'10%'}}>

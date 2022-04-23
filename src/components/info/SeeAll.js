@@ -24,6 +24,7 @@ function SeeAll(props) {
         const data = await fetch(url);
         const parsedData = await data.json();
         setMovie(parsedData.results);
+        console.log(parsedData.results[0].media_type);
     }
     return (
 
@@ -41,7 +42,7 @@ function SeeAll(props) {
                                     <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png'} className="card-img-top" />
                                     <div className="card-body">
                                         <h5 className="card-title">{element.title ? element.title : element.name}</h5>
-                                        <Link className="btn btn-danger"  to={`Details/${element.id}`}>
+                                        <Link className="btn btn-danger" to={element.media_type?`Details/${element.media_type}/${element.id}`:`Details/${element.id}`} >
                                            View More
                                         </Link>
                                 
