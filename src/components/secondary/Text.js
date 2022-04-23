@@ -8,7 +8,7 @@ function Text(props) {
     <div  style={{backgroundColor:`${color}`,height:'98px',borderRadius:'5px',marginBottom:'5px',textAlign:`center`}}>
       
         <h1 style={{lineHeight:'98px'}}>{props.title}</h1>
-      
+       
       </div>
   )
 }
