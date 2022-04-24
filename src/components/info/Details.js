@@ -28,7 +28,7 @@ function Details(props) {
  
                 <div style={{marginLeft:'10%'}}>
                   <div style={{float:'left'}} className='image'>
-                    <img style={{position:'absolute',top:'25%',left:'10%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+                    <img style={{position:'absolute',top:'25%',left:'5%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
                     </div>
                     <div style={{ paddingLeft:'15%',marginLeft:'25% ',paddingTop:'5%',width:'55%'}}className='overview'>
                         <h3 style={{ color: 'white' }}>{movie.overview}</h3>
