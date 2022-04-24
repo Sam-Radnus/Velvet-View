@@ -33,8 +33,8 @@ function SeeAll(props) {
             
                     <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
                     <Outlet/>
-                        <h1 style={{ fontSize: '65px', marginLeft: '48%' }}>{title}</h1>
-                        <div style={{marginLeft:'10%'}}className='row row-cols-4'>
+                        <h1 style={{ fontSize: '65px', textAlign:'center' }}>{title}</h1>
+                        <div style={{marginLeft:'7%'}}className='row row-cols-4'>
                     
                             {movie.slice(0, 20).map(element => (
                                 <div style={{ backgroundColor: 'rgb(23,22,27)' }} className="card" >
