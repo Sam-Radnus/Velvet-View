@@ -29,12 +29,12 @@ function SeeAll(props) {
     return (
 
        
-        <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '1vw' }} >
+        <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '0vw' }} >
             
-                    <div style={{ marginTop: '12vh', marginLeft: '5.5vw' }} className='container'>
+                    <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
                     <Outlet/>
-                        <h1 style={{ fontSize: '65px', textAlign: 'center' }}>{title}</h1>
-                        <div className='row row-cols-4'>
+                        <h1 style={{ fontSize: '65px', marginLeft: '48%' }}>{title}</h1>
+                        <div style={{marginLeft:'10%'}}className='row row-cols-4'>
                     
                             {movie.slice(0, 20).map(element => (
                                 <div style={{ backgroundColor: 'rgb(23,22,27)' }} className="card" >
