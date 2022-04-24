@@ -1,9 +1,15 @@
 import React from 'react'
 import '../App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import {useLocation} from "react-router-dom";
+function Navbar() {
+    let location=useLocation();
+    useEffect(() => {
 
-function navbar() {
+    
 
+    }, [])
     return (
         <>
             <nav style={{position:'fixed',top:'0',zIndex:'6',width:'100%'}} className="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark ">
@@ -14,11 +20,11 @@ function navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <Link style={{fontSize:'large'}}className="nav-link active mx-2" to="/">Movies</Link>
-                            <Link style={{fontSize:'large'}}className="nav-link  mx-2"       to="/TVshows">TV Shows</Link>
-                            <Link style={{fontSize:'large'}}className="nav-link  mx-2"       to="/Anime">Anime</Link>
-                            <Link style={{fontSize:'large'}}className="nav-link  mx-2 "      to="/DateNight">Date Night</Link>
-                            <Link style={{fontSize:'large'}}className="nav-link  mx-2 "      to="/AdvancedSearch">Advanced Search</Link>
+                            <Link style={{fontSize:'large'}}className={`nav-link ${location.pathname==='/'?'active':''} mx-2`} to="/">Movies</Link>
+                            <Link style={{fontSize:'large'}}className={`nav-link ${location.pathname==='/TVshows'?'active':''} mx-2`} to="/TVshows">TV Shows</Link>
+                            <Link style={{fontSize:'large'}}className={`nav-link ${location.pathname==='/Anime'?'active':''} mx-2`} to="/Anime">Anime</Link>
+                            <Link style={{fontSize:'large'}}className={`nav-link ${location.pathname==='/DateNight'?'active':''} mx-2`} to="/DateNight">Date Night</Link>
+                            <Link style={{fontSize:'large'}}className={`nav-link ${location.pathname==='/AdvancedSearch'?'active':''} mx-2`} to="/AdvancedSearch">Advanced Search</Link>
                           
                         </div>
                     </div>
@@ -36,4 +42,4 @@ function navbar() {
     )
 }
 
-export default navbar
+export default Navbar
