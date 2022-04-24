@@ -60,8 +60,7 @@ function App() {
             
           </Route>
           <Route exact path="/Recommended" element={<SeeAll key="Recommended" title="Recommended" URL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"></SeeAll>}>
-            <Route  path="Details/:username" element={<Details />} />
-            
+            <Route  path="Details/movie/:username" element={<Details />} />
           </Route>
           <Route  path="/OnAir" element={<SeeAll key="onAir" title="On Air" URL="https://api.themoviedb.org/3/tv/on_the_air?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=2"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
