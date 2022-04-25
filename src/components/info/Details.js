@@ -36,7 +36,7 @@ function Details(props) {
                     <h5 style={{ color: 'white' }}>{movie.overview}</h5>
                     <h5 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h5>
                     <h5 style={{ color: 'white' }}>Movie Runtime:{movie.runtime} minutes</h5>
-                    <div><h5>Created By:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres' id={genre.name} >{genre.name}</div>):''}</div>
+                    <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres' id={genre.name} >{genre.name}</div>):''}</div>
                 </div>
             </div>
     

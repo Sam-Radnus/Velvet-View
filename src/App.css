@@ -30,3 +30,75 @@ div#sidebar{
 h3.feature,h1.feature{
   color:rgb(255,0,77);
 }
+
+div[class="genres"]{
+  color:white;
+  width:fit-content;
+  font-family: 'Staatliches', cursive;
+  padding:5px;
+  margin-top: 0px;
+  margin: 5px;
+  display:inline;
+}
+div[id="Action"]{
+  background-color: red;
+}
+div[id="Adventure"]{
+  background-color: blue;
+}
+div[id="Science Fiction"]{
+  background-color: orange;
+}
+div[id="Animation"]{
+  background-color: rgb(206, 142, 152);
+}
+div[id="Comedy"]{
+  background-color: rgb(188, 188, 6);
+}
+div[id="Crime"]{
+  background-color: darkslategrey;
+}
+
+div[id="Documentary"]{
+  background-color: black;
+}
+div[id="Drama"]{
+  background-color: green;
+}
+div[id="Family"]{
+  background-color: darkgreen;
+}
+div[id="Crime"]{
+  background-color: darkslategrey;
+}
+div[id="Fantasy"]{
+  background-color: palevioletred;
+}
+div[id="History"]{
+  background-color: rgb(122, 38, 8);
+}
+div[id="Horror"]{
+  background-color: rgb(48, 2, 2);
+}
+div[id="Music"]{
+  background-color: violet;
+}
+div[id="Mystery"]{
+  background-color: olivedrab;
+}
+div[id="Romance"]{
+  background-color: rgb(195,52,78);
+}
+div[id="TV Movie"]{
+  background-color: rgb(90,83,73);
+}
+div[id="Thriller"]{
+  background-color: rgb(92, 6, 6);
+}
+div[id="War"]{
+  background-color: rgb(5, 100, 100);
+}
+div[id="Western"]
+{ 
+  background-color: #E0B88F;
+}
