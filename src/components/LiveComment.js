@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import Comment from './secondary/Comment';
+import '../App.css';
 function LiveComment(props) {
     const [comments, setComments] = useState([]);
     const [movieName, setMoviename] = useState('');
@@ -32,7 +33,7 @@ function LiveComment(props) {
     }, []);
     return (
         <>
-            <h1>Live Comments</h1>
+            <h1 className='feature'>Live Comments</h1>
             {comments.slice(0, 3).map(element => (
                 <Comment key={element.id} userName={element.author} MovieName={movieName} Review={element.content.slice(0, 76)} />
             ))}

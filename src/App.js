@@ -41,7 +41,9 @@ function App() {
             </div>
           </>}
           ></Route>
-         <Route exact path="/Anime" element={<Anime/>}/>
+         <Route exact path="/Anime" element={<Anime/>}>
+           <Route  path="Details/:username" element={<Details />} />
+         </Route>
          <Route exact path="/TVShows" element={<TVShows/>}>
 
          </Route>

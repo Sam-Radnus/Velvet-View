@@ -27,3 +27,6 @@ div#sidebar{
   border-color:rgb(23,22,27);
   border-right-color:rgb(27,26,31);
 }
+h3.feature,h1.feature{
+  color:rgb(255,0,77);
+}
