@@ -1,0 +1,11 @@
+div[class="genres"]{
+    color:'white';
+    width:'fit-content';
+    margin-top: '5px';
+}
+div[id="Action"]{
+    background-color: 'red';
+}
+div[id="Adventure"]{
+    background-color: 'blue';
+}
