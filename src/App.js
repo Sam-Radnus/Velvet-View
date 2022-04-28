@@ -17,6 +17,8 @@ import AdvancedSearch from './components/Features/AdvancedSearch';
 import DateNight from './components/Features/DateNight';
 import TVDetails from './components/Category/TV/TVDetails';
 import SeeAllGenre from './components/info/SeeAllGenre';
+import AnimeGenre from './components/Category/AnimeGenre';
+import AnimeDetails from './components/Category/AnimeDetails';
 function App() {
   
   return (
@@ -44,11 +46,17 @@ function App() {
           </>}
           ></Route>
          <Route exact path="/Anime" element={<Anime/>}>
-           <Route  path="Details/:username" element={<Details />} />
+           <Route  path="Details/Anime/:username" element={<AnimeDetails />} />
          </Route>
-         <Route  path="Genre/:heading/:genre" element={<SeeAllGenre></SeeAllGenre>}>
-            <Route  path="Details/:username" element={<Details />} />
-        </Route>
+         <Route  path="Genre/:media/:heading/:genre" element={<SeeAllGenre ></SeeAllGenre>}>
+            <Route  path="Details/:username" element={<Details />} />  
+            <Route  path="Details/TV/:username" element={<TVDetails />} />  
+    
+         </Route>
+         <Route  path="Genre/Anime/:media/:heading/:genre" element={< AnimeGenre></AnimeGenre>}>
+            
+            <Route  path="Details/Anime/:username" element={<AnimeDetails />} />  
+         </Route>
          <Route exact path="/TVShows" element={<TVShows/>}>
   
          </Route>

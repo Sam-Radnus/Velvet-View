@@ -14,11 +14,11 @@ function Details(props) {
         // const url="https://api.themoviedb.org/3/movie/latest?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US";
         const url = `https://api.themoviedb.org/3/${media?media:'movie'}/${username}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;
         const data = await fetch(url);
-        console.log(url);
+      //  console.log(url);
         const parsedData = await data.json();
-        console.log(parsedData);
+      //  console.log(parsedData);
         setMovie(parsedData);
-        console.log(movie);
+      //  console.log(movie);
     }
     useEffect(() => {
         getMovies();
@@ -37,7 +37,7 @@ function Details(props) {
                     <h5 style={{ color: 'white' }}>{movie.overview}</h5>
                     <h5 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h5>
                     <h5 style={{ color: 'white' }}>Movie Runtime:{movie.runtime} minutes</h5>
-                    <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
+                    <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/${media?media:'movie'}/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
                 </div>
             </div>
     
