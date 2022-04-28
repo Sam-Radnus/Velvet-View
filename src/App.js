@@ -16,6 +16,7 @@ import TVShows from './components/Category/TVShows';
 import AdvancedSearch from './components/Features/AdvancedSearch';
 import DateNight from './components/Features/DateNight';
 import TVDetails from './components/Category/TV/TVDetails';
+import SeeAllGenre from './components/info/SeeAllGenre';
 function App() {
   
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/" element={<>
        
             <NowPlaying />
+            
             <div style={{ marginTop: "57vh", marginLeft: '25vw' }}>
           
               <Featured limit={"3"} FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
@@ -44,8 +46,14 @@ function App() {
          <Route exact path="/Anime" element={<Anime/>}>
            <Route  path="Details/:username" element={<Details />} />
          </Route>
+         <Route  path="Genre/:genre" element={<SeeAllGenre></SeeAllGenre>}>
+            <Route  path="Details/:username" element={<Details />} />
+        </Route>
          <Route exact path="/TVShows" element={<TVShows/>}>
-
+  
+         </Route>
+         <Route exact path="/Genre/:genre" element={<SeeAllGenre></SeeAllGenre>}>
+            <Route  path="Details/:username" element={<Details />} />
          </Route>
          <Route exact path="/AdvancedSearch" element={<AdvancedSearch/>}></Route>
          <Route exact path="/DateNight" element={<DateNight/>}></Route>

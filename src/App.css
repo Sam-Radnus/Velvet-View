@@ -102,3 +102,16 @@ div[id="Western"]
 { 
   background-color: #E0B88F;
 }
+div[id="kids"]{
+  background-color: #ECC434;
+}
+div[id="Thriller"]{
+  background-color: #840808;
+}
+div[id="Reality"]{
+  background-color: #728CAA;
+}
+div[id="Talk"]
+{ 
+  background-color: #063699;
+}

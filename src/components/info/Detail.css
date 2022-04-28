@@ -4,7 +4,9 @@ div[class="genres"]{
     width:fit-content;
     font-family: 'Staatliches', cursive;
     padding:5px;
-    margin: 5px;
+    border-radius:5px;
+    padding:10px;
+    margin: 5px 10px 5px 0px;
     display:inline;
 }
 div[id="Action"]{
@@ -12,6 +14,9 @@ div[id="Action"]{
 }
 div[id="Adventure"]{
     background-color: blue;
+}
+div[id="Action & Adventure"]{
+    background-color: rgb(212, 65, 12);
 }
 div[id="Science Fiction"]{
     background-color: orange;
@@ -38,7 +43,7 @@ div[id="Family"]{
 div[id="Crime"]{
     background-color: darkslategrey;
 }
-div[id="Fantasy"]{
+div[id="Sci-Fi & Fantasy"]{
     background-color: palevioletred;
 }
 div[id="History"]{
