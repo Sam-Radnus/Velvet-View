@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import '../App.css'
 import LiveComment from './LiveComment'
 import MatchoftheDay from './MatchoftheDay'
+import Genres from './secondary/Genres';
 import Trailers from './Trailers'
 function Sidebar() {
   let location = useLocation();
@@ -23,7 +24,7 @@ function Sidebar() {
           <h3 style={{color:'rgb(255,0,70)'}}className='feature'>Catch New Trailers</h3>
           <Trailers/> 
      </div>
-     <div  style={{color:'white'}}className="w3-bar-item "><LiveComment/></div>
+     <div  style={{color:'white'}}className="w3-bar-item "><Genres/></div>
      <div  style={{color:'white',marginBottom:'25vh'}}className="w3-bar-item "><MatchoftheDay/></div>
      </div>
      </div >

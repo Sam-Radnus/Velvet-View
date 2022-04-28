@@ -95,14 +95,14 @@ div[id="TV Movie"]{
 div[id="Thriller"]{
   background-color: rgb(92, 6, 6);
 }
-div[id="War"]{
+div[id="War & Politics"]{
   background-color: rgb(5, 100, 100);
 }
 div[id="Western"]
 { 
   background-color: #E0B88F;
 }
-div[id="kids"]{
+div[id="Kids"]{
   background-color: #ECC434;
 }
 div[id="Thriller"]{
@@ -114,4 +114,12 @@ div[id="Reality"]{
 div[id="Talk"]
 { 
   background-color: #063699;
+}
+div[id="News"]
+{ 
+  background-color: #B20000;
+}
+div[id="Soap"]
+{ 
+  background-color: #ED96AF;
 }

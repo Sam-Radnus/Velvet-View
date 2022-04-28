@@ -62,9 +62,9 @@ function MatchoftheDay(props) {
     <div>
     
       <h1 style={{ textAlign: 'center' }}> Match of the Day</h1>
-      <Text color={'red'} title={movieName1} />
+      <Text color={'red'}  title={movieName1} />
       <h1 style={{ textAlign: 'center' }} >+</h1>
-      <Text color={'blue'} title={movieName2} />
+      <Text color={'blue'}  title={movieName2} />
       <h1 style={{ textAlign: 'center' }} >=</h1>
       {commonGenre.length > 0 && (<Text color={'purple'}  title={commonGenre[4].title} />)}
 
