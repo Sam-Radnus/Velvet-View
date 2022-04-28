@@ -37,7 +37,7 @@ function Details(props) {
                     <h5 style={{ color: 'white' }}>{movie.overview}</h5>
                     <h5 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h5>
                     <h5 style={{ color: 'white' }}>Movie Runtime:{movie.runtime} minutes</h5>
-                    <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres' id={genre.name} onClick={()=>{navigate(`/Genre/${genre.id}`)}} >{genre.name}</div>):''}</div>
+                    <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
                 </div>
             </div>
     
