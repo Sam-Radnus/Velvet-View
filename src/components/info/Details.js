@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Detail.css';
 function Details(props) {
     let media_type={props};
     let {media, username } = useParams();
     const [movie, setMovie] = useState([]);
-
+    let navigate=useNavigate();
 
     const getMovies = async () => {
         // const url="https://api.themoviedb.org/3/movie/latest?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US";
@@ -36,7 +37,7 @@ function Details(props) {
                     <h5 style={{ color: 'white' }}>{movie.overview}</h5>
                     <h5 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h5>
                     <h5 style={{ color: 'white' }}>Movie Runtime:{movie.runtime} minutes</h5>
-                    <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres' id={genre.name} >{genre.name}</div>):''}</div>
+                    <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres' id={genre.name} onClick={()=>{navigate(`/Genre/${genre.id}`)}} >{genre.name}</div>):''}</div>
                 </div>
             </div>
     
