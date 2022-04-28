@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function SeeAllGenre(props) {
 
-    let { genre }=useParams();
+    let { genre , heading}=useParams();
     let navigate = useNavigate();
     const [movie, setMovie] = useState([]);
     useEffect(() => {
@@ -33,7 +33,7 @@ function SeeAllGenre(props) {
             
                     <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
                     <Outlet/>
-                        <h1 style={{ fontSize: '65px', textAlign:'center' }}>heading</h1>
+                        <h1 style={{ fontSize: '65px', textAlign:'center' }}>{heading}</h1>
                         <div style={{marginLeft:'7%'}}className='row row-cols-4'>
                     
                             {movie.slice(0, 20).map(element => (
