@@ -23,10 +23,11 @@ function SeeAll(props) {
         const data = await fetch(url);
         const parsedData = await data.json();
         setMovie(movie.concat(parsedData.results));
-        console.log(movie);
+        //console.log(movie);
         setTotalResults(parsedData.total_results);
+        console.log(totalResults);
         setPage(page+1);
-        console.log(page);
+        //console.log(page);
     }
     return (
     
@@ -37,6 +38,12 @@ function SeeAll(props) {
         dataLength={movie.length}
         next={getMovies}
         hasMore={movie.length !== totalResults}
+        endMessage={
+            <p style={{ textAlign: 'center' }}>
+              <h1>This is the End of the Line</h1>
+            </p>
+          }
+          scrollThreshold={0.9}
              /> 
    <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
                     <Outlet/>
