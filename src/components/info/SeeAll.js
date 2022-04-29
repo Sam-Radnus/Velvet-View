@@ -7,36 +7,43 @@ import Details from './Details';
 import { Outlet, useNavigate,useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import InfiniteScroll from 'react-infinite-scroll-component';
 function SeeAll(props) {
 
     let { title, URL } = props;
-    
+    let[page,setPage]=useState(1);
+    const [totalResults,setTotalResults]=useState(0);
     let navigate = useNavigate();
     const [movie, setMovie] = useState([]);
     useEffect(() => {
-
         getMovies();
-
-    }, [movie.length])
+    }, [])
     const getMovies = async () => {
-        const url = `${URL}`;
+        const url=`${URL}&page=${page}`;
         const data = await fetch(url);
         const parsedData = await data.json();
-        setMovie(parsedData.results);
-        console.log(parsedData.results[0].media_type);
+        setMovie(movie.concat(parsedData.results));
+        console.log(movie);
+        setTotalResults(parsedData.total_results);
+        setPage(page+1);
+        console.log(page);
     }
     return (
-
+    
        
         <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '0vw' }} >
             
-                    <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
+            <InfiniteScroll
+        dataLength={movie.length}
+        next={getMovies}
+        hasMore={movie.length !== totalResults}
+             /> 
+   <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
                     <Outlet/>
                         <h1 style={{ fontSize: '65px', textAlign:'center' }}>{title}</h1>
                         <div style={{marginLeft:'7%'}}className='row row-cols-4'>
                     
-                            {movie.slice(0, 20).map(element => (
+                            {movie.map(element => (
                                 <div style={{ backgroundColor: 'rgb(23,22,27)' }} className="card" >
                                  
                                     <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} className="card-img-top" />

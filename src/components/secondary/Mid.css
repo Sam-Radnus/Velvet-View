@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Staatliches&display=swap');
 .frost {
     background-color: rgba(255, 255, 255, 0.373);
     -webkit-backdrop-filter: blur(20%);
     backdrop-filter: blur(20%);
   }
+button.danger{
+  color:white;
+  background-color:rgb(255,0,77);
+  border-style:none;
+  border-radius: 5px;
+  font-family: 'Staatliches', cursive;
+  padding:5px;
+}
