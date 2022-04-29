@@ -34,7 +34,7 @@ function AnimeGenre(props) {
                                     <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} className="card-img-top" />
                                     <div className="card-body">
                                         <h5 className="card-title">{element.title ? element.title : element.name}</h5>
-                                        <Link className="btn btn-danger" to={media==='tv'?`Details/Anime/tv/${element.id}`:`Details/Anime/${element.id}`} >
+                                        <Link className="btn btn-danger" onClick={window.scrollTo(0,0) } to={media==='tv'?`Details/Anime/tv/${element.id}`:`Details/Anime/${element.id}`} >
                                            View More
                                         </Link>
                                 
