@@ -32,7 +32,7 @@ function SeeAll(props) {
     return (
     
        
-        <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '0vw' }} >
+        <div style={{ width: '100vw', marginTop:'0vh',marginLeft: '0vw' }} >
             
            
    <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>

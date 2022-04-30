@@ -24,12 +24,12 @@ function Details(props) {
         getMovies();
     },[ movie.id && username]);
     return (
-        movie && <div style={{ height: 'fit-content',padding:'5vh',width: '100vw',backgroundRepeat:'round',backgroundImage: `${movie.backdrop_path}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png', backgroundColor: 'rgb(0,0,0,0.5)',backgroundBlendMode:'darken' }}>
+        movie && <div style={{ height: 'max-content',padding:'15vh',width: '100vw',backgroundRepeat:'round',backgroundImage: `${movie.backdrop_path}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png', backgroundColor: 'rgb(0,0,0,0.5)',backgroundBlendMode:'darken' }}>
         {
     
             <div style={{marginLeft:'10%'}}>
               <div style={{float:'left'}} className='image'>
-                <img style={{position:'absolute',top:'20%',left:'5%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+                <img style={{position:'absolute',top:'20%',left:'5%',height:'75%'}} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
                 </div>
                 <div style={{ paddingLeft:'15%',marginLeft:'5% ',paddingTop:'5%',width:'70vw'}}className='overview'>
                 <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.release_date?movie.release_date.slice(0,4):''})</h1>
