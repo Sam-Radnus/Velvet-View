@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Staatliches&display=swap');
+input,
+button {
+  padding: 4px;
+  font-size: 20px;
+  font-family: 'Staatliches',cursive;
+  background-color:#A53167  ;
+  color:#0D1117;
+}
+
+.wrapper {
+  display: inline-block;
+}
+
+.suggestions {
+  width: 300px;
+  max-height: 'fit-content';
+  position: absolute;
+
+  background-color: #A53167;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.suggestion {
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #eee;
+}
+
+div.suggestionList{
+    background-color:  #A53167 ;
+    height:fit-content;
+    padding:5px;
+    cursor:pointer;
+}
+div.suggestionList:hover{
+    background-color: #0D1117;
+    
+}
+button{
+    padding:5px;
+    color:#A53167  ;
+    background-color:#0D1117;
+}
+button:hover{
+    background-color: white;
+}
