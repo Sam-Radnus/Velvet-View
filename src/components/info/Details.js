@@ -29,7 +29,7 @@ function Details(props) {
     
             <div style={{marginLeft:'10%'}}>
               <div style={{float:'left'}} className='image'>
-                <img style={{position:'absolute',top:'20%',left:'5%',height:'75%'}} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+                <img style={{position:'absolute',marginTop:'-5%',left:'2%',height:'75%'}} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
                 </div>
                 <div style={{ paddingLeft:'15%',marginLeft:'5% ',paddingTop:'5%',width:'70vw'}}className='overview'>
                 <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.release_date?movie.release_date.slice(0,4):''})</h1>
