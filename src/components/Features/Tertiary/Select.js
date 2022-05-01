@@ -50,14 +50,15 @@ function Select(props,{onSearch}) {
         <input style={{margin:'2vw 0vw 0vw 2vw'}} value={searchField} onChange={searchFieldChanged}/>
         <button className='search' onClick={()=>{
           console.log(ref);
-
          console.log((ref.filter(function(vendor){ return vendor.title === searchField }))[0].poster_path);
          setImg((ref.filter(function(vendor){ return vendor.title === searchField }))[0].poster_path);
          let x=((ref.filter(function(vendor){ return vendor.title === searchField }))[0].title);
-         
-         id==='1'?setFilm1(x):setFilm2(x);
+         console.log(id);
          console.log(x);
-
+    
+         id==='1'?setFilm1(x):setFilm2(x)
+    
+         
            }}>+</button>
         {hasSuggestions && (
           <div className='suggestions'>

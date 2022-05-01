@@ -13,7 +13,7 @@ function DateNight(props) {
   return (
     <div>
       <h1 className='date' style={{ marginTop: '20vh', marginLeft: '40.5vw' }}>Date Night</h1>
-      <LoginContext.Provider value={{ Film1, Film2, setShowMovie }}>
+      <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie }}>
         <div style={{ marginLeft: '30vw', width: '50vw' }} className='row row-cols-2' >
           <div className='col'> <Select id="1" /></div>
           <div className='col'> <Select id="2"/></div>
