@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import  { useEffect, useState } from 'react'
+import  { useEffect, useState ,useContext } from 'react'
 import './DateNight.css';
 import SuggestionList from './SuggestionList';
+import Button from 'infinite-scroll/js/button';
+import { LoginContext } from './LoginContext';
 function Select(props,{onSearch}) {
+  let {id}=props;
+  const {setFilm1,setFilm2,setShowMovie}=useContext(LoginContext);
   const [searchField,setSearchField]=useState("");
   const [movie,setMovie]=useState([]);
   const [ref,setRef]=useState([]);
@@ -42,13 +46,18 @@ function Select(props,{onSearch}) {
   };
   return (
     <div>
-      <div  style={{height:'25vh',width:'10vw',background:img.length===0?'#A53167':`url(https://image.tmdb.org/t/p/w154${img})`,paddingTop:'10%'}} backgroundImage={''}><h1 style={{textAlign:'center'}} ><span >Add</span><br/>Movie</h1></div>
-        <input value={searchField} onChange={searchFieldChanged}/>
-        <button  onClick={()=>{
+      <div  style={{height:'45vh',width:'18vw',background:img.length===0?'#A53167':`url(https://image.tmdb.org/t/p/w300${img})`,paddingTop:'10%'}} backgroundImage={''}>{searchField.length===0?<h1 style={{textAlign:'center'}} ><span >Add</span><br/>Movie</h1>:''}</div>
+        <input style={{margin:'2vw 0vw 0vw 2vw'}} value={searchField} onChange={searchFieldChanged}/>
+        <button className='search' onClick={()=>{
           console.log(ref);
+
          console.log((ref.filter(function(vendor){ return vendor.title === searchField }))[0].poster_path);
          setImg((ref.filter(function(vendor){ return vendor.title === searchField }))[0].poster_path);
-         console.log(img);
+         let x=((ref.filter(function(vendor){ return vendor.title === searchField }))[0].title);
+         
+         id==='1'?setFilm1(x):setFilm2(x);
+         console.log(x);
+
            }}>+</button>
         {hasSuggestions && (
           <div className='suggestions'>
@@ -57,6 +66,7 @@ function Select(props,{onSearch}) {
             ))}
             </div>
         )}
+        
     </div>
   )
 }

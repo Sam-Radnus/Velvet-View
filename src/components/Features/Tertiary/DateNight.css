@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 input,
 button {
   padding: 4px;
@@ -7,7 +8,10 @@ button {
   background-color:#A53167  ;
   color:#0D1117;
 }
-
+h1.date{
+  font-family: 'Parisienne', cursive;
+  font-size: 76px;
+}
 .wrapper {
   display: inline-block;
 }
@@ -35,20 +39,31 @@ button {
 }
 
 div.suggestionList{
-    background-color:  #A53167 ;
-    height:fit-content;
-    padding:5px;
-    cursor:pointer;
-}
-div.suggestionList:hover{
-    background-color: #0D1117;
+  background-color:  #A53167 ;
+  height:fit-content;
+  padding:5px;
+  cursor:pointer;
     
 }
-button{
-    padding:5px;
-    color:#A53167  ;
-    background-color:#0D1117;
+div.suggestionList:hover{
+  background-color: #0D1117;   
 }
-button:hover{
-    background-color: white;
+button.search{
+  padding:5px;
+  color:#A53167  ;
+  background-color:#0D1117;
+  border:none;
+  width:2vw;
+  border-radius: 5px;
+  margin-left:5px;
+}
+button.search:hover{
+  background-color: white;
+}
+button.match{
+  padding:5px;
+  background-color:#A53167  ;
+  color:white;
+  border:none;
+  width:12vw;
 }
