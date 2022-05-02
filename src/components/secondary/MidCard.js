@@ -9,11 +9,11 @@ function MidCard(props) {
         <div style={{cursor:'pointer'}} onClick={()=>{media.length!==0?navigate(`${Feature}/Details/${media}/${id}`):navigate(`${Feature}/Details/${id}`)}}>
            
             <div style={{ height: '170px', width: '299px', position:'relative',borderRadius: '10px', backgroundImage: `url(${props.imageURL} ` }}>
-            
-                <div  className="card-body">
-                <p id="title" style={{ position:'absolute',top:'75%',fontSize: '15px'}} className="card-title">{props.title}</p>
-                    <div className='frost' style={{ position:'absolute',top:'71%',left:'0',borderRadius:'10px',height:'50px',width:'299px'}}></div>
-
+            <p id="title" style={{ position:'absolute',zIndex:'5',top:'80%',left:'12%',fontSize: '15px'}} className="card-title">{props.title}</p>
+                <div style={{position:'absolute',boxShadow:'none',borderRadius:'10px',background:`url(${props.imageURL}) no-repeat bottom center `,backgroundSize:'cover',backgroundColor:'rgb(255,255,255,0.5)',overflow:'hidden', filter: 'blur(5px)',height:'5vh',width:'100%',left:'0%',right:'5%',top:'79%'}}  className="card-body">
+               
+                  
+                   
                 </div>
             </div>
         </div>
