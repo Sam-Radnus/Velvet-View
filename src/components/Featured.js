@@ -26,7 +26,7 @@ function Featured(props) {
      }
   return (
   
-    <div  style={{marginTop:'1vh'}}className='container'>
+    <div  style={{marginTop:'5vh'}}className='container'>
       
    <div className="tag" style={{display:'inline',width:'100%'}}><p> <span style={{color:'rgb(255,0,77)',fontSize:'50px'}}>{props.FeatureName}</span><Link style={{position:'absolute',textDecoration:'none',color:'grey',cursor:'pointer',marginTop:'30px',right:'2vw'}} to={`/${location}`}>See All <i className="fa-solid fa-angle-right"></i> </Link></p></div>
        <div className='row'>

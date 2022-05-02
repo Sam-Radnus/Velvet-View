@@ -17,13 +17,13 @@ function TVDetails(props) {
         const parsedData = await data.json();
         console.log(parsedData);
         setMovie(parsedData);
-        console.log(movie.first_air_date.slice(0,4));
+        console.log(movie.backdrop_path===null);
     }
     useEffect(() => {
         getMovies();
     },[ movie.id && username]);
   return (
-    movie && <div style={{ height: 'fit-content',padding:'5vh',width: '100vw',backgroundRepeat:'round',backgroundImage: `${movie.backdrop_path}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png', backgroundColor: 'rgb(0,0,0,0.5)',backgroundBlendMode:'darken' }}>
+    movie && <div style={{ height: 'fit-content',padding:'5vh',width: '100vw',backgroundRepeat:'round',backgroundImage: `${movie.backdrop_path!==null}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m',backgroundBlendMode:'darken' }}>
     {
 
         <div style={{marginLeft:'10%'}}>
@@ -32,12 +32,12 @@ function TVDetails(props) {
             </div>
             <div style={{ paddingLeft:'15%',marginLeft:'5% ',paddingTop:'5%',width:'70vw'}}className='overview'>
             <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.first_air_date?movie.first_air_date.slice(0,4):''})</h1>
-               <h2 style={{color:'white'}}>Overview</h2>
-                <h5 style={{ color: 'white' }}>{movie.overview}</h5>
-                <h5 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h5>
-                <h5 >Number of Seasons:<span style={{color:'orange'}}>{movie.number_of_seasons}</span></h5>
-                <div style={{margin:'0px'}}><h5>Created By:-</h5>{movie.created_by?movie.created_by.map(creator_name=><h5 style={{color:'orange'}}>{creator_name.name}</h5>):''}</div>
-                <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/tv/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
+             { movie.overview && <div><h2 style={{color:'white'}}>Overview</h2>
+               <h5 style={{ color: 'white' }}>{movie.overview}</h5> </div> }
+             { movie.popularity &&    <h5 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h5>} 
+             { movie.number_of_seasons&&     <h5 >Number of Seasons:<span style={{color:'orange'}}>{movie.number_of_seasons}</span></h5>}
+             { movie.created_by?movie.created_by.length!==0:false &&     <div style={{margin:'0px'}}><h5>Created By:-</h5>{movie.created_by?movie.created_by.map(creator_name=><h5 style={{color:'orange'}}>{creator_name.name}</h5>):''}</div>}
+             <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/tv/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
             </div>
         </div>
 

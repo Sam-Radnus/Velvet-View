@@ -80,24 +80,44 @@ function App() {
           <Route exact path="/Recommended" element={<SeeAll key="Recommended" title="Recommended" URL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"></SeeAll>}>
             <Route  path="Details/movie/:username" element={<Details />} />
           </Route>
-          <Route  path="/OnAir" element={<SeeAll key="onAir" title="On Air" URL="https://api.themoviedb.org/3/tv/on_the_air?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=2"></SeeAll>}>
+          
+          <Route  path="TVShows/OnAir" element={<SeeAll key="onAir" title="On Air" URL="https://api.themoviedb.org/3/tv/on_the_air?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=2"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
-          <Route  path="/Action" element={<SeeAll key="action" title="Action & Adventure" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10759&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="TVShows/Action" element={<SeeAll key="action" title="Action & Adventure" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10759&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
-          <Route  path="/Soap" element={<SeeAll key="soap" title="Soap & Comedy" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=35|10766&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="TVShows/Soap" element={<SeeAll key="soap" title="Soap & Comedy" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=35|10766&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
-          <Route  path="/Crime" element={<SeeAll key="crime" title="Crime & Drama" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=80|18&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="TVShows/Crime" element={<SeeAll key="crime" title="Crime & Drama" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=80|18&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
-          <Route  path="/Fantasy" element={<SeeAll key="fantasy" title="Sci-Fi & Fantasy" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10765&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="TVShows/Fantasy" element={<SeeAll key="fantasy" title="Sci-Fi & Fantasy" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10765&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
-          <Route  path="/Documentary" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=99&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="TVShows/Documentary" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=99&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
+          <Route  path="TVShows/FamilyandKids" element={<SeeAll key="Family&Kids" title="Family&Kids" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10751|10762&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="Details/:username" element={<TVDetails />} />
+          </Route>
+          <Route  path="TVShows/Mystery" element={<SeeAll key="Mystery" title="Mystery" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=9648&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="Details/:username" element={<TVDetails />} />
+          </Route>
+          <Route  path="TVShows/News" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10763&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="Details/:username" element={<TVDetails />} />
+          </Route>
+          <Route  path="TVShows/Reality" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10764&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="Details/:username" element={<TVDetails />} />
+          </Route>
+          <Route  path="TVShows/Talk" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10767&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="Details/:username" element={<TVDetails />} />
+          </Route>
+          <Route  path="TVShows/War & Politics" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10768&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="Details/:username" element={<TVDetails />} />
+          </Route>
+
         </Routes>
 
       </Router>
