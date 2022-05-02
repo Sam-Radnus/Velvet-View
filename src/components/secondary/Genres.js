@@ -27,16 +27,11 @@ function Genres(props) {
   return (
     <div className='container'>
         <h1>Genres:-</h1>
-        <h5 className='mt-3'>For Movies:-</h5>
+      
          <div className='row row-cols-2'>
-         
          {genres?genres.slice(0,20).map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/movie/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}
          </div>
-         <h5 className='mt-3'>For TV Shows:-</h5>
-         <div className='row row-cols-2'>
-         
-         {genres2?genres2.slice(0,20).map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/tv/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}
-         </div>
+      
     </div>
 
   )
