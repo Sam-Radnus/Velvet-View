@@ -25,7 +25,7 @@ function Genres(props) {
       console.log(genres2);
   }
   return (
-    <div className='container'>
+    <div >
         <h1>Genres:-</h1>
       
          <div className='row row-cols-2'>

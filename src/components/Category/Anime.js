@@ -26,9 +26,9 @@ function Anime(props) {
   }, []);
   return (
     
-      <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '0vw' }} >
+      <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '3vw' }} >
       
-            <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
+            <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className=''>
             <Outlet/>
                 <h1 style={{ fontSize: '65px', textAlign:'center' }}>Anime</h1>
                 <div style={{marginLeft:'7%'}}className='row row-cols-4'>

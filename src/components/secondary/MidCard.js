@@ -6,7 +6,7 @@ function MidCard(props) {
     let { imageURL,media,Feature,id, title } = props;
     let navigate=useNavigate();
     return (
-        <div style={{cursor:'pointer'}} onClick={()=>{media.length!==0?navigate(`/${Feature}/Details/${media}/${id}`):navigate(`${Feature}/Details/${id}`)}}>
+        <div style={{marginTop:'5vh',cursor:'pointer'}}  onClick={()=>{media.length!==0?navigate(`/${Feature}/Details/${media}/${id}`):navigate(`${Feature}/Details/${id}`)}}>
            
             <div style={{ height: '170px', width: '299px', position:'relative',borderRadius: '10px', background:props.imageURL!==null?`url(${props.imageURL} `:`url(https://icon-library.com/images/netflix-icon-21_84051.jpg)` }}>
             <p id="title" style={{ position:'absolute',zIndex:'5',top:'87.6%',textAlign:'center',width:'100%',fontSize: '15px'}} className="card-title">{props.title}</p>

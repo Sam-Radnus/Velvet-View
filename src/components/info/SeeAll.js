@@ -20,6 +20,7 @@ function SeeAll(props) {
     }, [])
     const getMovies = async () => {
         const url=`${URL}&page=${page}`;
+        console.log(url);
         const data = await fetch(url);
         const parsedData = await data.json();
         setMovie(movie.concat(parsedData.results));
@@ -27,24 +28,25 @@ function SeeAll(props) {
         setTotalResults(parsedData.total_results);
         console.log(totalResults);
         setPage(page+1);
+        
         //console.log(page);
     }
     return (
     
        
-        <div style={{ width: '100vw', marginTop:'0vh',marginLeft: '0vw' }} >
+        <div style={{ width: '100vw', marginTop:'0vh',marginLeft: '5vw' }} >
             
            
-   <div style={{ marginTop: '12vh', marginLeft: '0vw' }} className='container'>
+   <div style={{ marginTop: '12vh', marginLeft: '5vw' }} >
                     <Outlet/>
                         <h1 style={{ fontSize: '65px', textAlign:'center' }}>{title}</h1>
                         <div style={{marginLeft:'7%'}}className='row row-cols-4'>
                     
                             {movie.map(element => (
-                                <div style={{ backgroundColor: 'rgb(23,22,27)' }} className="card" >
+                                <div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} className="card" >
                                  
                                     <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} className="card-img-top" />
-                                    <div className="card-body">
+                                    <div className="card-body" >
                                         <h5 className="card-title">{element.title ? element.title : element.name}</h5>
                                         <Link className="btn btn-danger" onClick={window.scrollTo(0,0) } to={element.media_type?`Details/${element.media_type}/${element.id}`:`Details/${element.id}`} >
                                            View More
