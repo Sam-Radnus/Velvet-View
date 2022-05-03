@@ -2,14 +2,33 @@ div.button-group,div.sort-group{
     margin-left:30vw;
 }
 button#button {
+    margin-top:5vw;
     margin-right:3vw;
     height:7vh;
     width:15vw;
 }
 div.sort-group{
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 div.sort-by{
-    margin-top:13vh;
+    margin-top:5vh;
     margin-left:7vw;
+}
+input#search{
+
+    margin-left:20vw;
+    width:50vw;
+
+}
+button.search{
+    height:5vh;
+    width:10vw;
+}
+div.search{
+    margin-top: 10vh;
+}
+button.look{
+    width:10vw;
+    border:none;
+    background-color: red;
 }
