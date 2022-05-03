@@ -5,7 +5,10 @@ import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import MultiRangeSlider from './Tertiary/MultiRangeSlider';
 import SeeAll from '../info/SeeAll';
+import SeeAllSuggestions from './SeeAllSuggestions';
 function AdvancedSearch(props) {
+
+const navigate=useNavigate();
 const [media,setMedia]=useState('movie');
 const [danger,setDanger]=useState(true);
 const [showFilter,setShowfilter]=useState(true);
@@ -19,12 +22,13 @@ useEffect(()=>{
   fetchData();
 },[danger,media,startDate,endDate,sortBy,rule,showResults]);
 const fetchData=async()=>{
-   setURL1(`https://api.themoviedb.org/3/discover/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=${sortBy}.${rule}&include_adult=false&include_video=false&primary_release_date.gte=${startDate}-01-01&primary_release_date.lte=${endDate}-12-31&with_watch_monetization_types=flatrate`);
+   setURL1(`https://api.themoviedb.org/3/discover/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=${sortBy}.${rule}&include_adult=false&include_video=false&${media==='movie'?'primary_release_date':'first_air_date.'}.gte=${startDate}-01-01&${media==='movie'?'primary_release_date':'first_air_date'}.lte=${endDate}-12-31&with_watch_monetization_types=flatrate`);
   console.log(URL1);
   }
   return (
     <div>
         <h1 style={{marginTop:'15vh',marginLeft:'40vw'}}>ADVANCED SEARCH</h1>
+        
         <div className='Filter'>
          <div className={'button-group'}>
          <button type="button" id="button" onClick={()=>{setDanger(true);setMedia('movie')}} className={`btn btn-${danger?'danger':'light'}`}>Movies</button>
@@ -49,12 +53,13 @@ const fetchData=async()=>{
             max={new Date().getFullYear()}
             onChange={({ min, max }) => {setStartDate(min);setEndDate(max)}}
          />
-        <button onClick={()=>{
+        <button style={{marginLeft:'45vw',color:'white',padding:'10px',width:'10vw',border:'none',borderRadius:'10px'}}onClick={()=>{
           setShowResults(true);
-        }}>Find</button>
+          navigate('/AdvancedSearch');
+        }}>Search {media}</button>
          </div>
         </div>
-       {showResults && <SeeAll title={"Results"} URL={URL1}/>}
+       {showResults && <SeeAllSuggestions medium={media} title={"Results"} URL={URL1}/>}
     </div>
   )
 }

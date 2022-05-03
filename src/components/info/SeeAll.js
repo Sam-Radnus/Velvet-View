@@ -34,13 +34,13 @@ function SeeAll(props) {
     return (
     
        
-        <div style={{ width: '100vw', marginTop:'0vh',marginLeft: '5vw' }} >
+        <div style={{ width: '100vw', marginTop:'0vh',marginLeft: '0vw' }} >
             
            
-   <div style={{ marginTop: '12vh', marginLeft: '5vw' }} >
+   <div style={{ marginTop: '12vh', marginLeft: '0vw' }} >
                     <Outlet/>
                         <h1 style={{ fontSize: '65px', textAlign:'center' }}>{title}</h1>
-                        <div style={{marginLeft:'7%'}}className='row row-cols-4'>
+                        <div style={{marginLeft:'0%'}}className='row row-cols-4'>
                     
                             {movie.map(element => (
                                 <div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} className="card" >
