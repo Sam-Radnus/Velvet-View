@@ -24,8 +24,10 @@ function DateNight(props) {
     var data = [Film1, Film2];
     var join=Film1.concat(Film2);
     var sub=join.filter((item,pos)=>join.indexOf(item)===pos);
+    console.log(sub);
     let result = data.reduce((a, b) => a.filter(c => b.includes(c)));
-    let search = result.length<=1?JSON.stringify(result):JSON.stringify(sub);
+    console.log(result);
+    let search = result.length>=1?JSON.stringify(result):JSON.stringify(Film1);
     console.log(search);
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&with_genres=${search.slice(1, search.length - 1)}`
     setURL(url);
@@ -41,7 +43,16 @@ function DateNight(props) {
         <div style={{ marginLeft: '25vw', width: '50vw' }} className='row row-cols-2' >
           <div className='col'> <Select id="1" /></div>
           <div className='col'> <Select id="2"/></div>
-          <button style={{ margin: '2vw 0vw 0vw 17vw' }}  onClick={()=>{console.log(URL1);showResults(true);navigate('/DateNight')}}  className='match'>Find Match</button>
+          <button style={{ margin: '2vw 0vw 0vw 17vw' }}  onClick={()=>{
+           if(Film1!==""||Film2!==""){ 
+             console.log(URL1);
+            showResults(true);
+            navigate('/DateNight')
+           }
+           else{
+             window.alert('Please select both movies')
+           }
+            }}  className='match'>Find Match</button>
         </div>
       </LoginContext.Provider>
       {console.log(URL1)}

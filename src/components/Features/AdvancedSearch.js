@@ -37,21 +37,22 @@ const fetchData=async()=>{
   return (
     <div>
         <h1 style={{marginTop:'15vh',marginLeft:'40vw'}}>ADVANCED SEARCH</h1>
-        <button onClick={()=>{setShowfilter(true)}} style={{background:'transparent',color:'white',border:'none'}}> <i  style={{ color: 'white',marginRight:'10px',fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-brands fa-buffer"></i>Filter</button>
+        <button onClick={()=>{setShowfilter(true)}} style={{background:'transparent',color:'white',border:'none',marginLeft:'10vw'}}> <i  style={{ color: 'white',marginRight:'10px',fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-brands fa-buffer"></i>Filter</button>
         <div className={'button-group'}>
          <button type="button" id="button" onClick={()=>{setDanger(true);setMedia('movie')}} className={`btn btn-${danger?'danger':'light'}`}>Movies</button>
          <button type="button" id="button" onClick={()=>{setDanger(false);setMedia('tv')}} className={`btn btn-${danger?'light':'danger'}`}>TV Show</button>
          </div>
          <div className='search'>
-      <input id="search" onChange={(e)=>{ setQuery(e.target.value)}} type='text' onFocus={()=>{setShowfilter(false)}} onBlur={()=>{setShowfilter(true)}} /><button onClick={fetchData2} >Search</button>
+      <input id="search" style={{backgroundColor:'white',color:'#BB2D3B'}} onChange={(e)=>{ setQuery(e.target.value)}} type='text' onFocus={()=>{setShowfilter(false)}} onBlur={()=>{setShowfilter(true)}} /><button style={{backgroundColor:'#BB2D3B',color:'white',borderRadius:'5px',marginLeft:'5px'}} onClick={fetchData2} >Search</button>
       </div>
       <div className='Filter'>
         {showFilter?
         <div>
         
          <div className={'sort-group'}>
-         <button type="button" id="button" onClick={()=>{setRule('asc')}} className={`btn btn-${rule==='asc'?'danger':'light'}`}>Increasing Order</button>
          <button type="button" id="button" onClick={()=>{setRule('desc')}} className={`btn btn-${rule==='desc'?'danger':'light'}`}>Decreasing Order</button>
+         <button type="button" id="button" onClick={()=>{setRule('asc')}} className={`btn btn-${rule==='asc'?'danger':'light'}`}>Increasing Order</button>
+       
          </div>
          <div className={'sort-by'}>
          <button type="button" id="button" onClick={()=>{setSortBy('popularity')}} className={`btn btn-${sortBy==='popularity'?'danger':'light'}`}>Popularity</button>

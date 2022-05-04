@@ -26,9 +26,9 @@ function Genres(props) {
   }
   return (
     <div >
-        <h1>Genres:-</h1>
-      
-         <div className='row row-cols-2'>
+        <h1 style={{color:'rgb(255,0,70)'}} >Genres:-</h1>
+       
+         <div style={{marginLeft:'1%'}} className='row row-cols-2'>
          {genres?genres.slice(0,20).map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/movie/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}
          </div>
       

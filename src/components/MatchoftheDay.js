@@ -43,9 +43,10 @@ function MatchoftheDay(props) {
 
   const findCommon = async () => {
     var data = [genreAR1, genreAR2];
+    var join=genreAR1.concat(genreAR2);
+    var sub=join.filter((item,pos)=>join.indexOf(item)===pos);
     let result = data.reduce((a, b) => a.filter(c => b.includes(c)));
-    let search = JSON.stringify(result);
-   
+    let search = result.length<=1?JSON.stringify(result):JSON.stringify(sub);
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&with_genres=${search.slice(1, search.length - 1)}`
     const common = await fetch(url);
     const parsedData = await common.json();
@@ -66,10 +67,10 @@ function MatchoftheDay(props) {
       <h1 style={{ textAlign: 'center' }} >+</h1>
       <Text color={'blue'}  title={movieName2} />
       <h1 style={{ textAlign: 'center' }} >=</h1>
-      {commonGenre.length > 0 && (<Text color={'purple'}  title={commonGenre[4].title} />)}
+      {commonGenre.length > 0 && (<Text color={'purple'}  title={commonGenre[0].title} />)}
 
-      <Link to="/DateNight" ><button style={{marginTop:'25px',height:'70px',border:'none',width:'22.5vw',backgroundColor:'rgb(8,9,55)'}}>
-        <h1>See How it works <i className="fa-solid fa-angle-right"></i>  </h1>
+      <Link to="/DateNight" ><button style={{marginTop:'25px',height:'70px',border:'none',width:'21vw',backgroundColor:'rgb(8,9,55)'}}>
+        <h1 >Try it Yourself <i className="fa-solid fa-angle-right"></i>  </h1>
       </button>
       </Link>
     </div>
