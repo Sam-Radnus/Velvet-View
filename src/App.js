@@ -62,7 +62,8 @@ function App() {
          </Route>
         
          <Route exact path="/AdvancedSearch" element={<AdvancedSearch/>}>
-              <Route  path="Details/:media/:username" element={<Details />} />
+              <Route  path="Details/movie/:username" element={<Details />} />
+              <Route  path="Details/tv/:username" element={<TVDetails />} />
          </Route>
          <Route exact path="/DateNight" element={<DateNight/>}>
          <Route  path="Details/:username" element={<Details />} />

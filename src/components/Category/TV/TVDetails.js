@@ -23,14 +23,15 @@ function TVDetails(props) {
         getMovies();
     },[ movie.id && username]);
   return (
-    movie && <div style={{ height: 'fit-content',padding:'5vh',width: '100vw',backgroundRepeat:'round',backgroundImage: `${movie.backdrop_path!==null}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m',backgroundBlendMode:'darken' }}>
+    movie && 
+    <div style={{ height: '80vh',width: '100vw',backgroundRepeat:'none',backgroundImage: `${movie.backdrop_path!==null}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
     {
 
-        <div style={{marginLeft:'10%'}}>
-          <div style={{float:'left'}} className='image'>
-            <img style={{position:'absolute',top:'20%',left:'5%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+        <div style={{backgroundColor:'rgba(255,0,0,0.5)',height:'80vh'}}>
+          <div style={{position:'relative',float:'left'}} className='image'>
+            <img style={{postion:'absolute',margin:'10% 0% 0% 10%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
             </div>
-            <div style={{ paddingLeft:'15%',marginLeft:'5% ',paddingTop:'5%',width:'70vw'}}className='overview'>
+            <div style={{ paddingLeft:'15%',marginLeft:'15% ',paddingTop:'5%',width:'70vw'}}className='overview'>
             <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.first_air_date?movie.first_air_date.slice(0,4):''})</h1>
              { movie.overview && <div><h2 style={{color:'white'}}>Overview</h2>
                <h5 style={{ color: 'white' }}>{movie.overview}</h5> </div> }
@@ -40,9 +41,10 @@ function TVDetails(props) {
              <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/tv/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
             </div>
         </div>
-
-
     }
+
+
+
    </div>
   )
 }
