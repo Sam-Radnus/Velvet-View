@@ -83,7 +83,9 @@ function App() {
           <Route exact path="/Recommended" element={<SeeAll key="Recommended" title="Recommended" URL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"></SeeAll>}>
             <Route  path="Details/movie/:username" element={<Details />} />
           </Route>
-          
+          <Route  path="TVShows/Popular" element={<SeeAll key="action" title="Popular" URL="https://api.themoviedb.org/3/tv/popular?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"></SeeAll>}>
+          <Route  path="Details/:username" element={<TVDetails />} />
+          </Route>
           <Route  path="TVShows/OnAir" element={<SeeAll key="onAir" title="On Air" URL="https://api.themoviedb.org/3/tv/on_the_air?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=2"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
@@ -119,7 +121,7 @@ function App() {
           <Route  path="TVShows/Talk" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10767&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
-          <Route  path="TVShows/War & Politics" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10768&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
+          <Route  path="TVShows/WarandPolitics" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10768&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
 

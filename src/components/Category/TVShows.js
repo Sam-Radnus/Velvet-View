@@ -23,6 +23,8 @@ function TVShows(props) {
           
           <div style={{zIndex:'5',position:'absolute',top:'2vh',left:'5vw',width:'25vw'}}> <h1 style={{fontSize:'17vh'}}>Game of Thrones</h1> </div>
           <div style={{position:'inherit',top:'100%'}}className='Featured'>
+
+              <Featured limit={"4"} medium={"tv"} FeatureName={"Popular"} location={"Popular"} FeatureURL="https://api.themoviedb.org/3/tv/popular?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1"/>  
               <Featured limit={"4"} medium={"tv"} FeatureName={"Airing Now"} location={"OnAir"} FeatureURL="https://api.themoviedb.org/3/tv/on_the_air?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=2"/>
               <Featured limit={"4"} medium={"tv"} FeatureName={"Action & Adventure"} location={"Action"} FeatureURL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10759|10765&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"/>
               <Featured limit={"4"} medium={"tv"} FeatureName={"Soap & Comedy"} location={"Soap"} FeatureURL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=35|10766&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"/>
@@ -35,7 +37,7 @@ function TVShows(props) {
               <Featured limit={"4"} medium={"tv"} FeatureName={"Reality "} location={"Reality"} FeatureURL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10764&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"/>
               <Featured limit={"4"} medium={"tv"} FeatureName={"Talk "} location={"Talk"} FeatureURL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10767&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"/>
               <Featured limit={"4"} medium={"tv"} FeatureName={"War & Politics "} location={"WarandPolitics"} FeatureURL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10768&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"/>
-              <Featured limit={"4"} medium={"tv"} FeatureName={"Animation "} location={"Animation"} FeatureURL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=16&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"/>
+             
            </div>
        </div>
     </div>

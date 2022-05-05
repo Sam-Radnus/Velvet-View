@@ -24,12 +24,12 @@ function TVDetails(props) {
     },[ movie.id && username]);
   return (
     movie && 
-    <div style={{ height: '80vh',width: '100vw',backgroundRepeat:'none',backgroundImage: `${movie.backdrop_path!==null}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
+    <div style={{ height: '85vh',width: '120vw',backgroundRepeat:'no-repeat',backgroundSize:'100vw',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
     {
 
-        <div style={{backgroundColor:'rgba(255,0,0,0.5)',height:'80vh'}}>
+        <div style={{backgroundColor:'rgba(0,0,100,0.5)',height:'85vh'}}>
           <div style={{position:'relative',float:'left'}} className='image'>
-            <img style={{postion:'absolute',margin:'10% 0% 0% 10%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+            <img style={{postion:'absolute',margin:'20% 0% 0% 30%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
             </div>
             <div style={{ paddingLeft:'15%',marginLeft:'15% ',paddingTop:'5%',width:'70vw'}}className='overview'>
             <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.first_air_date?movie.first_air_date.slice(0,4):''})</h1>
