@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link ,Navigate,useNavigate} from 'react-router-dom';
+import {Link ,Navigate,useNavigate,useLocation} from 'react-router-dom';
 import MidCard from './secondary/MidCard';
 import {useState,useEffect} from 'react';
 import '../App.css';
 
 function Featured(props) {
     let {medium,FeatureName,limit,location,FeatureURL}=props;
-      
+    let location1 =useLocation();
     const [movie,setMovie]=useState([]);
 
     useEffect(()=>{
-       
+       console.log(medium);
        getMovies();
    
     },[movie.length])
@@ -22,13 +22,13 @@ function Featured(props) {
        // console.log(location)
       //  console.log(parsedData.results);
         setMovie(parsedData.results); 
-       
+        console.log(location1.pathname);
      }
   return (
   
     <div  style={{marginTop:'5vh'}}className='1'>
       
-   <div className="tag" style={{display:'inline',width:'100%'}}><p> <span style={{color:'rgb(255,0,77)',fontSize:'50px'}}>{props.FeatureName}</span><Link style={{position:'absolute',textDecoration:'none',color:'grey',cursor:'pointer',marginTop:'30px',right:'2vw'}}  to={`${medium?window.location.pathname:''}/${location}`}>See All <i className="fa-solid fa-angle-right"></i> </Link></p></div>
+   <div className="tag" style={{display:'inline',width:'100%'}}><p> <span style={{color:'rgb(255,0,77)',fontSize:'50px'}}>{props.FeatureName}</span><Link style={{position:'absolute',textDecoration:'none',color:'grey',cursor:'pointer',marginTop:'30px',right:'2vw'}}  to={`Movie/${location}`}>See All <i className="fa-solid fa-angle-right"></i> </Link></p></div>
        <div className='row'>
        {movie.slice(0,limit).map(element=>(
           <div className="col ">
