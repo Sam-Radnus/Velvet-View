@@ -19,6 +19,7 @@ import TVDetails from './components/Category/TV/TVDetails';
 import SeeAllGenre from './components/info/SeeAllGenre';
 import AnimeGenre from './components/Category/AnimeGenre';
 import AnimeDetails from './components/Category/AnimeDetails';
+import SeeAllSuggestions from './components/Features/SeeAllSuggestions';
 function App() {
   
   return (
@@ -66,7 +67,9 @@ function App() {
               <Route  path="Details/tv/:username" element={<TVDetails />} />
          </Route>
          <Route exact path="/DateNight" element={<DateNight/>}>
-         <Route  path="Details/:username" element={<Details />} />
+            
+               <Route  path="Details/:username" element={<Details />} />
+          
          </Route>
           <Route exact path="Movie/TopRated" element={<SeeAll key="topRated" Medium="Movie" title="Top Rated" URL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US"></SeeAll>}>
             <Route  path="Details/:username" element={<Details />} />

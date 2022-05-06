@@ -4,6 +4,7 @@ import Select from './Tertiary/Select';
 import SeeAll from '../info/SeeAll';
 import { LoginContext } from './Tertiary/LoginContext';
 import { Outlet, useNavigate,useParams } from 'react-router-dom';
+import SeeAllSuggestions from './SeeAllSuggestions';
 function DateNight(props) {
   const [Film1, setFilm1] = useState("");
   const [Film2, setFilm2] = useState("");
@@ -56,7 +57,7 @@ function DateNight(props) {
         </div>
       </LoginContext.Provider>
       {console.log(URL1)}
-      {results && <SeeAll URL={URL1} title="Your Matches"></SeeAll>}
+      {results && <SeeAllSuggestions URL={URL1} title="Your Matches"></SeeAllSuggestions>}
       
     </div>
   )
