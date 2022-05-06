@@ -72,13 +72,15 @@ const fetchData=async()=>{
         <button style={{marginLeft:'45vw',color:'white',padding:'10px',width:'10vw',border:'none',borderRadius:'10px'}}onClick={()=>{
           setShowResults(true);
           navigate('/AdvancedSearch');
+          document.getElementById('see_movie').scrollIntoView(true)
         }}>Search {media}</button>
           </div>
          </div>:''}
          
          </div>
-            
+        
        {showResults && <SeeAllSuggestions medium={media} title={"Results"} URL={URL1}/>}
+     
     </div>
   )
 }

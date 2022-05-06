@@ -24,14 +24,13 @@ function Details(props) {
         getMovies();
     },[ movie.id && username]);
     return (
-        movie && <div style={{ height: 'max-content',padding:'15vh',width: '100vw',backgroundRepeat:'round',backgroundImage: `${movie.backdrop_path}`?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://www.devicetricks.com/wp-content/uploads/2019/12/This-video-is-unavailable-on-YouTube.png', backgroundColor: 'rgb(0,0,0,0.5)',backgroundBlendMode:'darken' }}>
+        movie &&    <div style={{ height: '85vh',width: '120vw',backgroundRepeat:'no-repeat',backgroundSize:'100vw',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
         {
-    
-            <div style={{marginLeft:'10%'}}>
-              <div style={{float:'left'}} className='image'>
-                <img style={{position:'absolute',marginTop:'-5%',left:'2%',height:'75%'}} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+           <div style={{backgroundColor:'rgba(0,0,50,0.5)',height:'85vh'}}>
+              <div style={{position:'relative',float:'left'}} className='image'>
+                <img style={{marginTop:'20%',marginLeft:'50%'}}  src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
                 </div>
-                <div style={{ paddingLeft:'15%',marginLeft:'5% ',paddingTop:'5%',width:'70vw'}}className='overview'>
+                <div style={{ paddingLeft:'15%',marginLeft:'15% ',paddingTop:'5%',width:'70vw'}}className='overview'>
                 <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.release_date?movie.release_date.slice(0,4):''})</h1>
                    <h2 style={{color:'white'}}>Overview</h2>
                     <h5 style={{ color: 'white' }}>{movie.overview}</h5>
