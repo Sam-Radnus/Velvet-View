@@ -29,7 +29,7 @@ function TVDetails(props) {
 
         <div style={{backgroundColor:'rgba(0,0,100,0.5)',height:'85vh'}}>
           <div style={{position:'relative',float:'left'}} className='image'>
-            <img style={{position:'absolute',margin:'20% 0% 0% 30%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+            <img style={{margin:'20% 0% 0% 50%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
             </div>
             <div style={{ paddingLeft:'15%',marginLeft:'15% ',paddingTop:'5%',width:'70vw'}}className='overview'>
             <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.first_air_date?movie.first_air_date.slice(0,4):''})</h1>
