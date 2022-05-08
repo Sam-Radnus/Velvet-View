@@ -63,7 +63,7 @@ const fetchData=async()=>{
     
 
          </div>
-         <div className='Slider'>
+         <div style={{paddingBottom:'50px'}} className='Slider'>
          <MultiRangeSlider
             min={1900}
             max={new Date().getFullYear()}
