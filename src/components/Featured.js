@@ -33,7 +33,7 @@ function Featured(props) {
        <div className='row'>
        {movie.slice(0,limit).map(element=>(
           <div className="col ">
-          {movie.length > 0 && <MidCard Feature={location} media={element.media_type?element.media_type:''} id={element.id} imageURL={element.backdrop_path!==null?`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`:'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg'} title={element.title?element.title:element.name}/> }
+          {movie.length > 0 && <MidCard Feature={location} Medium={medium} media={element.media_type?element.media_type:''} id={element.id} imageURL={element.backdrop_path!==null?`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`:'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg'} title={element.title?element.title:element.name}/> }
            </div>
        ))}
        </div>
