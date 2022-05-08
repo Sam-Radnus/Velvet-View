@@ -21,7 +21,7 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
                             <Link style={{fontSize:'large',color:`${location.pathname.slice(0,6)==='/Movie'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/'?'active':''} mx-2`} to="/">Movies</Link>
-                            <Link style={{fontSize:'large',color:`${location.pathname.slice(0,8)==='/TVshows'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/TVshows'?'active':''} mx-2`} to="/TVshows">TV Shows</Link>
+                            <Link style={{fontSize:'large',color:`${location.pathname.slice(0,3)==='/TV'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/TVshows'?'active':''} mx-2`} to="/TVshows">TV Shows</Link>
                             <Link style={{fontSize:'large',color:`${location.pathname.slice(0,6)==='/Anime'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/Anime'?'active':''} mx-2`} to="/Anime">Anime</Link>
                             <Link style={{fontSize:'large',color:`${location.pathname.slice(0,10)==='/DateNight'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/DateNight'?'active':''} mx-2`} to="/DateNight">Date Night</Link>
                             <Link style={{fontSize:'large',color:`${location.pathname.slice(0,15)==='/AdvancedSearch'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/AdvancedSearch'?'active':''} mx-2`} to="/AdvancedSearch">Advanced Search</Link>
