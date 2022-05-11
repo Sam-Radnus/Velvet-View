@@ -57,7 +57,7 @@ function DateNight(props) {
         </div>
       </LoginContext.Provider>
       {console.log(URL1)}
-      {results && <SeeAllSuggestions URL={URL1} title="Your Matches"></SeeAllSuggestions>}
+      {results && <SeeAllSuggestions  URL={URL1} medium={'movie'} title="Your Matches"></SeeAllSuggestions>}
       
     </div>
   )

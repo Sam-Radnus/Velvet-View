@@ -26,12 +26,12 @@ function Details(props) {
     return (
         movie &&    <div style={{ height: '85vh',width: '120vw',backgroundRepeat:'no-repeat',backgroundSize:'100vw',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
         {
-           <div style={{backgroundColor:'rgba(0,0,50,0.5)',height:'85vh'}}>
+           <div style={{backgroundColor:'rgba(0,0,50,0.5)',height:'85vh',paddingBottom:'5vh'}}>
               <div style={{position:'relative',float:'left'}} className='image'>
-                <img style={{marginTop:'20%',marginLeft:'50%'}}  src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
+                <img style={{marginTop:'20%',marginLeft:'40%'}}  src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
                 </div>
-                <div style={{ paddingLeft:'15%',marginLeft:'15% ',paddingTop:'5%',width:'70vw'}}className='overview'>
-                <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'50px'}}> {movie.title?movie.title:movie.name}({movie.release_date?movie.release_date.slice(0,4):''})</h1>
+                <div style={{ marginLeft:'25% ',paddingTop:'5%',width:'70vw'}}className='overview'>
+                <h1 style={{textAlign:'center',fontSize:'75px',marginTop:'0px'}}> {movie.title?movie.title:movie.name}({movie.release_date?movie.release_date.slice(0,4):''})</h1>
                    <h2 style={{color:'white'}}>Overview</h2>
                     <h5 style={{ color: 'white' }}>{movie.overview}</h5>
                     <h5 style={{ color: 'white' }}>Popularity:<span style={{color:`${movie.popularity>60?'orange':'red'}`}}>{movie.popularity}</span></h5>
