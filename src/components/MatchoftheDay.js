@@ -11,13 +11,14 @@ function MatchoftheDay(props) {
   const [genreAR1, setGenre1] = useState([]);
   const [genreAR2, setGenre2] = useState([]);
   const [genreAR3, setGenre3] = useState([]);
+  const [URL1, setURL] = useState('');
   const [commonGenre, setCommon] = useState([]);
   const [movieName2, setMovieName2] = useState('28');
   useEffect(() => {
     fetchData1();
     fetchData2();
     findCommon();
-  }, [genreAR1.length, genreAR2.length]);
+  }, [commonGenre.length,genreAR1.length, genreAR2.length]);
   const fetchData1 = async () => {
 
     const url1 = 'https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=1990-01-01&primary_release_date.lte=2022-12-31&vote_average.gte=6&with_genres=53';
@@ -25,7 +26,7 @@ function MatchoftheDay(props) {
     const parsedData1 = await data1.json();
     let x = parsedData1.results[0].genre_ids;
     setGenre1(x);
-  
+    
     setMovieName1(parsedData1.results[0].title);
   }
   const fetchData2 = async () => {
@@ -45,13 +46,16 @@ function MatchoftheDay(props) {
     var data = [genreAR1, genreAR2];
     var join=genreAR1.concat(genreAR2);
     var sub=join.filter((item,pos)=>join.indexOf(item)===pos);
+
     let result = data.reduce((a, b) => a.filter(c => b.includes(c)));
-    let search = result.length<=1?JSON.stringify(result):JSON.stringify(sub);
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&with_genres=${search.slice(1, search.length - 1)}`
+    let search = result.length>1?JSON.stringify(result):JSON.stringify(genreAR1);
+    console.log(search);
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&sort_by=vote_count.desc&with_genres=${search.slice(1, search.length - 1)}`
+    setURL(url);
     const common = await fetch(url);
     const parsedData = await common.json();
-  
     setCommon(parsedData.results);
+   
   }
   const addOne = useCallback(() => {
    
@@ -68,7 +72,6 @@ function MatchoftheDay(props) {
       <Text color={'blue'}  title={movieName2} />
       <h1 style={{ textAlign: 'center' }} >=</h1>
       {commonGenre.length > 0 && (<Text color={'purple'}  title={commonGenre[0].title} />)}
-
       <Link to="/DateNight" ><button style={{marginTop:'25px',height:'70px',border:'none',width:'21vw',backgroundColor:'rgb(8,9,55)'}}>
         <h1 >Try it Yourself <i className="fa-solid fa-angle-right"></i>  </h1>
       </button>
