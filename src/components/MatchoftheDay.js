@@ -35,11 +35,11 @@ function MatchoftheDay(props) {
     const data2 = await fetch(url2);
     const parsedData2 = await data2.json();
 
-    let y = parsedData2.results[1].genre_ids;
+    let y = parsedData2.results[0].genre_ids;
    
     setGenre2(y);
    
-    setMovieName2(parsedData2.results[1].title);
+    setMovieName2(parsedData2.results[0].title);
   }
 
   const findCommon = async () => {
