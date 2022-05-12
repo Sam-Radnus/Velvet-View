@@ -20,6 +20,8 @@ import SeeAllGenre from './components/info/SeeAllGenre';
 import AnimeGenre from './components/Category/AnimeGenre';
 import AnimeDetails from './components/Category/AnimeDetails';
 import SeeAllSuggestions from './components/Features/SeeAllSuggestions';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
 function App() {
   
   return (
@@ -46,6 +48,8 @@ function App() {
             </div>
           </>}
           ></Route>
+          <Route exact path="/SignUp" element={<SignUp/>}/>
+          <Route exact path="/LogIn" element={<Login/>}/>
          <Route exact path="/Anime" element={<Anime/>}>
            <Route  path="Details/Anime/:username" element={<AnimeDetails />} />
          </Route>
@@ -127,7 +131,7 @@ function App() {
           <Route  path="TVShows/WarandPolitics" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10768&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
           </Route>
-
+ 
         </Routes>
 
       </Router>
