@@ -41,7 +41,7 @@ function Select(props,{onSearch}) {
   }; 
   const suggestionClicked=async(suggestion)=>{
     setSkipSuggestionSearch(true);
-    // console.log(suggestions.indexOf(suggestion.title));
+    
     setMovie([]);
     setSearchField(suggestion);
   };
@@ -50,12 +50,11 @@ function Select(props,{onSearch}) {
       <div  style={{height:'55vh',width:'19vw',background:img.length===0?'#A53167':`url(https://image.tmdb.org/t/p/w300${img})`,paddingTop:'10%'}} backgroundImage={''}>{searchField.length===0?<h1 style={{marginTop:'35%',textAlign:'center'}} ><span >Add</span><br/>Movie</h1>:''}</div>
         <input style={{margin:'2vw 0vw 0vw 2vw'}} value={searchField} onChange={searchFieldChanged}/>
         <button className='search' onClick={()=>{
-          console.log(ref);
-         console.log((ref.filter(function(vendor){ return vendor.title === searchField }))[0].poster_path);
+         
+         
          setImg((ref.filter(function(vendor){ return vendor.title === searchField }))[0].poster_path);
          let x=((ref.filter(function(vendor){ return vendor.title === searchField }))[0].genre_ids);
-         console.log(id);
-         console.log(x);
+        
     
          id==='1'?setFilm1(x):setFilm2(x)
     

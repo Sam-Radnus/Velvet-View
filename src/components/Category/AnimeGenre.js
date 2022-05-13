@@ -9,7 +9,7 @@ function AnimeGenre(props) {
     let navigate = useNavigate();
     const [movie, setMovie] = useState([]);
     useEffect(() => {
-        console.log(genre);
+       
         getMovies();
     }, [movie.length,genre])
     const getMovies = async () => {
@@ -17,8 +17,8 @@ function AnimeGenre(props) {
         const data = await fetch(url);
         const parsedData = await data.json();
         setMovie(parsedData.results);
-        console.log(url);
-       // console.log(parsedData.results);
+        
+      
     }
   return (
     <div style={{ width: '100vw', marginTop:'10vh',marginLeft: '0vw' }} >

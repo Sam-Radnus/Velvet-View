@@ -19,7 +19,7 @@ function Login(props) {
             })
         })
         const data=await response.json();
-        console.log(data);
+       
         if(data.user)
         {
             localStorage.setItem('token',data.user);
@@ -30,7 +30,7 @@ function Login(props) {
 
             alert('login unsuccessful');
         }
-        console.log(data);
+      
     }
     return (
         <div>

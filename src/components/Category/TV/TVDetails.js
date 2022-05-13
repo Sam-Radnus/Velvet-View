@@ -10,14 +10,14 @@ function TVDetails(props) {
     let navigate=useNavigate();
 
     const getMovies = async () => {
-        // const url="https://api.themoviedb.org/3/movie/latest?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US";
+       
         const url = `https://api.themoviedb.org/3/tv/${username}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US`;
         const data = await fetch(url);
-        console.log(url);
+       
         const parsedData = await data.json();
-        console.log(parsedData);
+      
         setMovie(parsedData);
-        console.log(movie.backdrop_path===null);
+    
     }
     useEffect(() => {
         getMovies();

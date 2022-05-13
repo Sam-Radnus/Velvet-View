@@ -16,15 +16,15 @@ function SeeAllSuggestions(props) {
     }, [URL])
     const getMovies = async () => {
         const url=`${URL}`;
-        console.log(url);
+        
         const data = await fetch(url);
         const parsedData = await data.json();
         setMovie(parsedData.results);
-        //console.log(movie);
+       
         setTotalResults(parsedData.total_results);
-        console.log(totalResults);
+       
         
-        //console.log(page);
+       
     }
   return (
     <div>

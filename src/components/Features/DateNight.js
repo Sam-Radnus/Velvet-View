@@ -15,10 +15,10 @@ function DateNight(props) {
   const [commonGenre, setCommon] = useState([]);
   const [movieName2, setMovieName2] = useState('28');
   useEffect(()=>{
-     console.log(Film1);
-     console.log(Film2);
+   
+     
     findCommon();
-    console.log(commonGenre);
+  
   },[Film1,Film2,results]);
   
   const findCommon = async () => {
@@ -28,7 +28,7 @@ function DateNight(props) {
 
     let result = data.reduce((a, b) => a.filter(c => b.includes(c)));
     let search = result.length>1?JSON.stringify(result):JSON.stringify(Film1);
-    console.log(search);
+   
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&sort_by=vote_count.desc&with_genres=${search.slice(1, search.length - 1)}`
     setURL(url);
     const common = await fetch(url);
@@ -45,7 +45,7 @@ function DateNight(props) {
           <div className='col'> <Select id="2"/></div>
           <button style={{ margin: '2vw 0vw 0vw 17vw' }}  onClick={()=>{
            if(Film1!==""||Film2!==""){ 
-             console.log(URL1);
+            
             showResults(true);
             navigate('/DateNight')
            }
@@ -55,7 +55,7 @@ function DateNight(props) {
             }}  className='match'>Find Match</button>
         </div>
       </LoginContext.Provider>
-      {console.log(URL1)}
+      
       {results && <SeeAllSuggestions  URL={URL1} medium={'movie'} title="Your Matches"></SeeAllSuggestions>}
       
     </div>

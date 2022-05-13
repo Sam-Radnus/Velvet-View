@@ -48,6 +48,7 @@ app.post('/api/LogIn',async (req,res)=>{
             email:user.email,
         },
         'secret123')
+        
         return res.json({status:'ok',user:token})
     }
     else{

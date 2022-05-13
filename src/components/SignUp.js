@@ -24,9 +24,9 @@ function SignUp() {
         if(data.status==='OK')
         {
             navigate(-1);
-            console.log(data);
+            
         }
-        console.log(data);
+        
     }
     return (
         <>

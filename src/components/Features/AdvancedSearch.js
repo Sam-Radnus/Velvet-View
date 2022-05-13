@@ -24,15 +24,15 @@ useEffect(()=>{
 },[media,query,startDate,endDate,sortBy,rule]);
 const fetchData=async()=>{
    setURL1(`https://api.themoviedb.org/3/discover/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=${sortBy}.${rule}&include_adult=false&include_video=false&${media==='movie'?'primary_release_date':'first_air_date.'}.gte=${startDate}-01-01&${media==='movie'?'primary_release_date':'first_air_date'}.lte=${endDate}-12-31&with_watch_monetization_types=flatrate`);
-  console.log(URL1);
+ 
   }
   const fetchData2=async()=>{
    
-    console.log(query);
+ 
     setURL1(`https://api.themoviedb.org/3/search/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&query=${query}&page=1&include_adult=false`);
     setShowResults(true);
     setShowfilter(false);
-    console.log(URL1);
+   
    }
   return (
     <div>

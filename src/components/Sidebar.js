@@ -15,7 +15,7 @@ function Sidebar() {
     { setDisplay('block')}
     else
     {setDisplay('none')}
-    console.log(location);
+    
   },[location]);
   return (
      <div style={{display:`${display}`}}>

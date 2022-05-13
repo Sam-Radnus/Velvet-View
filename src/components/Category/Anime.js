@@ -16,7 +16,7 @@ function Anime(props) {
     const parsedData = await data.json();
   
     setMovie(movie.concat(parsedData.results));
-        console.log(movie);
+       // console.log(movie);
         setTotalResults(parsedData.total_results);
         setPage(page+1);
 

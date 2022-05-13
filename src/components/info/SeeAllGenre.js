@@ -17,25 +17,25 @@ function SeeAllGenre(props) {
     let navigate = useNavigate();
     const [movie, setMovie] = useState([]);
     useEffect(() => {
-       //console.log(genre);
+      
         getMovies();
     }, [genre,heading])
     const getMovies = async () => {
         const url = `https://api.themoviedb.org/3/discover/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genre}&with_watch_monetization_types=flatrate`;
         const data = await fetch(url);
         const parsedData = await data.json();
-        console.log(isLoaded);
+      
         setMovie(parsedData.results);
-        //console.log(movie.length);
+       
         setTotalResults(parsedData.total_results);
         setPage(page+1);
-       // console.log(parsedData.results);
+  
     }
     const updateMovies = async () => {
         const url = `https://api.themoviedb.org/3/discover/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genre}&with_watch_monetization_types=flatrate`;
         const data = await fetch(url);
         const parsedData = await data.json();
-        console.log(isLoaded);
+       
         setMovie(movie.concat(parsedData.results));
         setTotalResults(parsedData.total_results);
         setPage(page+1);

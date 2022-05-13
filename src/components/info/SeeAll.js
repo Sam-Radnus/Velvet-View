@@ -20,16 +20,16 @@ function SeeAll(props) {
     }, [])
     const getMovies = async () => {
         const url=`${URL}&page=${page}`;
-        console.log(url);
+        
         const data = await fetch(url);
         const parsedData = await data.json();
         setMovie(movie.concat(parsedData.results));
-        //console.log(movie);
+     
         setTotalResults(parsedData.total_results);
-        console.log(totalResults);
+        
         setPage(page+1);
         
-        //console.log(page);
+        
     }
     return (
     

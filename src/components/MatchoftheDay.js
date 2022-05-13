@@ -21,7 +21,7 @@ function MatchoftheDay(props) {
   }, [commonGenre.length,genreAR1.length, genreAR2.length]);
   const fetchData1 = async () => {
 
-    const url1 = 'https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=1990-01-01&primary_release_date.lte=2022-12-31&vote_average.gte=6&with_genres=53';
+    const url1 = 'https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=1990-01-01&primary_release_date.lte=2022-12-31&vote_average.gte=6&with_genres=27';
     const data1 = await fetch(url1);
     const parsedData1 = await data1.json();
     let x = parsedData1.results[0].genre_ids;
@@ -49,7 +49,7 @@ function MatchoftheDay(props) {
 
     let result = data.reduce((a, b) => a.filter(c => b.includes(c)));
     let search = result.length>1?JSON.stringify(result):JSON.stringify(genreAR1);
-    console.log(search);
+   
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&sort_by=vote_count.desc&with_genres=${search.slice(1, search.length - 1)}`
     setURL(url);
     const common = await fetch(url);
