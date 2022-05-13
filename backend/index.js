@@ -37,7 +37,7 @@ app.post('/api/LogIn',async (req,res)=>{
     {
         return {status:'error',error:'account not found'}
     }
-    const isPasswordValid=req.body.password===user.password;
+    const isPasswordValid=await bcrypt.compare(req.body.password,user.password);
     console.log(req.body.password);
     console.log(user.password);
     if(isPasswordValid)
