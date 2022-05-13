@@ -6,14 +6,9 @@ import {useLocation} from "react-router-dom";
 
 function Navbar() {
     let location=useLocation();
-    const [loggedIn,setLoggedIn]=useState(false);
+  
     useEffect(() => {
-      //let user=parseJwt(window.localStorage.getItem('token'));
-      //setLoggedIn(user.length>0);
-      //console.log(user.name);
-      //console.log(user.email);
-      setLoggedIn(localStorage.getItem('token')?true:false);
-      console.log(loggedIn);
+   
     }, [])
     function kick(){
         localStorage.removeItem('token');
@@ -26,7 +21,7 @@ function Navbar() {
         var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
-    
+        
         return JSON.parse(jsonPayload);
     };
     return (
@@ -51,8 +46,12 @@ function Navbar() {
                               
                       <li>  <i  onClick={()=>{window.location.reload(false)}}  style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-arrows-rotate"></i></li>
                       <li >  <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-hand-holding-dollar"></i></li>
-                      <li>{window.localStorage.getItem('token')? <Link to={`/SignUp`}> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link>
-                     :<button onClick={kick} className="btn btn-danger">Log Out</button>}</li>
+                      { !window.localStorage.getItem('token')?<li> <Link to={`/SignUp`}> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link></li>
+                     :<><li><i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} onClick={kick} className="fa-solid fa-right-from-bracket"></i></li>
+                       <li><Link to="/Dashboard"><i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-info"></i></Link> </li>
+                      </>
+                     }
+                      
                     </div>
                 </div>
              

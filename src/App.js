@@ -22,6 +22,7 @@ import AnimeDetails from './components/Category/AnimeDetails';
 import SeeAllSuggestions from './components/Features/SeeAllSuggestions';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 function App() {
   
   return (
@@ -48,9 +49,11 @@ function App() {
             </div>
           </>}
           ></Route>
+          <Route exact path="/Dashboard" element={<Dashboard/>}/>
           <Route exact path="/SignUp" element={<SignUp/>}/>
           <Route exact path="/LogIn" element={<Login/>}/>
          <Route exact path="/Anime" element={<Anime/>}>
+           
            <Route  path="Details/Anime/:username" element={<AnimeDetails />} />
          </Route>
          <Route  path="Genre/:media/:heading/:genre" element={<SeeAllGenre ></SeeAllGenre>}>
