@@ -8,16 +8,17 @@ function Navbar() {
     let location=useLocation();
     const [loggedIn,setLoggedIn]=useState(false);
     useEffect(() => {
-      let user=parseJwt(window.localStorage.getItem('token'));
-      setLoggedIn(user.length>0);
-      console.log(user.name);
-      console.log(user.email);
-      
-    
+      //let user=parseJwt(window.localStorage.getItem('token'));
+      //setLoggedIn(user.length>0);
+      //console.log(user.name);
+      //console.log(user.email);
+      setLoggedIn(localStorage.getItem('token')?true:false);
+      console.log(loggedIn);
     }, [])
     function kick(){
-        window.localStorage.removeItem('token');
-        window.location.href="/SignUp";
+        localStorage.removeItem('token');
+        window.location.href="/";
+        console.log(localStorage.removeItem('token'));
     }
     function parseJwt (token) {
         var base64Url = token.split('.')[1];
@@ -50,8 +51,8 @@ function Navbar() {
                               
                       <li>  <i  onClick={()=>{window.location.reload(false)}}  style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-arrows-rotate"></i></li>
                       <li >  <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-hand-holding-dollar"></i></li>
-                      <li> <Link to={`/SignUp`}> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link></li>
-                      
+                      <li>{window.localStorage.getItem('token')? <Link to={`/SignUp`}> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link>
+                     :<button onClick={kick} className="btn btn-danger">Log Out</button>}</li>
                     </div>
                 </div>
              
