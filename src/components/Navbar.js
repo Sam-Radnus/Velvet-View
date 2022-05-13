@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import {useLocation} from "react-router-dom";
+
 function Navbar() {
     let location=useLocation();
+    const [loggedIn,setLoggedIn]=useState(false);
     useEffect(() => {
-
-      console.log(location.pathname.slice(0,7))
-
+      let user=parseJwt(window.localStorage.getItem('token'));
+      setLoggedIn(user.length>0);
+      console.log(user.name);
+      console.log(user.email);
+      
+    
     }, [])
+    function kick(){
+        window.localStorage.removeItem('token');
+        window.location.href="/SignUp";
+    }
+    function parseJwt (token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    
+        return JSON.parse(jsonPayload);
+    };
     return (
         <>
             <nav style={{position:'fixed',top:'0',zIndex:'6',width:'100%'}} className="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark ">
@@ -29,11 +47,11 @@ function Navbar() {
                         </div>
                     </div>
                     <div style={{display:'flex',marginRight:'2vw'}} className='white'>
-                    
+                              
                       <li>  <i  onClick={()=>{window.location.reload(false)}}  style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-arrows-rotate"></i></li>
                       <li >  <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-hand-holding-dollar"></i></li>
-                      <li> <Link to="/SignUp"> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link></li>
-                        
+                      <li> <Link to={`/SignUp`}> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link></li>
+                      
                     </div>
                 </div>
              

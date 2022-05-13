@@ -11,7 +11,7 @@ function Featured(props) {
     const [movie,setMovie]=useState([]);
 
     useEffect(()=>{
-       console.log(medium);
+      
        getMovies();
    
     },[movie.length])
@@ -19,10 +19,7 @@ function Featured(props) {
       const url=`${FeatureURL}`;
         const data=await fetch(url);
         const parsedData=await data.json();
-       // console.log(location)
-      //  console.log(parsedData.results);
         setMovie(parsedData.results); 
-        console.log(location1.pathname);
      }
   return (
   
