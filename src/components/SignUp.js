@@ -21,9 +21,12 @@ function SignUp() {
             }),
         })
         const data=await response.json();
-        localStorage.setItem('token',data.user);
+       // localStorage.setItem('token',data.user);
+        console.log(data);
         if(data.status==='OK')
         {
+            localStorage.setItem('token',data.User);
+            console.log(localStorage.getItem('token'));
             navigate(-1);
             
         }

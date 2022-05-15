@@ -21,7 +21,13 @@ app.post('/api/SignUp',async(req,res)=>{
             password:newPassword,
         })
        // console.log(newPassword);
-        res.json({status:'OK'})
+        
+       const token=jwt.sign({
+        name:req.body.name,
+        email:req.body.email,
+    },
+    'secret123')
+        res.json({status:'OK',User:token})
     }
     catch(err)
     {

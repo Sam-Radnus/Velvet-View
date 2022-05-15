@@ -12,3 +12,10 @@ button.danger{
   font-family: 'Staatliches', cursive;
   padding:5px;
 }
+div#mid{
+  background-size: cover;
+  overflow: hidden;
+  filter: blur(13px);
+  position: absolute;
+
+}

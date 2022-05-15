@@ -9,3 +9,4 @@ const User=new mongoose.Schema({
 })
 const model=mongoose.model('UserMovies',User);
 module.exports=model;
+
