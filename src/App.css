@@ -122,3 +122,22 @@ div[id="Soap"]
 { 
   background-color: #ED96AF;
 }
+a[id="trailer"]
+{
+  display: block;
+  border-style:solid;
+  border-color:white;
+  border-radius:20px;
+  padding:5px;
+  text-align: center;
+  margin:5px;
+  text-decoration: none;
+}
+a[id="trailer"]:hover 
+{
+  
+  border-color:rgb(255,0,77);
+  color:rgb(255,0,77);
+  
+}
+
