@@ -7,10 +7,11 @@ import { useEffect } from 'react'
 import Text from './secondary/Text';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 function MatchoftheDay(props) {
+  const [dimenisions,setDimensions]=useState('');
+  const [mobile,setMobile]=useState(851 > window.innerWidth);
   const [movieName1, setMovieName1] = useState('');
   const [genreAR1, setGenre1] = useState([]);
   const [genreAR2, setGenre2] = useState([]);
-  const [genreAR3, setGenre3] = useState([]);
   const [URL1, setURL] = useState('');
   const [commonGenre, setCommon] = useState([]);
   const [movieName2, setMovieName2] = useState('28');
@@ -19,6 +20,17 @@ function MatchoftheDay(props) {
     fetchData2();
     findCommon();
   }, [commonGenre.length,genreAR1.length, genreAR2.length]);
+  useEffect(()=>{
+    window.addEventListener("resize",handleResize,false);
+    handleResize();
+    window.innerWidth>851?setMobile(true):setMobile(false);
+  },[dimenisions.width]);
+  const handleResize=()=>{
+    setDimensions({
+      width:window.innerWidth,
+      height:window.innerHeight
+    })
+  }
   const fetchData1 = async () => {
 
     const url1 = 'https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=1990-01-01&primary_release_date.lte=2022-12-31&vote_average.gte=6&with_genres=27';
@@ -64,8 +76,8 @@ function MatchoftheDay(props) {
 
   //const sum = numbers.reduce((a, v) => a + v, 0);
   return (
-    <div>
-    
+    <>
+    {mobile?<div>
       <h1 style={{ textAlign: 'center' }}> Match of the Day</h1>
       <Text color={'red'}  title={movieName1} />
       <h1 style={{ textAlign: 'center' }} >+</h1>
@@ -76,7 +88,8 @@ function MatchoftheDay(props) {
         <h1 >Try it Yourself <i className="fa-solid fa-angle-right"></i>  </h1>
       </button>
       </Link>
-    </div>
+    </div>:<Link  id="trailer" to="/DateNight" >Date Night</Link>} 
+    </>
   )
 }
 
