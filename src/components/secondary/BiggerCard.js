@@ -4,7 +4,7 @@ function BiggerCard(props) {
   let { imageURL, title } = props;
   return (
     <div style={{marginLeft:'40vw'}}>
-      <h1 className='feature'>Now Playing</h1>
+      <span style={{marginLeft:'2vw',color:'rgb(255,0,77)',fontSize:'50px'}}>Now Playing</span>
       <div style={{ height: '290px', width: '75vw', borderRadius:'10px',backgroundImage: `url(${props.imageURL} `,backgroundPosition:`85% 20%`}}>
         <div style={{ backgroundColor: 'rgba(0,0,0,0)', backdropFilter: 'blur(0px)' }} className="card-body">
          

@@ -2,11 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import '../../App.css';
 function Genres(props) {
+  const [selectedMovie,setSelectedMovie]=useState([]);
+  const [mobile,setMobile]=useState(window.innerWidth>851);
   let[genres,setGenres]=useState([]);
   let[genres2,setGenres2]=useState([]);
   let navigate=useNavigate();
+  const [dimensions,setDimensions]=useState({
+    width:window.innerWidth,
+    height:window.innerHeight
+  })
+  const handleResize=()=>{
+       setDimensions({
+        width:window.innerWidth,
+        height:window.innerHeight
+       }) ;
+  }
+  useEffect(()=>{
+    window.addEventListener("resize",handleResize,false);
+    console.log(dimensions);
+    dimensions.width>851?setMobile(false):setMobile(true);
+  },[dimensions.width]);
+
   useEffect(()=>{
     getGenres();
   },[genres.length,genres2.length]);
@@ -26,11 +45,15 @@ function Genres(props) {
   }
   return (
     <div >
-        <h1 style={{color:'rgb(255,0,70)'}} >Genres:-</h1>
+
+       { !mobile?
+       <div><h1 style={{color:'rgb(255,0,70)'}} >Genres:-</h1>
        
          <div style={{marginLeft:'1%'}} className='row row-cols-2'>
-         {genres?genres.slice(0,20).map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/movie/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}
+         {genres?genres.slice(0,18).map(genre=><div className='genres'  style={{textAlign:'center',justifyContent:'center',display:'flex',alignItems:'center',width:'105px',cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/movie/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}
          </div>
+         </div>:<div><h3 style={{color:'rgb(255,0,70)'}}className='feature'>Search through Genres</h3><Link style={{width:'50px'}} to="/Genres" id="trailer"><i className="fa-solid fa-arrow-right"></i></Link></div>
+         }
       
     </div>
 

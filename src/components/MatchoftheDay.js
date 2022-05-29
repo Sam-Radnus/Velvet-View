@@ -88,7 +88,7 @@ function MatchoftheDay(props) {
         <h1 >Try it Yourself <i className="fa-solid fa-angle-right"></i>  </h1>
       </button>
       </Link>
-    </div>:<Link  id="trailer" to="/DateNight" >Date Night</Link>} 
+    </div>:<div><h3 style={{color:'rgb(255,0,70)'}}className='feature'>Go to Date Night</h3><Link style={{width:'50px'}} to="/DateNight" id="trailer"><i className="fa-solid fa-arrow-right"></i></Link></div>} 
     </>
   )
 }
