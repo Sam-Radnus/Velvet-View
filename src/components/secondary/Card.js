@@ -31,7 +31,6 @@ function Card(props) {
   const renderFunction = async () => {
     
     // const trailer=props.play.videos.results.find(vid=>vid.name==='Official Trailer')
-    // console.log(trailer);
     const url2 = `https://api.themoviedb.org/3/movie/${props.play}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&append_to_response=videos`;
     const data2 = await fetch(url2);
     const parsedData2 = await data2.json();
@@ -39,7 +38,6 @@ function Card(props) {
 
     const loc = trailer.key;
     setLoc(loc);
-    console.log(id);
     
   };
   return (

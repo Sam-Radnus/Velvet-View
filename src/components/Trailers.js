@@ -27,25 +27,18 @@ function Trailers() {
       fetch("https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&include_adult=false&page=1&append_to_response=videos").
       then((response)=>response.json()).
       then((data)=>setMovie(data.results))
-       console.log(movie);
+       
     },[movie.length])
     useEffect(()=>{
       window.addEventListener("resize",handleResize,false);
-      console.log(dimensions);
       dimensions.width>851?setMobile(true):setMobile(false);
     },[dimensions.width]);
 
     
-    const getMovies=async()=>{
-        // const url="https://api.themoviedb.org/3/movie/latest?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US";
-       
-        //console.log(movie);
-        
-     }
+  
      
   return (
     <>
-    {console.log(movie.length)}
      { movie&&<div style={{borderBottomStyle:'solid' ,borderBottomColor:'rgb(27,26,31)'}}>
         {movie.slice(0,3).map(element=>(
               <Card key={element.id} play={element.id} imageURL={`https://image.tmdb.org/t/p/w500/${element.backdrop_path}`} title={element.title}/>

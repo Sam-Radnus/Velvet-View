@@ -29,8 +29,8 @@ function Featured(props) {
    to={`${medium==="TVShows"?window.location.pathname:medium}/${location}`}>See All <i className="fa-solid fa-angle-right"></i> </Link></p></div>
        <div className='row'>
        {movie.slice(0,limit).map(element=>(
-          <div className="col ">
-          {movie.length > 0 && <MidCard Feature={location} Medium={medium} media={element.media_type?element.media_type:''} id={element.id} imageURL={element.backdrop_path!==null?`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`:'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg'} title={element.title?element.title:element.name}/> }
+          <div key={element.id} className="col my-3">
+          {movie.length > 0 && <MidCard Feature={location} key={element.id} Medium={medium} media={element.media_type?element.media_type:''} id={element.id} imageURL={element.backdrop_path!==null?`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`:'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg'} title={element.title?element.title:element.name}/> }
            </div>
        ))}
        </div>

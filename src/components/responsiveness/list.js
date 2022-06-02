@@ -17,13 +17,11 @@ function List(props) {
       let data=await fetch(url);
       let parsedData=await data.json();
       setGenres(parsedData.genres);
-      console.log(genres);
 
       let url2="https://api.themoviedb.org/3/genre/tv/list?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US";
       let data2=await fetch(url2);
       let parsedData2=await data2.json();
       setGenres2(parsedData2.genres);
-      console.log(genres2);
   }
   return (
     <>

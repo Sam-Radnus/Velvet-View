@@ -10,7 +10,6 @@ function Dashboard(props) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
     setToken(JSON.parse(jsonPayload));
-  //  console.log(jsonPayload);
   };
   useEffect(()=>{
     parseJwt(localStorage.getItem('token'));
@@ -22,7 +21,7 @@ function Dashboard(props) {
             <div style={{float:'left',backgroundColor:'red',borderRadius:'100%',padding:'55px',width:'fit-content'}}><i style={{color:'white',fontSize:'20vh',padding:'5px'}} className="fa-solid fa-user"></i></div>
            <div style={{marginTop:'10vh',marginLeft:'30px'}}> <h1>User:{token.name}</h1>
             <h1>Email:{token.email}</h1></div>
-            {token&&console.log(token)}
+          
           
         </div>
 
