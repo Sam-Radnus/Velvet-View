@@ -16,7 +16,7 @@ function Video1(props) {
     useEffect(()=>
     {
       setPlay(props.loc);
-      console.log(play);
+      
     },[props.play])  
   return ( 
       <>  

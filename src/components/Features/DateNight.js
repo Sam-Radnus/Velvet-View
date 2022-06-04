@@ -6,6 +6,10 @@ import { LoginContext } from './Tertiary/LoginContext';
 import { Outlet, useNavigate,useParams } from 'react-router-dom';
 import SeeAllSuggestions from './SeeAllSuggestions';
 function DateNight(props) {
+  const [dimenisions,setDimensions]=useState({
+    width:window.innerWidth,
+    height:window.innerHeight
+  })
   const [Film1, setFilm1] = useState("");
   const [Film2, setFilm2] = useState("");
   const [showMovie, setShowMovie] = useState(false);
@@ -14,13 +18,23 @@ function DateNight(props) {
   const [URL1, setURL] = useState('');
   const [commonGenre, setCommon] = useState([]);
   const [movieName2, setMovieName2] = useState('28');
+
   useEffect(()=>{
    
      
     findCommon();
   
   },[Film1,Film2,results]);
-  
+  useEffect(()=>{
+    window.addEventListener("resize",handleResize,false);
+    handleResize();
+  },[dimenisions.width]);
+  const handleResize=()=>{
+    setDimensions({
+      width:window.innerWidth,
+      height:window.innerHeight
+    })
+  }
   const findCommon = async () => {
     var data = [Film1, Film2];
     var join=Film1.concat(Film2);

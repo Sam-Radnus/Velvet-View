@@ -7,12 +7,30 @@ import '../../App.css';
 import Video1 from './Video1';
 function Card(props) {
   let { play, imageURL, title } = props;
+  const navigate=useNavigate();
   let [id, setLoc] = useState("");
+  const [mobile,setMobile]=useState(window.innerWidth<850);
+  const [dimensions,setDimensions]=useState({
+    width:window.innerWidth,
+    height:window.innerHeight
+  })
+  const handleResize=()=>{
+    setDimensions({
+      width:window.innerWidth,
+    height:window.innerHeight
+    })
+  }
+  useEffect(()=>{
+     renderFunction();
+  },[id.length])
+  useEffect(()=>{
+    window.addEventListener("resize",handleResize,false);
+    window.innerWidth<850?setMobile(true):setMobile(false);
+  },[dimensions.width])
+  
   const renderFunction = async () => {
     
     // const trailer=props.play.videos.results.find(vid=>vid.name==='Official Trailer')
-    // console.log(trailer);
-
     const url2 = `https://api.themoviedb.org/3/movie/${props.play}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&append_to_response=videos`;
     const data2 = await fetch(url2);
     const parsedData2 = await data2.json();
@@ -20,17 +38,18 @@ function Card(props) {
 
     const loc = trailer.key;
     setLoc(loc);
-    return loc;
+    
   };
   return (
-    <div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '25% 25% ' }} className="card my-2">
+   <>
+    {!mobile?<div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '25% 25% ' }} className="card my-2">
       {/* <YouTube videoId={id} opts={opts} /> */}
       <div style={{ backgroundColor: 'rgba(0,0,0,0.11)', backdropFilter: 'blur(0px)' }} className="card-body">
         <p id="title" className="card-title">{props.title}</p>
-        <a href={id.length === 0 ? "#" : `https://www.youtube.com/watch?v=${id}`} onClick={renderFunction} className="btn btn-danger"><span className='mx-2 my-2'>Play Trailer</span><i className="fa-solid fa-play"></i></a>
+        <a href={`https://www.youtube.com/watch?v=${id}`}  className="btn btn-danger"><span className='mx-2 my-2'>Play Trailer</span><i className="fa-solid fa-play"></i></a>
       </div>
-    </div>
-  )
+    </div>:<a  href={`https://www.youtube.com/watch?v=${id}`} id="trailer">{title}</a>}
+  <hr/>  </> )
 }
 
 export default Card

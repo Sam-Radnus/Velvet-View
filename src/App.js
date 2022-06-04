@@ -18,6 +18,7 @@ import DateNight from './components/Features/DateNight';
 import TVDetails from './components/Category/TV/TVDetails';
 import SeeAllGenre from './components/info/SeeAllGenre';
 import AnimeGenre from './components/Category/AnimeGenre';
+import List from './components/responsiveness/List';
 import AnimeDetails from './components/Category/AnimeDetails';
 import SeeAllSuggestions from './components/Features/SeeAllSuggestions';
 import SignUp from './components/SignUp';
@@ -37,14 +38,14 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<>
-       
+    
             <NowPlaying />
-            
-            <div style={{ marginTop: "57vh", marginLeft: '25vw' }}>
+        
+            <div style={{ marginTop: "2vh", marginLeft: '25vw' }}>
           
-              <Featured limit={"3"} medium={"Movie"} FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+            <Featured limit={"3"} medium={"Movie"} FeatureName={"TRENDING"} location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
               <Featured limit={"3"} medium={"Movie"} FeatureName={"UPCOMING"} location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
-              <Featured limit={"3"} medium={"Movie"} FeatureName={"TRENDING"} location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+              <Featured limit={"3"} medium={"Movie"} FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
               <Featured limit={"3"} medium={"Movie"} FeatureName={"RECOMMENDED"} location={"Recommended"} FeatureURL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
             </div>
           </>}
@@ -52,6 +53,7 @@ function App() {
           <Route exact path="/Dashboard" element={<Dashboard/>}/>
           <Route exact path="/SignUp" element={<SignUp/>}/>
           <Route exact path="/LogIn" element={<Login/>}/>
+          <Route exact path="/Genres" element={<List/>}/>
          <Route exact path="/Anime" element={<Anime/>}>
            
            <Route  path="Details/Anime/:username" element={<AnimeDetails />} />
