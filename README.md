@@ -1,12 +1,21 @@
-# Movie-Array:The Ultimate  Movie Recommendation App made using ReactJS
+# Movie-Array:The Ultimate Movie Recommendation App 
+## Tools Used
+* ReactJS
+* MovieDB API
+* Mongo DB
+* Express
+* Node
+* Bootstrap
 ![preview](./Preview/Preview1.png)
 ![preview](./Preview/Preview2.png)
-## Feautures
+
+## Features
 * Date Night 
 * Movie Details
 * Advanced Search
 ### Date Night
-#### Finally, the answer to "What should we watch tonight?"
+### Finally, the answer to "What should we watch tonight?
+---
 Here you can find the match between two movies that you like or your loved ones does,using this you can find the most suitable movies according to your or their taste
 ---
 ![preview](./Preview/DateNight.png)
