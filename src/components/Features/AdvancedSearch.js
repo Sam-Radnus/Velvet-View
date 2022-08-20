@@ -1,10 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './Tertiary/Advanced.css'
 import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import MultiRangeSlider from './Tertiary/MultiRangeSlider';
-import SeeAll from '../info/SeeAll';
 import SeeAllSuggestions from './SeeAllSuggestions';
 function AdvancedSearch(props) {
 
@@ -23,13 +21,13 @@ useEffect(()=>{
   fetchData();
 },[media,query,startDate,endDate,sortBy,rule]);
 const fetchData=async()=>{
-   setURL1(`https://api.themoviedb.org/3/discover/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=${sortBy}.${rule}&include_adult=false&include_video=false&${media==='movie'?'primary_release_date':'first_air_date.'}.gte=${startDate}-01-01&${media==='movie'?'primary_release_date':'first_air_date'}.lte=${endDate}-12-31&with_watch_monetization_types=flatrate`);
+   setURL1(`https://api.themoviedb.org/3/discover/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=${sortBy}.${rule}&include_video=false&include_adult=false&${media==='movie'?'primary_release_date':'first_air_date.'}.gte=${startDate}-01-01&${media==='movie'?'primary_release_date':'first_air_date'}.lte=${endDate}-12-31&with_watch_monetization_types=flatrate`);
  
   }
   const fetchData2=async()=>{
    
  
-    setURL1(`https://api.themoviedb.org/3/search/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&query=${query}&page=1&include_adult=false`);
+    setURL1(`https://api.themoviedb.org/3/search/${media}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&query=${query}&page=1`);
     setShowResults(true);
     setShowfilter(false);
    
