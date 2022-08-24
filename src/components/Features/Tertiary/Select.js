@@ -64,7 +64,7 @@ function Select(props,{onSearch}) {
         {hasSuggestions && (
           <div className='suggestions'>
             {movie.map((suggestion)=>(
-              <div id={suggestion.id} onClick={() => {suggestionClicked(suggestion.title)}}> <SuggestionList  key={suggestion.id} title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
+             suggestion.backdrop_path &&  <div key={suggestion.id}  id={suggestion.id} onClick={() => {suggestionClicked(suggestion.title)}}> <SuggestionList  key={suggestion.id} title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
             ))}
             </div>
         )}
