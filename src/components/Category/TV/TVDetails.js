@@ -23,7 +23,7 @@ function TVDetails(props) {
         getMovies();
     },[ movie.id && username]);
   return (
-    movie && 
+    movie && movie.poster_path &&
     <div style={{ height: '85vh',width: '120vw',backgroundRepeat:'no-repeat',backgroundSize:'100vw',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
     {
 
@@ -39,7 +39,7 @@ function TVDetails(props) {
              { movie.number_of_seasons&&     <h5 >Number of Seasons:<span style={{color:'orange'}}>{movie.number_of_seasons}</span></h5>}
              {   <span style={{ color: 'white' }}>Episode Runtime:{movie.episode_run_time} Minutes</span>} 
              { movie.created_by?movie.created_by.length!==0:false &&     <div style={{margin:'0px'}}><h5>Created By:-</h5>{movie.created_by?movie.created_by.map(creator_name=><h5 style={{color:'orange'}}>{creator_name.name}</h5>):''}</div>}
-             <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} onClick={()=>{navigate(`/Genre/tv/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
+             <div className='genres'><h5>Genres:-</h5>{movie.genres?movie.genres.map(genre=><div className='genres'  style={{cursor:'pointer'}} id={genre.name} key={genre.name} onClick={()=>{navigate(`/Genre/tv/${genre.name}/${genre.id}`)}}>{genre.name}</div>):''}</div>
             </div>
         </div>
     }

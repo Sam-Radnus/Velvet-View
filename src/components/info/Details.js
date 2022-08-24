@@ -27,7 +27,7 @@ function Details(props) {
     },[ movie.id && username]);
     return (
        
-        movie &&    <div style={{ height: '85vh',width: '120vw',backgroundRepeat:'no-repeat',backgroundSize:'100vw',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
+        movie && movie.poster_path &&  <div style={{ height: '85vh',width: '120vw',backgroundRepeat:'no-repeat',backgroundSize:'100vw',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
         {
            
            <div style={{position:'absolute',backgroundColor:'rgba(0,0,50,0.5)',border:'solid',height:'85vh',width:'100vw',paddingBottom:'5vh'}}>

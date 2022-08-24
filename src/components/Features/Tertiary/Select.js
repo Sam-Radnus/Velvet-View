@@ -26,6 +26,7 @@ function Select(props,{onSearch}) {
     const url=`https://api.themoviedb.org/3/search/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&query=${searchField}&page=1&include_adult=false`;
     const data=await fetch(url);
     const parsedData=await data.json();
+    console.log(parsedData);
     setMovie(parsedData.results);
     setRef(parsedData.results);
   }
@@ -63,7 +64,7 @@ function Select(props,{onSearch}) {
         {hasSuggestions && (
           <div className='suggestions'>
             {movie.map((suggestion)=>(
-              <div onClick={() => {suggestionClicked(suggestion.title)}}> <SuggestionList   title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
+              <div id={suggestion.id} onClick={() => {suggestionClicked(suggestion.title)}}> <SuggestionList  key={suggestion.id} title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
             ))}
             </div>
         )}

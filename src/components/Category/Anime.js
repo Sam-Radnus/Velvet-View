@@ -34,7 +34,7 @@ function Anime(props) {
                 <div style={{marginLeft:'0%'}}className='row row-cols-4'>
             
                     {movie.map(element => (
-                        <div style={{ backgroundColor: 'rgb(23,22,27)' }} className="card" >
+                        <div style={{ backgroundColor: 'rgb(23,22,27)' }} key={element.id} className="card" >
                          
                             <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} className="card-img-top" />
                             <div className="card-body">
@@ -54,7 +54,7 @@ function Anime(props) {
         hasMore={movie.length !== totalResults}
         endMessage={
             <p style={{ textAlign: 'center' }}>
-              <h1>This is the End of the Line</h1>
+              <span>This is the End of the Line</span>
             </p>
           }
           scrollThreshold={0.9}

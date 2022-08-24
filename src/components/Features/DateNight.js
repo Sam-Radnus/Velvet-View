@@ -37,10 +37,10 @@ function DateNight(props) {
   }
   const findCommon = async () => {
     var data = [Film1, Film2];
-    var join=Film1.concat(Film2);
-    var sub=join.filter((item,pos)=>join.indexOf(item)===pos);
+    //var join=Film1.concat(Film2);
+    //var sub=join.filter((item,pos)=>join.indexOf(item)===pos);
 
-    let result = data.reduce((a, b) => a.filter(c => b.includes(c)));
+    let result = data.reduce((a, b) => Object.values(a).filter(c => b.includes(c)));
     let search = result.length>1?JSON.stringify(result):JSON.stringify(Film1);
    
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&sort_by=vote_count.desc&with_genres=${search.slice(1, search.length - 1)}`
@@ -55,8 +55,8 @@ function DateNight(props) {
       <h1 className='date' style={{ marginTop: '10vh', marginLeft: '35.5vw' }}>Date Night</h1>
       <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie,showResults }}>
         <div style={{ marginLeft: '25vw', width: '50vw' }} className='row row-cols-2' >
-          <div className='col'> <Select id="1" /></div>
-          <div className='col'> <Select id="2"/></div>
+          <div className='col'> <Select key="1" id="1" /></div>
+          <div className='col'> <Select key="2" id="2"/></div>
           <button style={{ margin: '2vw 0vw 0vw 17vw' }}  onClick={()=>{
            if(Film1!==""||Film2!==""){ 
             
