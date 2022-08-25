@@ -1,7 +1,6 @@
 import React, { useEffect , useState } from 'react'
-import PropTypes from 'prop-types'
 
-function Dashboard(props) {
+function Dashboard() {
   const [token,setToken]=useState('');
   function parseJwt (token) {
     var base64Url = token.split('.')[1];

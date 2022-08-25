@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useLocation } from "react-router-dom";
 import '../App.css'
-import LiveComment from './LiveComment'
+
 import MatchoftheDay from './MatchoftheDay'
 import Genres from './secondary/Genres';
 import Trailers from './Trailers'

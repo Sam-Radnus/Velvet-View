@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 function Text(props) {
-    let{color,title}=props;
+    let{color}=props;
   return (
     
     <div  style={{backgroundColor:`${color}`,height:'fit-content',borderRadius:'5px',marginBottom:'5px',textAlign:`center`}}>

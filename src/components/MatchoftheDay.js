@@ -1,12 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
 import '../App.css'
-import MidCard from './secondary/MidCard';
+
 import { useState, useCallback } from 'react'
 import { useEffect } from 'react'
 import Text from './secondary/Text';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-function MatchoftheDay(props) {
+import {  Link } from 'react-router-dom';
+function MatchoftheDay() {
   const [dimenisions,setDimensions]=useState('');
   const [mobile,setMobile]=useState(851 > window.innerWidth);
   const [movieName1, setMovieName1] = useState('');

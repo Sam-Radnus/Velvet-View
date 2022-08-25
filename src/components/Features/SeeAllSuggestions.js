@@ -54,7 +54,7 @@ function SeeAllSuggestions(props) {
         hasMore={movie.length !== totalResults}
         endMessage={
             <p style={{ textAlign: 'center' }}>
-              <h1>This is the End of the Line</h1>
+              <span>This is the End of the Line</span>
             </p>
           }
           scrollThreshold={0.9}

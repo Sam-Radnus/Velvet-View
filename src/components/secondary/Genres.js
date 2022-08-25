@@ -1,11 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../App.css';
 function Genres(props) {
-  const [selectedMovie,setSelectedMovie]=useState([]);
+
   const [mobile,setMobile]=useState(window.innerWidth>851);
   let[genres,setGenres]=useState([]);
   let[genres2,setGenres2]=useState([]);

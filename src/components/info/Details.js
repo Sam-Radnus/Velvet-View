@@ -1,11 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
 import { useEffect, useState } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
+
 import './Detail.css';
 function Details(props) {
-    let media_type={props};
+    
     let {media, username } = useParams();
     const [movie, setMovie] = useState([]);
     let navigate=useNavigate();

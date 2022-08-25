@@ -1,19 +1,19 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
 import { useEffect, useState } from 'react'
-import BiggerCard from '../secondary/BiggerCard';
+
 import '../../App.css';
-import Details from './Details';
-import { Outlet, useNavigate,useParams } from 'react-router-dom';
+
+import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import InfiniteScroll from 'react-infinite-scroll-component';
 function SeeAll(props) {
 
     let { title, URL } = props;
     let[page,setPage]=useState(1);
     const [totalResults,setTotalResults]=useState(0);
-    let navigate = useNavigate();
+ 
     const [movie, setMovie] = useState([]);
     useEffect(() => {
         getMovies();

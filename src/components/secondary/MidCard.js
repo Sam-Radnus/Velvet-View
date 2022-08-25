@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import './Mid.css';
 function MidCard(props) {
-    let { imageURL,Medium,media,Feature,id, title } = props;
+    let { Medium,media,Feature,id } = props;
     
     let navigate=useNavigate();
     return (

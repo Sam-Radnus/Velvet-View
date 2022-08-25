@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Card from './secondary/Card';
-import PropTypes from 'prop-types';
-import YouTube from 'react-youtube';
+
 
 function Trailers() {
     
     const [movie,setMovie]=useState([]);
-    const [selectedMovie,setSelectedMovie]=useState([]);
     const [mobile,setMobile]=useState(window.innerWidth<851);
     const [dimensions,setDimensions]=useState({
       width:window.innerWidth,

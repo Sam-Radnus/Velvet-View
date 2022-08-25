@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
 import {useState} from 'react'
-function Login(props) {
-    const [name,setName]=useState('');
+function Login() {
+
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     async function loginUser(e)

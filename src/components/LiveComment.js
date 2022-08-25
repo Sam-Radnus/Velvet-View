@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import Comment from './secondary/Comment';
 import '../App.css';
-function LiveComment(props) {
+function LiveComment() {
     const [comments, setComments] = useState([]);
     const [movieName, setMoviename] = useState('');
     const fetchComments = async () => {
-        const rand=Math.random(100,1000);
+        
         const url = "https://api.themoviedb.org/3/movie/11/reviews?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&page=1";
         const data = await fetch(url);
         const parsedData = await data.json();

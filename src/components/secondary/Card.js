@@ -1,13 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import YouTube from 'react-youtube';
-import { Navigate, useNavigate } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 import '../../App.css';
-import Video1 from './Video1';
+
 function Card(props) {
-  let { play, imageURL, title } = props;
-  const navigate=useNavigate();
+  let { title } = props;
+ 
   let [id, setLoc] = useState("");
   const [mobile,setMobile]=useState(window.innerWidth<850);
   const [dimensions,setDimensions]=useState({

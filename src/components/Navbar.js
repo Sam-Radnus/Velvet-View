@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import {useLocation} from "react-router-dom";
 
@@ -15,15 +15,7 @@ function Navbar() {
         window.location.href="/";
         console.log(localStorage.removeItem('token'));
     }
-    function parseJwt (token) {
-        var base64Url = token.split('.')[1];
-        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-        
-        return JSON.parse(jsonPayload);
-    };
+   
     return (
         <>
             <nav style={{position:'fixed',top:'0',zIndex:'6',width:'100%'}} className="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark ">

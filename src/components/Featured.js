@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import {Link ,Navigate,useNavigate,useLocation} from 'react-router-dom';
+
+import {Link } from 'react-router-dom';
 import MidCard from './secondary/MidCard';
 import {useState,useEffect} from 'react';
 import '../App.css';
 
 function Featured(props) {
-    let {medium,FeatureName,limit,location,FeatureURL}=props;
-    let location1 =useLocation();
+    let {medium,limit,location,FeatureURL}=props;
     const [movie,setMovie]=useState([]);
 
     useEffect(()=>{

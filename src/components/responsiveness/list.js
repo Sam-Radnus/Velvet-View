@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function List(props) {
+function List() {
   let[genres,setGenres]=useState([]);
   let[genres2,setGenres2]=useState([]);
   

@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../App.css';
 function BiggerCard(props) {
-  let { imageURL, title } = props;
   return (
     <div style={{marginLeft:'26.5vw'}}>
       <span style={{marginLeft:'2vw',color:'rgb(255,0,77)',fontSize:'50px'}}>Now Playing</span>
