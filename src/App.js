@@ -50,7 +50,6 @@ function App() {
           <Route exact path="/Dashboard" element={<Dashboard/>}/>
           <Route exact path="/SignUp" element={<SignUp/>}/>
           <Route exact path="/LogIn" element={<Login/>}/>
-          <Route exact path="/Genres" element={<List/>}/>
          <Route exact path="/Anime" element={<Anime/>}>
            
            <Route  path="Details/Anime/:username" element={<AnimeDetails />} />
