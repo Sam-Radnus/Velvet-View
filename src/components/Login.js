@@ -8,7 +8,7 @@ function Login() {
     async function loginUser(e)
     {
         e.preventDefault();
-        const response=await fetch("http://localhost:3000/api/LogIn",{
+        const response=await fetch("https://moviedbjs1.herokuapp.com/api/LogIn",{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',

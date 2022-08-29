@@ -9,7 +9,7 @@ function SignUp() {
     const navigate=useNavigate();
     async function registerUser(e){
         e.preventDefault();
-        const response=await fetch('http://localhost:3000/api/SignUp',{
+        const response=await fetch('https://moviedbjs1.herokuapp.com/api/SignUp',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json',
