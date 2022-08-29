@@ -1,15 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import Video1 from './components/secondary/Video1';
-import { useState } from 'react';
+
 import NowPlaying from './components/NowPlaying';
 import Featured from './components/Featured';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SeeAll from './components/info/SeeAll';
-import { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+
 import Details from './components/info/Details';
 import Anime from './components/Category/Anime';
 import TVShows from './components/Category/TVShows';
@@ -18,9 +16,8 @@ import DateNight from './components/Features/DateNight';
 import TVDetails from './components/Category/TV/TVDetails';
 import SeeAllGenre from './components/info/SeeAllGenre';
 import AnimeGenre from './components/Category/AnimeGenre';
-import List from './components/responsiveness/List';
+// import List from './components/responsiveness/List';
 import AnimeDetails from './components/Category/AnimeDetails';
-import SeeAllSuggestions from './components/Features/SeeAllSuggestions';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
