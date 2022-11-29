@@ -34,17 +34,7 @@ function Navbar() {
                           
                         </div>
                     </div>
-                    <div style={{display:'flex',marginRight:'2vw'}} className='white'>
-                              
-                      <li>  <i  onClick={()=>{window.location.reload(false)}}  style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-arrows-rotate"></i></li>
-                      <li >  <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-hand-holding-dollar"></i></li>
-                      { !window.localStorage.getItem('token')?<li> <Link to={`/SignUp`}> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link></li>
-                     :<><li><i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} onClick={kick} className="fa-solid fa-right-from-bracket"></i></li>
-                       <li><Link to="/Dashboard"><i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-info"></i></Link> </li>
-                      </>
-                     }
-                      
-                    </div>
+                   
                 </div>
              
             </nav>
