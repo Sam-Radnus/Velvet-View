@@ -12,16 +12,70 @@ function DateNight(props) {
   })
   const [Film1, setFilm1] = useState("");
   const [Film2, setFilm2] = useState("");
+  const [Query,setQuery] =useState("");
+  const [occassion,setOccasion]=useState("");
+  const [genre,setGenre]=useState("");
+  const [specification,setSpecification]=useState("");
   const [showMovie, setShowMovie] = useState(false);
+  const [type, setType] = useState("");
   const [results,showResults]=useState(false);
   const navigate=useNavigate();
   const [URL1, setURL] = useState('');
   const [commonGenre, setCommon] = useState([]);
   const [movieName2, setMovieName2] = useState('28');
-
+  async function findMatch() {
+  
+    if (!type) {
+      return json({ status: "error" });
+    }
+    generateQuery(type, categories, specification,occassion);
+    const url = "https://api.openai.com/v1/completions";
+    const payload = {
+      model: "text-davinci-003",
+      prompt: Query,
+      temperature: 0.7,
+      max_tokens: 2048,
+      top_p: 1.0,
+      frequency_penalty: 0.0,
+      stream: false,
+      presence_penalty: 0.0,
+      n: 1,
+    };
+    const response = await fetch(url, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPEN_AI_API_KEY}`,
+      },
+      method: "POST",
+      body: JSON.stringify(payload),
+    });
+    var data = await response.json();
+    var movies = data.choices[0].text.split("\n").join("").split(",");
+    movies = movies.map((m) => m.trim());
+    return json(movies);
+  }
+  
+  const generateQuery = (type, categories, specification,occassion) => {
+    var query = "Give a List of 5 ";
+    if (type == "Both") {
+      type = "Movie or TV Show";
+    }
+    query += type;
+    if (categories) {
+      query += ` that fits the following categories: ${categories} .`;
+    }
+    if (specification) {
+      query += `Make sure it fits the following description as well: ${specification}.`;
+    }
+    if (categories || specification) {
+      `If you do not have 5 recommendations that fit these criteria perfectly, do your best to suggest other ${type} that I might like.`;
+    }
+    query += `Please return the names as a comma seperated list without numbering.`;
+    setQuery(query);
+  };
   useEffect(()=>{
    
-     
+    findMatch();
     findCommon();
   
   },[Film1,Film2,results]);
