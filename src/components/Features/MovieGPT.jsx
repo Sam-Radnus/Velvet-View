@@ -34,8 +34,7 @@ const App = () => {
 
   const fetchMoviesFromTMDB = async (movieData) => {
     console.log("fetching movie from TMDB...", movieData);
-    console.log(TMBD_API_KEY)
-    console.log(OPENAI_API_KEY)
+    
     try {
       const response = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=${TMBD_API_KEY}&query=${movieData.title}`
@@ -69,8 +68,7 @@ const App = () => {
   };
 
   const fetchMoviesDataFromOpenAI = async (searchTerm, onMovieDataReceived) => {
-    console.log(TMBD_API_KEY)
-    console.log(OPENAI_API_KEY)
+   
     setError(null);
     try {
       const prompt = `Return a JSON object movie titles that best match this search term and their Rotten Tomatoes tomatometer score, 
