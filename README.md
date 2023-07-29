@@ -1,4 +1,4 @@
-# Movie-Array:The Ultimate Movie Recommendation App 
+# Velvet-View:The Ultimate Movie Recommendation App 
 ## Tools Used
 * ReactJS
 * MovieDB API
@@ -6,6 +6,7 @@
 * Express
 * Node
 * Bootstrap
+* OpenAI
 ---
 ![preview](./Preview/Preview1.png)
 ![preview](./Preview/Preview2.png)
@@ -26,7 +27,7 @@
 ![preview](./Preview/Matches.png)
 ### Details of Each Movie along with their Genres and Runtime
 ---
-Movie Array gives you the Details of Movies along with their respective Genres,Runtime,Rating,etc.By Clicking on a genre you will be redirected to a page where you can find Movies under those Genres 
+Velvet View gives you the Details of Movies along with their respective Genres,Runtime,Rating,etc.By Clicking on a genre you will be redirected to a page where you can find Movies under those Genres 
 
 ![preview](./Preview/Detail.png)
 ## Advanced Search that enables you to sort your movies in various categories

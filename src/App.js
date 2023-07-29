@@ -7,7 +7,7 @@ import NowPlaying from './components/NowPlaying';
 import Featured from './components/Featured';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SeeAll from './components/info/SeeAll';
-
+import MovieGPT from './components/Features/MovieGPT';
 import Details from './components/info/Details';
 import Anime from './components/Category/Anime';
 import TVShows from './components/Category/TVShows';
@@ -47,6 +47,7 @@ function App() {
             </div>
           </>}
           ></Route>
+           <Route  exact path="/prompt" element={<MovieGPT/>} />
           <Route exact path="/Dashboard" element={<Dashboard/>}/>
           <Route exact path="/SignUp" element={<SignUp/>}/>
           <Route exact path="/LogIn" element={<Login/>}/>
@@ -131,6 +132,7 @@ function App() {
           </Route>
           <Route  path="TVShows/WarandPolitics" element={<SeeAll key="documentary" title="Documentary" URL="https://api.themoviedb.org/3/discover/tv?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&with_genres=10768&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0"></SeeAll>}>
           <Route  path="Details/:username" element={<TVDetails />} />
+         
           </Route>
  
         </Routes>

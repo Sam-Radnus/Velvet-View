@@ -40,14 +40,14 @@ function Card(props) {
   };
   return (
    <>
-    {!mobile?<div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '25% 25% ' }} className="card my-2">
+    {!mobile?<div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '20% 40% ' }} className="card my-2">
       {/* <YouTube videoId={id} opts={opts} /> */}
       <div style={{ backgroundColor: 'rgba(0,0,0,0.11)', backdropFilter: 'blur(0px)' }} className="card-body">
         <p id="title" className="card-title">{props.title}</p>
         <a href={`https://www.youtube.com/watch?v=${id}`}  className="btn btn-danger"><span className='mx-2 my-2'>Play Trailer</span><i className="fa-solid fa-play"></i></a>
       </div>
     </div>:<a  href={`https://www.youtube.com/watch?v=${id}`} id="trailer">{title}</a>}
-  <hr/>  </> )
+  </> )
 }
 
 export default Card

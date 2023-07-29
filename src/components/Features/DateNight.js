@@ -16,6 +16,7 @@ function DateNight(props) {
   const [occassion,setOccasion]=useState("");
   const [genre,setGenre]=useState("");
   const [specification,setSpecification]=useState("");
+  const [categories,setCategories]=useState("");
   const [showMovie, setShowMovie] = useState(false);
   const [type, setType] = useState("");
   const [results,showResults]=useState(false);
@@ -26,9 +27,9 @@ function DateNight(props) {
   async function findMatch() {
   
     if (!type) {
-      return json({ status: "error" });
+      // return json({ status: "error" });
     }
-    generateQuery(type, categories, specification,occassion);
+    generateQuery(type, categories, specification);
     const url = "https://api.openai.com/v1/completions";
     const payload = {
       model: "text-davinci-003",
@@ -52,10 +53,10 @@ function DateNight(props) {
     var data = await response.json();
     var movies = data.choices[0].text.split("\n").join("").split(",");
     movies = movies.map((m) => m.trim());
-    return json(movies);
+   // return json(movies);
   }
   
-  const generateQuery = (type, categories, specification,occassion) => {
+  const generateQuery = (type, categories, specification) => {
     var query = "Give a List of 5 ";
     if (type == "Both") {
       type = "Movie or TV Show";
@@ -68,7 +69,7 @@ function DateNight(props) {
       query += `Make sure it fits the following description as well: ${specification}.`;
     }
     if (categories || specification) {
-      `If you do not have 5 recommendations that fit these criteria perfectly, do your best to suggest other ${type} that I might like.`;
+      query+=`If you do not have 5 recommendations that fit these criteria perfectly, do your best to suggest other ${type} that I might like.`;
     }
     query += `Please return the names as a comma seperated list without numbering.`;
     setQuery(query);
