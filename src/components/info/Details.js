@@ -33,7 +33,7 @@ function Details(props) {
            <div style={{position:'absolute',backgroundColor:'rgba(0,0,50,0.5)',border:'solid',height:'85vh',width:'100vw',paddingBottom:'5vh'}}>
          
            <div ><img  style={{height:'60%',width:'20%',marginTop:'5%',marginLeft:'5%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} /></div>
-           <div style={{position:'absolute',top:'25%',left:'35%'}}> <h2 style={{textAlign:'center',fontSize:'5vh',lineHeight:'none'}}>{movie.title?movie.title:movie.name}({movie.release_date?movie.release_date.slice(0,4):''})</h2>
+           <div style={{position:'absolute',top:'25%',left:'35%',width:"50%",textAlign:"justify"}}> <h2 style={{textAlign:'center',fontSize:'5vh',lineHeight:'none'}}>{movie.title?movie.title:movie.name}({movie.release_date?movie.release_date.slice(0,4):''})</h2>
            <h2 style={{color:'white',textAlign:'center'}}>Overview</h2>
                       <span style={{ color: 'white' }}>{movie.overview}</span>
                       <br/>
