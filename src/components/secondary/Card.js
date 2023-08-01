@@ -32,6 +32,7 @@ function Card(props) {
     const url2 = `https://api.themoviedb.org/3/movie/${props.play}?api_key=2023616ed87a6faf2ec9cd6de24b46ed&append_to_response=videos`;
     const data2 = await fetch(url2);
     const parsedData2 = await data2.json();
+    
     const trailer = parsedData2.videos.results.find(vid => vid.name === 'Official Trailer')
 
     const loc = trailer.key;
