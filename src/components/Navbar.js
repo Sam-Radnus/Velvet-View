@@ -11,9 +11,9 @@ function Navbar() {
    
     }, [])
     function kick(){
-        localStorage.removeItem('token');
+        localStorage.removeItem('userInfo');
         window.location.href="/";
-        console.log(localStorage.removeItem('token'));
+        console.log(localStorage.removeItem('userInfo'));
     }
    
     return (
@@ -33,6 +33,18 @@ function Navbar() {
                 <Link style={{fontSize:'large',color:`${location.pathname.slice(0,15)==='/AdvancedSearch'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/AdvancedSearch'?'active':''} mx-2`} to="/AdvancedSearch">Advanced Search</Link>
                 <Link style={{fontSize:'large',color:`${location.pathname.slice(0,15)==='/prompt'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/prompt'?'active':''} mx-2`} to="/prompt">Plot Seeker</Link>
             </div>
+            
+            <div style={{marginLeft:'10.6vw',display:'flex'}} className='white'>
+                              
+                              <li>  <i  onClick={()=>{window.location.href="https://github.com/Sam-Radnus"}}  style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-brands fa-github"></i></li>
+                              <li >  <i onClick={()=>{ window.location.href="https://www.buymeacoffee.com/samradnus2o"}} style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-money-bill"></i></li>
+                              { !window.localStorage.getItem('userInfo')?<li> <Link to={`/SignUp`}> <i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-user"></i></Link></li>
+                             :<>
+                               <li><Link to="/Dashboard"><i style={{ color: 'white', fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-solid fa-circle-info"></i></Link> </li>
+                              </>
+                             }
+                              
+                            </div>
         </div>
     </div>
 </nav>
