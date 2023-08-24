@@ -3,7 +3,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
+import { AwesomeButton } from 'react-awesome-button';
 import InfiniteScroll from 'react-infinite-scroll-component';
 function SeeAllSuggestions(props) {
     let { title,medium, URL } = props;
