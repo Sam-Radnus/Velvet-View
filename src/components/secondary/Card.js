@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './../Sidebar.scss'
 import { useEffect, useState } from "react";
 import '../../App.css';
-
+import { AwesomeButton } from 'react-awesome-button';
 function Card(props) {
   let { title } = props;
  
@@ -44,8 +44,11 @@ function Card(props) {
     {!mobile?<div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '20% 40% ' }} className="card my-2">
       {/* <YouTube videoId={id} opts={opts} /> */}
       <div style={{ backgroundColor: 'rgba(0,0,0,0.11)', backdropFilter: 'blur(0px)' }} className="card-body">
-        <p id="title" className="card-title">{props.title}</p>
-        <a href={`https://www.youtube.com/watch?v=${id}`}  className="btn btn-danger"><span className='mx-2 my-2'>Play Trailer</span><i className="fa-solid fa-play"></i></a>
+        <p id="title" style={{marginLeft:"4.7px"}} className="card-title">{props.title}</p>
+        <AwesomeButton type="danger" onPress={()=>{
+          window.location.href=`https://www.youtube.com/watch?v=${id}`
+        }}>
+       Play Trailer&nbsp;&nbsp;<i className="fa-solid fa-play"></i></AwesomeButton>
       </div>
     </div>:<a  href={`https://www.youtube.com/watch?v=${id}`} id="trailer">{title}</a>}
   </> )

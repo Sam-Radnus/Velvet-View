@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import MultiRangeSlider from './Tertiary/MultiRangeSlider';
 import SeeAllSuggestions from './SeeAllSuggestions';
+import './../../App.css'
 function AdvancedSearch(props) {
 
 const navigate=useNavigate();

@@ -41,7 +41,7 @@ function SignUp() {
                     <h1 style={{marginTop:'10%',textAlign:'center'}}>Sign Up for an account</h1>
                     
                     <div className="form-floating mb-3">
-                        <input onChange={(e)=>setFirstName(e.target.value)}type="name" className="form-control" id="floatingInput" placeholder="your name" />
+                        <input onChange={(e)=>setFirstName(e.target.value)} style={{backgroundColor:"#A53167"}} type="name" className="form-control" id="floatingInput" placeholder="your name" />
                         <label for="floatingInput">Enter Your First Name</label>
                     </div>
                     <div className="form-floating mb-3">

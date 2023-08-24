@@ -10,11 +10,6 @@ function Navbar() {
     useEffect(() => {
    
     }, [])
-    function kick(){
-        localStorage.removeItem('userInfo');
-        window.location.href="/";
-        console.log(localStorage.removeItem('userInfo'));
-    }
    
     return (
         <>

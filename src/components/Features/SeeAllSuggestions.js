@@ -40,7 +40,7 @@ function SeeAllSuggestions(props) {
                                     <div className="card-body" >
                                         <h5 className="card-title">{element.title ? element.title : element.name}</h5>
                                         <Link className="btn btn-danger" onClick={document.getElementById('outlet').scrollIntoView(true)} to={`Details/${medium}/${element.id}`} >
-                                           View More
+                                        <AwesomeButton  type="danger">View More</AwesomeButton>
                                         </Link>
                                 
                                     </div>

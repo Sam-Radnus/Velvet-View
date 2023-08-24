@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 input,
 button {
   padding: 4px;
   font-size: 20px;
-  font-family: 'Staatliches',cursive;
+  
   background-color:#A53167  ;
   color:#0D1117;
 }
 h1.date{
-  font-family: 'Parisienne', cursive;
+
   font-size: 76px;
 }
 .wrapper {

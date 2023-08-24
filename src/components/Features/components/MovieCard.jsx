@@ -7,6 +7,8 @@ import ProviderList from "./ProviderList";
 const Card = styled.div`
   position: relative;
   cursor: pointer;
+  
+  
 `;
 
 const Image = styled.img`
@@ -27,6 +29,8 @@ const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(51, 51, 51, 0.85);
+  color:white;
+  
   display: flex;
   flex-direction: column;
   align-items: left;

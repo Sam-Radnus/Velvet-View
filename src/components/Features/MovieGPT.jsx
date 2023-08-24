@@ -16,7 +16,7 @@ const TMBD_API_KEY = process.env.REACT_APP_TMBD_API_KEY;
 const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 const DEFAULT_PARAMS = {
-  model: "text-davinci-003",
+  model: "text-ada-001",
   temperature: 0.1,
   max_tokens: 1000,
   top_p: 1,
@@ -114,7 +114,7 @@ const App = () => {
       if (!response.body) {
         throw new Error("ReadableStream not yet supported in this browser.");
       }
-
+      
       const reader = response.body.getReader();
       const textDecoder = new TextDecoder();
 
@@ -132,7 +132,7 @@ const App = () => {
           const decodedValue = textDecoder.decode(value);
 
           const jsonValue = decodedValue.substring(5); // Remove "data: " from the beginning
-
+          console.log(jsonValue);
           // Build up the response from the stream
           try {
             accumulatedData += JSON.parse(jsonValue).choices[0].text;

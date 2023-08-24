@@ -2,6 +2,7 @@
 
 body{
    background-color: rgb(23,22,27);  
+   font-family: 'Staatliches', cursive;
 }
 
 h1,h2,h4,a,h3,h5,h6,span,p#title{
@@ -32,7 +33,7 @@ h3.feature,h1.feature{
 
 div[class="genres"]{
   color:white;
-  width:fit-content;
+  
   font-family: 'Staatliches', cursive;
   padding:5px;
   margin-top: 0px;
