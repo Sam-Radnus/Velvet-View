@@ -36,7 +36,7 @@ function SeeAllSuggestions(props) {
                     
                             {movie.map(element => 
                                 {  
-                              if(props?.movies && (element?.title !== props?.movies[0] && element?.title!==props?.movies[1])) return null;
+                              if(props?.movies && (element?.title === props?.movies[0] || element?.title===props?.movies[1])) return <></>;
                               else 
                               return  <div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} key={element.id} className="card" >
                                  
