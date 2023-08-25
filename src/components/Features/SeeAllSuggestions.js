@@ -36,8 +36,9 @@ function SeeAllSuggestions(props) {
                     
                             {movie.map(element => 
                                 {  
-                           
-                              return  (element.title !== props.movies[0] && element.title!==props.movies[1])?<div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} key={element.id} className="card" >
+                              if(props?.movies && (element?.title !== props?.movies[0] && element?.title!==props?.movies[1])) return null;
+                              else 
+                              return  <div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} key={element.id} className="card" >
                                  
                                     <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} alt="error404" className="card-img-top" />
                                     <div className="card-body" >
@@ -47,7 +48,7 @@ function SeeAllSuggestions(props) {
                                         </Link>
                                 
                                     </div>
-                                </div>:<></>
+                                </div>
                                 
                                 }
                               )}
