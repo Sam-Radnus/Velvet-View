@@ -7,7 +7,7 @@ import Button from 'infinite-scroll/js/button';
 import { LoginContext } from './LoginContext';
 function Select(props,{onSearch}) {
   let {id}=props;
-  const {setFilm1,setFilm2,setShowMovie,showResults}=useContext(LoginContext);
+  const {setFilm1,setFilm2,setShowMovie,showResults,setMovieName1,setMovieName2}=useContext(LoginContext);
   const [searchField,setSearchField]=useState("");
   const [movie,setMovie]=useState([]);
   const [ref,setRef]=useState([]);
@@ -64,7 +64,15 @@ function Select(props,{onSearch}) {
         {hasSuggestions && (
           <div className='suggestions'>
             {movie.map((suggestion)=>(
-             suggestion.backdrop_path &&  <div key={suggestion.id}  id={suggestion.id} onClick={() => {suggestionClicked(suggestion.title)}}> <SuggestionList  key={suggestion.id} title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
+             suggestion.backdrop_path &&  <div key={suggestion.id}  id={suggestion.id} onClick={() => {
+              suggestionClicked(suggestion.title)
+              if(props?.id==1){
+                setMovieName1(suggestion.title);
+              }
+              else{
+                setMovieName2(suggestion.title);
+              }
+            }}> <SuggestionList  key={suggestion.id} title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
             ))}
             </div>
         )}

@@ -24,6 +24,7 @@ function DateNight(props) {
   const [URL1, setURL] = useState('');
   const [commonGenre, setCommon] = useState([]);
   const [movieName2, setMovieName2] = useState('28');
+  const [movieName1,setMovieName1]=useState('');
   async function findMatch() {
   
     if (!type) {
@@ -108,13 +109,14 @@ function DateNight(props) {
   return (
     <div>
       <h1 className='date' style={{ marginTop: '10vh', marginLeft: '35.5vw' }}>Date Night</h1>
-      <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie,showResults }}>
+      <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie,movieName1,setMovieName1,movieName2,setMovieName2,showResults }}>
         <div style={{ marginLeft: '25vw', width: '50vw' }} className='row row-cols-2' >
           <div className='col'> <Select key="1" id="1" /></div>
           <div className='col'> <Select key="2" id="2"/></div>
           <button style={{ margin: '2vw 0vw 0vw 17vw' }}  onClick={()=>{
            if(Film1!==""||Film2!==""){ 
-            
+            console.log(movieName1);
+            console.log(movieName2);
             showResults(true);
             navigate('/DateNight')
            }
@@ -125,7 +127,7 @@ function DateNight(props) {
         </div>
       </LoginContext.Provider>
       
-      {results && <SeeAllSuggestions  URL={URL1} medium={'movie'} title="Your Matches"></SeeAllSuggestions>}
+      {results && <SeeAllSuggestions  URL={URL1} medium={'movie'} movies={[movieName1,movieName2]} title="Your Matches"></SeeAllSuggestions>}
       
     </div>
   )

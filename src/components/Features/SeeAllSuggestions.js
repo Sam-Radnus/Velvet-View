@@ -12,6 +12,7 @@ function SeeAllSuggestions(props) {
 
     const [movie, setMovie] = useState([]);
     useEffect(() => {
+        console.log(props.movies)
         getMovies();
     }, [URL])
     const getMovies = async () => {
@@ -33,19 +34,23 @@ function SeeAllSuggestions(props) {
                         <h1 style={{ fontSize: '65px', textAlign:'center' }}>{title}</h1>
                         <div style={{marginLeft:'0%'}}className='row row-cols-4'>
                     
-                            {movie.map(element => (
-                                <div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} key={element.id} className="card" >
+                            {movie.map(element => 
+                                {  
+                           
+                              return  (element.title !== props.movies[0] && element.title!==props.movies[1])?<div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} key={element.id} className="card" >
                                  
                                     <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} alt="error404" className="card-img-top" />
                                     <div className="card-body" >
                                         <h5 className="card-title">{element.title ? element.title : element.name}</h5>
-                                        <Link className="btn btn-danger" onClick={document.getElementById('outlet').scrollIntoView(true)} to={`Details/${medium}/${element.id}`} >
+                                        <Link onClick={document.getElementById('outlet').scrollIntoView(true)} to={`Details/${medium}/${element.id}`} >
                                         <AwesomeButton  type="danger">View More</AwesomeButton>
                                         </Link>
                                 
                                     </div>
-                                </div>
-                            ))}
+                                </div>:<></>
+                                
+                                }
+                              )}
                         </div>
                     </div>
                     <InfiniteScroll
