@@ -109,9 +109,9 @@ function DateNight(props) {
   
   return (
     <div>
-      <h1 className='date' style={{ marginTop: '10vh', marginLeft: '35.5vw' }}>Date Night</h1>
+      <h1 className='date' style={{ marginTop: '10vh', textAlign:"center" }}>Date Night</h1>
       <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie,movieName1,setMovieName1,movieName2,setMovieName2,showResults }}>
-        <div style={{ marginLeft: '25vw', width: '50vw' }} className='row row-cols-2' >
+        <div style={{ marginLeft: '27vw', width: '50vw' }} className='row row-cols-2' >
           <div className='col'> <Select key="1" id="1" /></div>
           <div className='col'> <Select key="2" id="2"/></div>
           <button style={{ margin: '2vw 0vw 0vw 17vw' }}  onClick={()=>{
