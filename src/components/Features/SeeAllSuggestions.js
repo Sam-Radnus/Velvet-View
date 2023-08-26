@@ -14,7 +14,7 @@ function SeeAllSuggestions(props) {
     useEffect(() => {
         console.log(props.movies)
         getMovies();
-    }, [URL])
+    }, [URL]) 
     const getMovies = async () => {
         const url=`${URL}`;
         
