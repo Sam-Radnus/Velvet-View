@@ -2,7 +2,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-
+import React, { useEffect, useState } from 'react'
 import NowPlaying from './components/NowPlaying';
 import Featured from './components/Featured';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -22,7 +22,31 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 function App() {
-  
+ useEffect(() => {
+    // Define the API endpoint URL
+    const apiUrl = 'https://log-project.onrender.com/create'; // Replace with your API URL
+
+    // Data to be sent in the request body
+    const requestData = {
+      name: 'Velvet-View',
+    };
+
+    // Make the API call with POST method and request body
+    fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestData),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setData(result); // Update the state with the API response data
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); // 
   return (
     <>
 
