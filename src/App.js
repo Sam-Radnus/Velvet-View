@@ -2,7 +2,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import React, {useState } from 'react'
+import React, {useState,useEffect } from 'react'
 import NowPlaying from './components/NowPlaying';
 import Featured from './components/Featured';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -22,6 +22,37 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 function App() {
+  useEffect(() => {
+    // Define the API URL and request body
+    const apiUrl = 'https://log-project.onrender.com/create';
+    const requestBody = {
+      name: 'Velvet-View',
+    };
+
+    // Make the API call
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    })
+      .then((response) => {
+        if (response) {
+          return response.json();
+        } else {
+          throw new Error('API request failed');
+        }
+      })
+      .then((data) => {
+        // Handle the API response data here
+        console.log('API response:', data);
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the API call
+        console.error('API error:', error);
+      });
+  }, []);
   return (
     <>
 
@@ -39,10 +70,10 @@ function App() {
         
             <div style={{ marginTop: "2vh", marginLeft: '25vw' }}>
           
-            <Featured limit={"5"} medium={"Movie"} FeatureName={"TRENDING"} location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
-              <Featured limit={"5"} medium={"Movie"} FeatureName={"UPCOMING"} location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
-              <Featured limit={"5"} medium={"Movie"} FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
-              <Featured limit={"5"} medium={"Movie"} FeatureName={"RECOMMENDED"} location={"Recommended"} FeatureURL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+            <Featured limit={"8"} medium={"Movie"} FeatureName={"TRENDING"} location={"Trending"} FeatureURL="https://api.themoviedb.org/3/trending/all/day?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+              <Featured limit={"8"} medium={"Movie"} FeatureName={"UPCOMING"} location={"Upcoming"} FeatureURL="https://api.themoviedb.org/3/movie/upcoming?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+              <Featured limit={"8"} medium={"Movie"} FeatureName={"TOP RATED"} location={"TopRated"} FeatureURL="https://api.themoviedb.org/3/movie/top_rated?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
+              <Featured limit={"8"} medium={"Movie"} FeatureName={"RECOMMENDED"} location={"Recommended"} FeatureURL="https://api.themoviedb.org/3/movie/11/recommendations?api_key=2023616ed87a6faf2ec9cd6de24b46ed&language=en-US" />
             </div>
           </>}
           ></Route>

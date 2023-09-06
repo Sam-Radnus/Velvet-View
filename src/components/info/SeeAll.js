@@ -51,8 +51,8 @@ function SeeAll(props) {
                                <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} className="card-img-top" />
                                <div className="card-body" >
                                    <h5 className="card-title">{element.title ? element.title : element.name}</h5>
-                                   <Link  onClick={window.scrollTo(0,0) } to={element.media_type?`Details/${element.media_type}/${element.id}`:`Details/${element.id}`} >
-                                   <AwesomeButton  type="danger">View More</AwesomeButton>
+                                   <Link   to={element.media_type?`Details/${element.media_type}/${element.id}`:`Details/${element.id}`} >
+                                   <AwesomeButton onPress={() => window.scrollTo(0, 0)}  type="danger">View More</AwesomeButton>
                                    </Link>
                                   
                            

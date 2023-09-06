@@ -24,10 +24,10 @@ function TVDetails(props) {
     },[ movie.id && username]);
   return (
     movie && movie.poster_path &&
-    <div style={{ height: 'fit-content',width: '120vw',backgroundRepeat:'no-repeat',backgroundSize:'100vw',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
+    <div style={{ height: 'fit-content',width: '120vw',backgroundPosition:"center",backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundImage: `${movie.backdrop_path!==null} `?`url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://lrmonline.com/wp-content/uploads/2020/08/disney-300-ppi.jpg?mrf-size=m' }}>
     {
 
-        <div style={{backgroundColor:'rgba(0,0,100,0.5)',height:'fit-content'}}>
+        <div style={{backgroundColor:'rgba(0,0,100,0.5)',minHeight:"52vw",height:'fit-content'}}>
           <div style={{position:'relative',float:'left'}} className='image'>
             <img style={{margin:'20% 0% 0% 50%'}} src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
             </div>

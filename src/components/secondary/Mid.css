@@ -1,21 +1,4 @@
-
-.frost {
-    background-color: rgba(255, 255, 255, 0.373);
-    -webkit-backdrop-filter: blur(20%);
-    backdrop-filter: blur(20%);
-  }
-button.danger{
-  color:white;
-  background-color:rgb(255,0,77);
-  border-style:none;
-  border-radius: 5px;
-  
-  padding:5px;
-}
-div#mid{
-  background-size: cover;
-  overflow: hidden;
-  filter: blur(13px);
-  position: absolute;
-
+#image_bg{
+  background-position: cover !important;
+  background-size: contain !important;
 }

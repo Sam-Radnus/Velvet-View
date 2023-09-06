@@ -20,10 +20,10 @@ function NowPlaying() {
     return (
         <div style={{top:'10%',left:'5%'}}>
             
-             {movie.slice(5,6).map(element=>(
+            
                    
-                   <BiggerCard key="Movie" imageURL={`https://image.tmdb.org/t/p/w1280${element.backdrop_path}`} title={element.title}/>
-    ))}
+                   <BiggerCard key="Movie" imageURL={`https://image.tmdb.org/t/p/w1280/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg`} title={"Oppenheimer"}/>
+ 
              
         </div>
     )

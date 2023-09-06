@@ -26,10 +26,10 @@ function Featured(props) {
       
    <div className="tag" style={{display:'inline',width:'100%'}}><p > <h3 style={{color:'rgb(255,0,77)',fontSize:"35px"}}>{props.FeatureName}</h3><h3 style={{fontSize:"30px"}}><Link style={{position:'absolute',textDecoration:'none',color:'grey',cursor:'pointer',marginTop:'-40px',right:'3.5vw'}}  
    to={`${medium==="TVShows"?window.location.pathname:medium}/${location}`}>See All <i className="fa-solid fa-angle-right"></i> </Link></h3></p></div>
-       <div style={{display:"flex"}}>
+       <div style={{display:"flex",marginTop:'-25px'}}>
        {movie.slice(0,limit).map(element=>(
           <div key={element.id}   className="my-3">
-          {movie.length > 0 && <MidCard Feature={location} key={element.id} Medium={medium} media={element.media_type?element.media_type:''} id={element.id} imageURL={element.backdrop_path!==null?`https://image.tmdb.org/t/p/w300/${element.backdrop_path}`:'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg'} title={element.title?element.title:element.name}/> }
+          {movie.length > 0 && <MidCard Feature={location} key={element.id} Medium={medium} media={element.media_type?element.media_type:''} id={element.id} imageURL={element.poster_path!==null?`https://www.themoviedb.org/t/p/w220_and_h330_face/${element.poster_path}`:'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg'} title={element.title?element.title:element.name}/> }
            </div>
        ))}
        </div>
