@@ -26,7 +26,7 @@ function Navbar() {
                 <Link style={{fontSize:'large',color:`${location.pathname.slice(0,6)==='/Anime'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/Anime'?'active':''} mx-2`} to="/Anime">Anime</Link>
                 <Link style={{fontSize:'large',color:`${location.pathname.slice(0,10)==='/DateNight'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/DateNight'?'active':''} mx-2`} to="/DateNight">Date Night</Link>
                 <Link style={{fontSize:'large',color:`${location.pathname.slice(0,15)==='/AdvancedSearch'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/AdvancedSearch'?'active':''} mx-2`} to="/AdvancedSearch">Advanced Search</Link>
-                <Link style={{fontSize:'large',color:`${location.pathname.slice(0,15)==='/prompt'?'rgb(255,0,77)':'white'}`}}className={`nav-link ${location.pathname==='/prompt'?'active':''} mx-2`} to="/prompt">Plot Seeker</Link>
+       
             </div>
             
             <div style={{marginLeft:'10.6vw',display:'flex'}} className='white'>

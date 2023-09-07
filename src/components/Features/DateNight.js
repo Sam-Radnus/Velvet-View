@@ -108,7 +108,7 @@ function DateNight(props) {
   }
   
   return (
-    <div>
+    <div className="dn-bg" >
       <h1 className='date' style={{ marginTop: '10vh', textAlign:"center" }}>Date Night</h1>
       <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie,movieName1,setMovieName1,movieName2,setMovieName2,showResults }}>
         <div style={{ marginLeft: '27vw', width: '50vw' }} className='row row-cols-2' >

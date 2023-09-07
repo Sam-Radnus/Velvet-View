@@ -43,7 +43,7 @@ function Card(props) {
    <>
     {!mobile?<div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '20% 40% ' }} className="card my-2">
       {/* <YouTube videoId={id} opts={opts} /> */}
-      <div style={{ backgroundColor: 'rgba(0,0,0,0.11)', backdropFilter: 'blur(0px)' }} className="card-body">
+      <div style={{  }} className="card-body">
         <p id="title" style={{marginLeft:"4.7px"}} className="card-title">{props.title}</p>
         <AwesomeButton type="danger" onPress={()=>{
           window.location.href=`https://www.youtube.com/watch?v=${id}`

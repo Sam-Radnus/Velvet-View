@@ -38,16 +38,11 @@ function SeeAllSuggestions(props) {
                                 {  
                               if(props?.movies && (element?.title === props?.movies[0] || element?.title===props?.movies[1])) return <></>;
                               else 
-                              return  <div style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} key={element.id} className="card" >
-                                 
+                              return  <div style={{ height:"224px",width:"146px",backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} key={element.id} className="card" >
+                                                                         <Link onClick={document.getElementById('outlet').scrollIntoView(true)} to={`Details/${medium}/${element.id}`} >
                                     <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} alt="error404" className="card-img-top" />
-                                    <div className="card-body" >
-                                        <h5 className="card-title">{element.title ? element.title : element.name}</h5>
-                                        <Link onClick={document.getElementById('outlet').scrollIntoView(true)} to={`Details/${medium}/${element.id}`} >
-                                        <AwesomeButton  type="danger">View More</AwesomeButton>
-                                        </Link>
-                                
-                                    </div>
+                                    
+                                    </Link>
                                 </div>
                                 
                                 }

@@ -43,20 +43,26 @@ function SeeAll(props) {
    <div style={{ marginTop: '12vh', marginLeft: '0vw' }} >
                     <Outlet/>
                         <h1 style={{ fontSize: '65px', textAlign:'center' }}>{title}</h1>
-                        <div style={{marginLeft:'0%'}}className='row row-cols-4'>
+                        <div style={{alignItems:"center",justifyContent:"center",width:"50vw !important"}} className='row row-cols-4'>
                     
                             {movie.map(element => (
-                               <div key={element.id}  style={{ backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} className="card" >
+                                  <div key={element.id}  style={{ height:"224px",width:"146px",backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} className="card" >
+                                <Link to={element.media_type?`Details/${element.media_type}/${element.id}`:`Details/${element.id}`} onClick={()=>{
+                                    window.scrollTo(0,0)
+                                }}>
+                             
                                  
                                <img src={element.poster_path!=null?`https://image.tmdb.org/t/p/original/${element.poster_path}`:'https://www.annsentitledlife.com/wp-content/uploads/2019/04/error-404-not-found-vertical.jpg'} className="card-img-top" />
-                               <div className="card-body" >
-                                   <h5 className="card-title">{element.title ? element.title : element.name}</h5>
+                               {/* <div className="card-body" >
+                                  
                                    <Link   to={element.media_type?`Details/${element.media_type}/${element.id}`:`Details/${element.id}`} >
                                    <AwesomeButton onPress={() => window.scrollTo(0, 0)}  type="danger">View More</AwesomeButton>
                                    </Link>
-                                  
+                                 
                            
-                               </div>
+                               </div> */}
+                       
+                           </Link>
                            </div>
                             ))}
                         </div>
