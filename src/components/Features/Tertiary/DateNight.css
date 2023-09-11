@@ -4,7 +4,8 @@ button {
   padding: 4px;
   font-size: 20px;
   
-  background-color:#A53167  ;
+  background-color:white ;
+  
   color:#0D1117;
 }
 h1.date{
@@ -66,5 +67,31 @@ button.match{
   background-color:#A53167  ;
   color:white;
   border:none;
-  width:12vw;
+  width:120px;
+}
+.dn-bg {
+ 
+  min-height:100vh;
+  height:fit-content;
+  background: linear-gradient(284deg, #17161b, #62393d, #17161b);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }

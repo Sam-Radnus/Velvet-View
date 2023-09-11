@@ -68,7 +68,7 @@ const fetchData=async()=>{
             max={new Date().getFullYear()}
             onChange={({ min, max }) => {setStartDate(min);setEndDate(max)}}
          />
-        <button style={{marginLeft:'45vw',color:'white',padding:'10px',width:'10vw',border:'none',borderRadius:'10px'}}onClick={()=>{
+        <button style={{marginLeft:'45vw',color:'black',padding:'10px',width:'10vw',border:'none',borderRadius:'10px'}}onClick={()=>{
           setShowResults(true);
           navigate('/AdvancedSearch');
           //document.getElementById('see_movie').scrollIntoView(true)

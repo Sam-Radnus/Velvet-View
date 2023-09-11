@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import  { useEffect, useState ,useContext } from 'react'
 import './DateNight.css';
 import SuggestionList from './SuggestionList';
-import Button from 'infinite-scroll/js/button';
 import { LoginContext } from './LoginContext';
 function Select(props,{onSearch}) {
   let {id}=props;
@@ -48,22 +47,30 @@ function Select(props,{onSearch}) {
   };
   return (
     <div>
-      <div  style={{height:'55vh',width:'19vw',background:img.length===0?'#A53167':`url(https://image.tmdb.org/t/p/w300${img})`,paddingTop:'10%'}} backgroundimage={''}>{searchField.length===0?<h1 style={{marginTop:'35%',textAlign:'center'}} ><span >Add</span><br/>Movie</h1>:''}</div>
-        <input style={{margin:'2vw 0vw 0vw 2vw'}} value={searchField} onChange={searchFieldChanged}/>
-        <button className='search' onClick={()=>{
-         
-         
-         setImg((ref.filter(function(vendor){ return vendor.title === searchField }))[0].poster_path);
-         let x=((ref.filter(function(vendor){ return vendor.title === searchField }))[0].genre_ids);
+     <div id="image_bg" style={{
+
+  height: '215px',
+  width: '143px',
+  borderRadius:"10px",
+  background: img.length === 0 ? '#A53167' : `url(https://www.themoviedb.org/t/p/w220_and_h330_face/${img})`,
+  backgroundSize: "cover",  // Use 'cover' to fit the background image while maintaining its aspect ratio
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat ",
+  boxShadow:"0px 4px 6px rgba(0,0,0,0.1)",
+  paddingTop: '10%'
+}}>
+  {searchField.length === 0 ? (
+    <h4 style={{ marginTop: '45%', textAlign: 'center' }}>
+      <span>Add</span><br />Movie
+    </h4>
+  ) : ''}
+</div>
+
+        <input style={{margin:'2vw 0vw 0vw 0vw', boxShadow:"0px 4px 6px rgba(0,0,0,0.1)",height:"32px",textAlign:"center",border:"none",width:"143px",backgroundColor:"white !important"}} placeholder="Enter Movie Name" value={searchField} onChange={searchFieldChanged}/>
         
-    
-         id==='1'?setFilm1(x):setFilm2(x)
-    
-         
-           }}>+</button>
         {hasSuggestions && (
-          <div className='suggestions'>
-            {movie.map((suggestion)=>(
+          <div style={{marginTop:"10px"}} className='suggestions'>
+            {movie.slice(0,7).map((suggestion)=>(
              suggestion.backdrop_path &&  <div key={suggestion.id}  id={suggestion.id} onClick={() => {
               suggestionClicked(suggestion.title)
               if(props?.id==1){
@@ -72,6 +79,9 @@ function Select(props,{onSearch}) {
               else{
                 setMovieName2(suggestion.title);
               }
+              setImg(suggestion.poster_path);         
+         
+              id==='1'?setFilm1(suggestion.title):setFilm2(suggestion.title)
             }}> <SuggestionList  key={suggestion.id} title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
             ))}
             </div>

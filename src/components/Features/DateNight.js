@@ -53,7 +53,7 @@ function DateNight(props) {
       body: JSON.stringify(payload),
     });
     var data = await response.json();
-    var movies = data.choices[0].text.split("\n").join("").split(",");
+    var movies = data.choices[0]?.text?.split("\n").join("").split(",");
     movies = movies.map((m) => m.trim());
    // return json(movies);
   }
@@ -109,12 +109,14 @@ function DateNight(props) {
   
   return (
     <div className="dn-bg" >
-      <h1 className='date' style={{ marginTop: '10vh', textAlign:"center" }}>Date Night</h1>
+      <p className='date' style={{ marginTop: '9vh', textAlign:"center",fontSize:"50px",color:"white" }}>Date Night</p>
       <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie,movieName1,setMovieName1,movieName2,setMovieName2,showResults }}>
-        <div style={{ marginLeft: '27vw', width: '50vw' }} className='row row-cols-2' >
-          <div className='col'> <Select key="1" id="1" /></div>
-          <div className='col'> <Select key="2" id="2"/></div>
-          <button style={{ margin: '2vw 0vw 0vw 17vw' }}  onClick={()=>{
+        <div style={{ marginLeft: '24.5vw',justifyContent:"center !important",textAlign:"center !important" ,maxWidth: '50vw'}}  >
+          <div style={{display:"flex",justifyContent:"center",gap:"100px"}}> 
+          <div > <Select key="1" id="1" /></div>
+          <div > <Select key="2" id="2"/></div>
+        </div>
+          <button style={{backgroundColor:"#A53167 !important", boxShadow:"0px 4px 6px rgba(0,0,0,0.1)" ,borderRadius:"5px",margin: '2vw 0vw 0vw 21.5vw' }}  onClick={()=>{
            if(Film1!==""||Film2!==""){ 
             console.log(movieName1);
             console.log(movieName2);
@@ -125,6 +127,7 @@ function DateNight(props) {
              window.alert('Please select both movies')
            }
             }}  className='match'>Find Match</button>
+
         </div>
       </LoginContext.Provider>
       
