@@ -66,11 +66,11 @@ function Select(props,{onSearch}) {
   ) : ''}
 </div>
 
-        <input style={{margin:'2vw 0vw 0vw 0vw', boxShadow:"0px 4px 6px rgba(0,0,0,0.1)",height:"32px",textAlign:"center",border:"none",width:"143px",backgroundColor:"white !important"}} placeholder="Enter Movie Name" value={searchField} onChange={searchFieldChanged}/>
+        <input id="input-bar" style={{margin:'2vw 0vw 0vw 0vw', boxShadow:"0px 4px 6px rgba(0,0,0,0.1)",height:"32px",textAlign:"center",border:"none",borderRadius:"5px",width:"143px",backgroundColor:"#757575 !important",color:"#757575"}} placeholder="Enter Movie Name" value={searchField} onChange={searchFieldChanged}/>
         
-        {hasSuggestions && (
+        {hasSuggestions && movie && (
           <div style={{marginTop:"10px"}} className='suggestions'>
-            {movie.slice(0,7).map((suggestion)=>(
+            { movie  && movie.length>1 && movie.slice(0,7).map((suggestion)=>(
              suggestion.backdrop_path &&  <div key={suggestion.id}  id={suggestion.id} onClick={() => {
               suggestionClicked(suggestion.title)
               if(props?.id==1){
@@ -81,7 +81,9 @@ function Select(props,{onSearch}) {
               }
               setImg(suggestion.poster_path);         
          
-              id==='1'?setFilm1(suggestion.title):setFilm2(suggestion.title)
+              id==='1'?setFilm1(suggestion.genre_ids
+                ):setFilm2(suggestion.genre_ids
+)
             }}> <SuggestionList  key={suggestion.id} title={suggestion.title} image={`https://image.tmdb.org/t/p/w45${suggestion.backdrop_path}`}/></div>
             ))}
             </div>

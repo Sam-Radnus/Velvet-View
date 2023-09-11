@@ -38,7 +38,7 @@ function Trailers() {
   return (
     <>
      { movie&&<div>
-        {movie.slice(1,4).map(element=>(
+        {movie.slice(0,3).map(element=>(
               <Card key={element.id} play={element.id} imageURL={`https://image.tmdb.org/t/p/w500/${element.backdrop_path}`} title={element.title}/>
           ))}  
        

@@ -41,7 +41,7 @@ function Card(props) {
   };
   return (
    <>
-    {!mobile?<div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '20% 40% ' }} className="card my-2">
+    {!mobile?<div style={{ backgroundImage: `url(${props.imageURL}`,backgroundPosition: '20% 40% ', borderRadius:"5px" }} className="my-2">
       {/* <YouTube videoId={id} opts={opts} /> */}
       <div style={{  }} className="card-body">
         <p id="title" style={{marginLeft:"4.7px"}} className="card-title">{props.title}</p>

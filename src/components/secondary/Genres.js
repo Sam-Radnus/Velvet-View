@@ -51,7 +51,7 @@ function Genres(props) {
        <div><h3 style={{color:'rgb(255,0,70)'}} >Genres:-</h3>
        
          <div style={{marginLeft:'1%'}} className='row row-cols-2'>
-        {genres?genres.slice(0,10).map((genre,index)=> {
+        {genres?genres.slice(0,13).map((genre,index)=> {
         { if(["documentary","science fiction","tv movie"].includes(genre.name.toLowerCase())) return null;} 
         return (<AwesomeButton  type={index%2==0?"danger":"primary"} onPress={()=>{navigate(`/Genre/movie/${genre.name}/${genre.id}`)}}>{genre.name}</AwesomeButton>)}):''}
          </div>

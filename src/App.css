@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Staatliches&display=swap');
 
 body{
-   background-color: rgb(23,22,27);  
+  background: hsla(252, 10%, 10%, 1);
+
+  background: linear-gradient(225deg, hsla(252, 10%, 10%, 1) 0%, hsla(316, 93%, 12%, 1) 100%);
+  
+  background: -moz-linear-gradient(225deg, hsla(252, 10%, 10%, 1) 0%, hsla(316, 93%, 12%, 1) 100%);
+  
+  background: -webkit-linear-gradient(225deg, hsla(252, 10%, 10%, 1) 0%, hsla(316, 93%, 12%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#17161B", endColorstr="#3B022C", GradientType=1 );
    font-family: 'Staatliches', cursive;
+   height:fit-content;
 }
 
+div.card{
+  background: none !important;
+  border:none;
+}
 h1,h2,h4,a,h3,h5,h6,span,p#title{
   font-family: 'Staatliches', cursive;
   color:white;
@@ -12,20 +25,13 @@ h1,h2,h4,a,h3,h5,h6,span,p#title{
 li{
   list-style-type: '';
 }
-nav{
-  background-color: rgb(23,22,27); 
-  border-style: solid;
-  border-color:rgb(23,22,27);
-  border-bottom-color:rgb(27,26,31);
-}
+
 a.dropdown-item{
   color:white;
 }
 div#sidebar{
-  background-color: rgb(23,22,27); 
-  border-style: solid;
-  border-color:rgb(23,22,27);
-  border-right-color:rgb(27,26,31);
+ 
+background:none;
 }
 h3.feature,h1.feature{
   color:rgb(255,0,77);

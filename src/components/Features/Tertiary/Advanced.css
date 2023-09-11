@@ -1,5 +1,6 @@
 div.button-group,div.sort-group{
-    margin-left:30vw;
+    justify-content: center;
+  
 }
 button#button {
     margin-top:5vw;
@@ -7,28 +8,69 @@ button#button {
     height:7vh;
     width:15vw;
 }
+button{
+    box-shadow:0px 4px 6px rgba(0,0,0,0.1);
+}
 div.sort-group{
     margin-top: 5vh;
+    
+    
 }
 div.sort-by{
-    margin-top:5vh;
-    margin-left:7vw;
+    margin-top: 10px;
+    justify-content: center;
 }
 input#search{
 
-    margin-left:20vw;
-    width:50vw;
+    margin-left:23vw;
+    width:45vw;
+    background-color: transparent !important;
+    border: solid #757575 2px ;
+    border-radius: 10px;
+    
 
 }
 button.search{
-    height:5vh;
-    width:10vw;
+    border:none;
+
+    
 }
 div.search{
-    margin-top: 10vh;
+   
+    margin-top: 20px;
+    display: flex;
+    margin-left: 80px;
+    justify-content: left;
 }
 button.look{
     width:10vw;
     border:none;
     background-color: red;
 }
+
+.adv-bg {
+    border: solid;
+    min-height:100vh;
+    height:fit-content;
+    background: linear-gradient(284deg, #17161b, #62393d, #17161b);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 12s ease infinite;
+    -moz-animation: AnimationName 12s ease infinite;
+    animation: AnimationName 12s ease infinite;
+  }
+  
+  @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }

@@ -34,31 +34,32 @@ const fetchData=async()=>{
    
    }
   return (
-    <div>
-        <h1 style={{marginTop:'15vh',marginLeft:'40vw'}}>ADVANCED SEARCH</h1>
-        <button onClick={()=>{setShowfilter(true)}} style={{background:'transparent',color:'white',border:'none',marginLeft:'10vw'}}> <i  style={{ color: 'white',marginRight:'10px',fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-brands fa-buffer"></i>Filter</button>
-        <div className={'button-group'}>
-         <button type="button" id="button" onClick={()=>{setDanger(true);setMedia('movie')}} className={`btn btn-${danger?'danger':'light'}`}>Movies</button>
-         <button type="button" id="button" onClick={()=>{setDanger(false);setMedia('tv')}} className={`btn btn-${danger?'light':'danger'}`}>TV Show</button>
+    <div className="adv-bg" >
+      <h1 style={{textAlign:"center",marginTop:"85px"}}>Advanced Search</h1>
+        <button onClick={()=>{setShowfilter(true)}} style={{background:'none',color:'white',border:'none',marginLeft:'10vw'}}> <i  style={{ color: 'white',marginRight:'10px',fontSize:'large',cursor: 'pointer', marginLeft: '15px' }} className="fa-brands fa-buffer"></i>Filter</button>
+        <div style={{display:"flex",gap:"10px"}} className={'button-group'}>
+         <button  onClick={()=>{setDanger(true);setMedia('movie')}} className='btn btn' style={{color:!danger?'#757575':'white',backgroundColor:danger?'#757575':'transparent',borderColor:'#757575'}}>Movies</button>
+         <button  onClick={()=>{setDanger(false);setMedia('tv')}}   className='btn btn' style={{color:danger?'#757575':'white',backgroundColor:!danger?'#757575':'transparent',borderColor:'#757575'}}>TV Show</button>
          </div>
          <div className='search'>
-      <input id="search" style={{backgroundColor:'white',color:'#BB2D3B'}} onChange={(e)=>{ setQuery(e.target.value)}} type='text' onFocus={()=>{setShowfilter(false)}} onBlur={()=>{setShowfilter(true)}} /><button style={{backgroundColor:'#BB2D3B',color:'white',borderRadius:'5px',marginLeft:'5px'}} onClick={fetchData2} >Search</button>
+      <input id="search" style={{color:'white',textAlign:"center"}} placeholder={`enter ${media} name`} onChange={(e)=>{ setQuery(e.target.value)}} type='text' onFocus={()=>{setShowfilter(false)}} onBlur={()=>{setShowfilter(true)}} />
+      <button style={{backgroundColor:"transparent",borderColor:"#757575",color:'#757575',border:"solid",borderRadius:'10px',borderWidth:'2px',marginLeft:'5px'}} onClick={fetchData2} >Search</button>
       </div>
       <div className='Filter'>
-        {showFilter?
-        <div>
         
-         <div className={'sort-group'}>
-         <button type="button" id="button" onClick={()=>{setRule('desc')}} className={`btn btn-${rule==='desc'?'danger':'light'}`}>Decreasing Order</button>
-         <button type="button" id="button" onClick={()=>{setRule('asc')}} className={`btn btn-${rule==='asc'?'danger':'light'}`}>Increasing Order</button>
+        <div style={{display:!showFilter?"none":""}}>
+        
+         <div style={{display:"flex",gap:"10px"}} className={'sort-group'}>
+         <button onClick={()=>{setRule('desc')}} className="btn btn" style={{color:rule!=='desc'?'#757575':'white',backgroundColor:rule==='desc'?'#757575':'transparent',borderColor:'#757575'}}>Decreasing Order</button>
+         <button onClick={()=>{setRule('asc')}} className="btn btn" style={{color:rule!=='asc'?'#757575':'white',backgroundColor:rule==='asc'?'#757575':'transparent',borderColor:'#757575'}}>Increasing Order</button>
        
          </div>
-         <div className={'sort-by'}>
-         <button type="button" id="button" onClick={()=>{setSortBy('popularity')}} className={`btn btn-${sortBy==='popularity'?'danger':'light'}`}>Popularity</button>
-         <button type="button" id="button" onClick={()=>{setSortBy('release_date')}} className={`btn btn-${sortBy==='release_date'?'danger':'light'}`}>Release Date</button>
-         <button type="button" id="button" onClick={()=>{setSortBy('revenue')}} className={`btn btn-${sortBy==='revenue'?'danger':'light'}`}>Revenue</button>
-         <button type="button" id="button" onClick={()=>{setSortBy('original_title')}} className={`btn btn-${sortBy==='original_title'?'danger':'light'}`}>Original Title</button>
-         <button type="button" id="button" onClick={()=>{setSortBy('vote_average')}} className={`btn btn-${sortBy==='vote_average'?'danger':'light'}`}>Vote Average</button>
+         <div style={{display:"flex",gap:"10px"}} className={'sort-by'}>
+         <button  onClick={()=>{setSortBy('popularity')}} className="btn btn" style={{color:sortBy!=='popularity'?'#757575':'white',backgroundColor:sortBy==='popularity'?'#757575':'transparent',borderColor:'#757575'}}>Popularity</button>
+         <button  onClick={()=>{setSortBy('release_date')}} className="btn btn" style={{color:sortBy!=='release_date'?'#757575':'white',backgroundColor:sortBy==='release_date'?'#757575':'transparent',borderColor:'#757575'}}>Release Date</button>
+         <button  onClick={()=>{setSortBy('revenue')}} className="btn btn" style={{color:sortBy!=='revenue'?'#757575':'white',backgroundColor:sortBy==='revenue'?'#757575':'transparent',borderColor:'#757575'}}>Revenue</button>
+         <button  onClick={()=>{setSortBy('original_title')}} className="btn btn" style={{color:sortBy!=='original_title'?'#757575':'white',backgroundColor:sortBy==='original_title'?'#757575':'transparent',borderColor:'#757575'}}>Original Title</button>
+         <button  onClick={()=>{setSortBy('vote_average')}} className="btn btn" style={{color:sortBy!=='vote_average'?'#757575':'white',backgroundColor:sortBy==='vote_average'?'#757575':'transparent',borderColor:'#757575'}}>Vote Average</button>
     
 
          </div>
@@ -66,15 +67,16 @@ const fetchData=async()=>{
          <MultiRangeSlider
             min={1900}
             max={new Date().getFullYear()}
+          
             onChange={({ min, max }) => {setStartDate(min);setEndDate(max)}}
          />
-        <button style={{marginLeft:'45vw',color:'black',padding:'10px',width:'10vw',border:'none',borderRadius:'10px'}}onClick={()=>{
+        <button className="btn btn"style={{backgroundColor:"#757575",color:"white",marginLeft:'47vw',padding:"5px",border:'none',borderRadius:'10px'}}onClick={()=>{
           setShowResults(true);
           navigate('/AdvancedSearch');
           //document.getElementById('see_movie').scrollIntoView(true)
         }}>Search {media}</button>
           </div>
-         </div>:''}
+         </div>
          
          </div>
         

@@ -98,8 +98,8 @@ function DateNight(props) {
     //var sub=join.filter((item,pos)=>join.indexOf(item)===pos);
 
     let result = data.reduce((a, b) => Object.values(a).filter(c => b.includes(c)));
-    let search = result.length>1?JSON.stringify(result):JSON.stringify(Film1);
-   
+    let search = result.length>1?JSON.stringify(result):JSON.stringify([...Film1,...Film2]);
+    console.log(data);
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=2023616ed87a6faf2ec9cd6de24b46ed&sort_by=vote_count.desc&with_genres=${search.slice(1, search.length - 1)}`
     setURL(url);
     const common = await fetch(url);
@@ -108,8 +108,8 @@ function DateNight(props) {
   }
   
   return (
-    <div className="dn-bg" >
-      <p className='date' style={{ marginTop: '9vh', textAlign:"center",fontSize:"50px",color:"white" }}>Date Night</p>
+    <div className="dn-bg"  style={{marginTop:"0 !important",border:"solid"}}>
+      <p className='date' style={{ marginTop: '15vh', textAlign:"center",fontSize:"50px",color:"white" }}>Date Night</p>
       <LoginContext.Provider value={{ Film1, Film2, setFilm1,setFilm2,setShowMovie,movieName1,setMovieName1,movieName2,setMovieName2,showResults }}>
         <div style={{ marginLeft: '24.5vw',justifyContent:"center !important",textAlign:"center !important" ,maxWidth: '50vw'}}  >
           <div style={{display:"flex",justifyContent:"center",gap:"100px"}}> 

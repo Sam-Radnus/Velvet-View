@@ -4,7 +4,7 @@ button {
   padding: 4px;
   font-size: 20px;
   
-  background-color:white ;
+  
   
   color:#0D1117;
 }
@@ -16,6 +16,9 @@ h1.date{
   display: inline-block;
 }
 
+#input-bar::placeholder {
+  font-weight:lighter !important; /* Set the desired font weight */
+}
 
 
 .suggestions {

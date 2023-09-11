@@ -46,7 +46,7 @@ function SeeAll(props) {
                         <div style={{alignItems:"center",justifyContent:"center",width:"50vw !important"}} className='row row-cols-4'>
                     
                             {movie.map(element => (
-                                  <div key={element.id}  style={{ height:"224px",width:"146px",backgroundColor: 'rgb(23,22,27)' ,margin:'20px 0px 20px 0px'}} className="card" >
+                                  <div key={element.id}  style={{ height:"224px",width:"146px" ,margin:'20px 0px 20px 0px'}} className="card" >
                                 <Link to={element.media_type?`Details/${element.media_type}/${element.id}`:`Details/${element.id}`} onClick={()=>{
                                     window.scrollTo(0,0)
                                 }}>
